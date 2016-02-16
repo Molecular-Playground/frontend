@@ -8,7 +8,7 @@ For convenience of condensing code into one file at a time while still conservin
 
 To bundle while working, type the command:
 ```
-node bundle &
+npm run bundle &
 ```
 
 The watchify module will automatically update the bundle.js script in public/javascipts.
