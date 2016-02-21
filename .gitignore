@@ -13,6 +13,7 @@ pids
 node_modules
 
 # Bundling for Flux/React
+.bundle.js
 bundle.js
 bundle.min.js
 bundleoutput.txt

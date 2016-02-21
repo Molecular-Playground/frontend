@@ -4,7 +4,10 @@
 
 var api = {
   login : function(params){
-    // should return login information to the Action.
+    // just returning dummy data until it works and whatnot.
+    params.success({
+        token : "totally legit JWT"
+    });
     // hint hint $.ajax({});
   }
 };

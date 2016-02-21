@@ -4,6 +4,8 @@
 var LoginConstants = require('../constants/LoginConstants');
 var assign = require('object-assign');
 var cookie = require('react-cookie');
+var EventEmitter = require('events').EventEmitter;
+var AppDispatcher = require('../dispatcher/AppDispatcher');
 
 var CHANGE_EVENT = 'change';
 
@@ -17,7 +19,6 @@ var _user = null;
 function login(jwt) {
   _jwt = jwt;
   //TODO : add user information to cookie
-  // add cookie implementation here
   var daysToExpire = 1;
   cookie.save('MolApp-clientCookie', jwt,
   /*Set to expire in an absolute time interval of days*/
@@ -81,21 +82,15 @@ var LoginStore = assign({}, EventEmitter.prototype, {
 AppDispatcher.register(function(action) {
   switch(action.actionType) {
     case LoginConstants.LOGIN:
-      // Be sure to process all information passed through the action.
-      // use .trim to be sure that the string passd is "neat" for formatting.
-      // EX: jwt = (somestringname) trim();
-
-      // save the cookie/web token (maybe with login()?)
-
-      // dont forget to .emitChange()
+      var jwt = action.jwt.trim();
+      login(jwt);
+      LoginStore.emitChange();
       break;
 
     case LoginConstants.LOGOUT:
-      // update store information with some method (logout()?)
-
-      // don't forget to .emitchange()
+      logout();
+      LoginStore.emitChange();
       break;
-
     default:
       // no op
   }

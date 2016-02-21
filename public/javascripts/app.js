@@ -1,6 +1,6 @@
 var React = require('react');
 
-var LVApp = require('./components/MolApp.react');
+var MolApp = require('./components/MolApp.react');
 
 React.render(
   <MolApp />,
