@@ -19,9 +19,13 @@
     "keymirror": "~0.1.0",
     "object-assign": "^1.0.0",
     "react": "^0.12.0",
-    "react-cookie": "^0.2.6"
+    "react-cookie": "^0.2.6",
+    "react-dom": "^0.14.0",
+    "react-router": "^2.0.0",
+    "react-tap-event-plugin": "^0.2.1"
   },
   "devDependencies": {
+    "material-ui": "^0.14.4",
     "browserify": "^6.2.0",
     "envify": "^3.0.0",
     "reactify": "^0.15.2",
