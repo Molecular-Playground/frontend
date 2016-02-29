@@ -30,7 +30,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!--<title>Material Design Lite</title>-->
     <title>Molecular Playground</title>
 
     <!-- Add to homescreen for Chrome on Android -->
@@ -57,7 +56,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.deep_purple-pink.min.css">
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="css/styles.css">
     <style>
     #view-source {
       position: fixed;
@@ -70,13 +69,25 @@
     }
     </style>
   </head>
-  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+  <!--
+    "custom-overrides" id on body tag to make it easier to prioritize
+    custom styling over Material Design Lite's styles.
+    If having trouble getting your custom styles to override MDL's,
+    try using nested styles, e.g.:
+      #custom-overrides h1 {
+      ......
+    }
+    Otherwise, be sure to reference the EXACT SAME selector you want to override
+    (i.e. if trying to override class "mdl-button", simply referencing the
+    button tag isn't specific enough!)
+  -->
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base" id="custom-overrides">
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
       <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
-          <h3>Name &amp; Title</h3>
+          <h3>Molecular Playground</h3>
         </div>
         <div class="mdl-layout--large-screen-only mdl-layout__header-row">
         </div>
