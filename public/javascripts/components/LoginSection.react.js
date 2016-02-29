@@ -19,6 +19,14 @@ var LoginSection = React.createClass({
   login : function(data) {
     LoginAction.login(data);
   },
+  __passwordEntry : function(e){
+    this.setState({usernameInput : e.target.value.trim(),
+                    passwordPrompt : ''});
+  },
+  __usernameEntry : function(e){
+    this.setState({passwordInput : e.target.value.trim(),
+                    passwordPrompt : ''});
+  },
   handleOnSubmit : function(e) {
       // prevent conventional form submission...
       e.preventDefault();
@@ -29,13 +37,10 @@ var LoginSection = React.createClass({
       });
       if ((!this.state.usernameInput) || (!this.state.passwordInput))
         return;
-      // dont forget to use .trim() on strings.b
-      this.state.usernameInput = this.state.usernameInput.trim();
-      this.state.passwordInput = this.passwordInput.trim();
       // login() to start the Flux lifecycle for a user interaction.
       this.login({
-          username : this.usernameInput,
-          password : this.passwordInput
+          username : this.state.usernameInput,
+          password : this.state.passwordInput
       });
   },
 
@@ -47,15 +52,11 @@ var LoginSection = React.createClass({
       <form className="loginForm" onSubmit={this.handleOnSubmit}>
         <p className="prompt">{this.state.usernamePrompt}</p>
         <input type = "text" placeholder="Username"
-          onChange={function(input) {
-            this.setState({usernameInput : input.target.value.trim()});
-          }} />
+          onChange={this.__usernameEntry} />
         <br />
         <p className="prompt">{this.state.passwordPrompt}</p>
         <input type = "password" placeholder="Password"
-          onChange = {function(input){
-             this.setState({passwordInput : input.target.value.trim()});
-           }} />
+          onChange = {this.__passwordEntry} />
         <input type="submit" value = "Login" />
       </form>
     );
