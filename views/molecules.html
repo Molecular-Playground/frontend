@@ -1,0 +1,628 @@
+<!doctype html>
+<!--
+  Material Design Lite
+  Copyright 2015 Google Inc. All rights reserved.
+
+  Licensed under the Apache License, Version 2.0 (the "License");
+  you may not use this file except in compliance with the License.
+  You may obtain a copy of the License at
+
+      https://www.apache.org/licenses/LICENSE-2.0
+
+  Unless required by applicable law or agreed to in writing, software
+  distributed under the License is distributed on an "AS IS" BASIS,
+  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+  See the License for the specific language governing permissions and
+  limitations under the License
+-->
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="A front-end template that helps you build fast, modern mobile web apps.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Molecular Playground</title>
+
+    <!-- Add to homescreen for Chrome on Android -->
+    <meta name="mobile-web-app-capable" content="yes">
+    <link rel="icon" sizes="192x192" href="images/android-desktop.png">
+
+    <!-- Add to homescreen for Safari on iOS -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-title" content="Material Design Lite">
+    <link rel="apple-touch-icon-precomposed" href="images/ios-desktop.png">
+
+    <!-- Tile icon for Win8 (144x144 + tile color) -->
+    <meta name="msapplication-TileImage" content="images/touch/ms-touch-icon-144x144-precomposed.png">
+    <meta name="msapplication-TileColor" content="#3372DF">
+
+    <link rel="shortcut icon" href="images/favicon.png">
+
+    <!-- SEO: If your mobile URL is different from the desktop URL, add a canonical link to the desktop page https://developers.google.com/webmasters/smartphone-sites/feature-phones -->
+    <!--
+    <link rel="canonical" href="http://www.example.com/">
+    -->
+
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.deep_purple-pink.min.css">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    #view-source {
+      position: fixed;
+      display: block;
+      right: 0;
+      bottom: 0;
+      margin-right: 40px;
+      margin-bottom: 40px;
+      z-index: 900;
+    }
+    </style>
+  </head>
+  <body class="mdl-demo mdl-color--grey-100 mdl-color-text--grey-700 mdl-base">
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+      <header class="mdl-layout__header mdl-layout__header--scroll mdl-color--primary">
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+          <h3>The Molecules</h3>
+        </div>
+        <div class="mdl-layout--large-screen-only mdl-layout__header-row">
+        </div>
+        <div class="mdl-layout__tab-bar mdl-js-ripple-effect mdl-color--primary-dark">
+          <a href="#overview" class="mdl-layout__tab is-active">Home</a>
+          <a href="#features" class="mdl-layout__tab">The Molecules</a>
+          <a href="#features" class="mdl-layout__tab">Current Installations</a>
+          <a href="#features" class="mdl-layout__tab">Setup Your Own Installation</a>
+          <a href="#features" class="mdl-layout__tab">Support</a>
+        </div>
+      </header>
+      <main class="mdl-layout__content">
+        <div class="mdl-layout__tab-panel is-active" id="overview">
+          
+
+
+          <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Tamiflu</h4>
+                The Tamiflu® drug binds to a protein on the influenza virus (neuraminidase) that the virus needs in order to infect cells. This structure shows the drug binding to, and inhibiting, the target protein, and hence helping to control infection by flu, including H1N1.
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://proteopedia.org/wiki/index.php/User:Eric_Martz/Molecular_Playground/Tamiflu" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="http://www.umass.edu/molvis/martz/" class="mdl-button">Eric Martz</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>HIV Protease</h4>
+                The Human Immunodeficiency Virus (HIV), responsible for AIDS, uses a protease (an enzyme) that is essential to its infection and reproduction. Scientists have designed an inhibitor of this enzyme that effectively stops viral growth, and has dramatically extended the healthy lifespans of HIV-infected individuals. This structure shows an animation of the drug binding to, and inhibiting, the HIV protease.
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://proteopedia.org/wiki/index.php/User:Eric_Martz/Molecular_Playground/HIVDrug" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="http://www.umass.edu/molvis/martz/" class="mdl-button">Eric Martz</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Ribosome</h4>
+                The Ribosome - the machine that makes protein is largely RNA! This structure led to the Nobel Prize in Chemistry in 2009. We used to think that proteins were the only biomacromolecules that could achieve catalysis. We now think that RNA was the primordialy enzyme.
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://proteopedia.org/wiki/index.php/Ribosome" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author: 
+                    <a href="http://www.unh.edu/biochemistry/sower/members_wayne_decatur.html" class="mdl-button">Wayne Dectaur</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>RNA Polymerase</h4>
+                RNA polymerase transcribes DNA in cells into RNA copies - studied by the Martin lab at UMass
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://people.chem.umass.edu/cmartin/Jmol/T7RP/" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="http://people.chem.umass.edu/cmartin/" class="mdl-button">Craig Martin</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>DNA</h4>
+                DNA - the information storage molecule of life
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://people.chem.umass.edu/cmartin/Jmol/DNATutor/" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="http://people.chem.umass.edu/cmartin/" class="mdl-button">Craig Martin</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>CRABP</h4>
+                Cellular retinoic acid binding protein transports fatty acids in your cells - studied by the Gierasch lab at UMass
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://molecularplayground.org/JmolContent/CRABP/index.html" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="http://people.chem.umass.edu/cmartin/" class="mdl-button">Craig Martin</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Acetphenone</h4>
+                Vibrational modes in acetophenone, a natural flavoring. Real molecules are not static, but vibrate with thermal energy
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://molecularplayground.org/JmolContent/VibrationalModes.html" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="" class="mdl-button">Paul Lahti</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Zero Calorie Fat I</h4>
+                A sugar-based zero-calorie fat developed by Proctor & Gamble. Although chemically, this molecule should behave like a fat, the unnatural linkage makes it not digestable by our cellular enzymes.
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://molecularplayground.org/JmolContent/Sucrose_Polyester.html" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="http://people.chem.umass.edu/cmartin/" class="mdl-button">Craig Martin</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Zero Calorie Fat II</h4>
+                A zero-calorie fat developed by Proctor & Gamble. Although chemically, this molecule should behave like a fat, the unnatural linkage makes it not digestable by our cellular enzymes.
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://molecularplayground.org/JmolContent/Triglyceride.html" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="http://people.chem.umass.edu/cmartin/" class="mdl-button">Craig Martin</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Stapled Peptide</h4>
+                  An isolated protein alpha helix is not stable. Protein engineers, however, have stabilized a helix by adding a covalent linkage - a staple.
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://molecularplayground.org/JmolContent/StapPep.html" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="http://people.chem.umass.edu/cmartin/" class="mdl-button">Craig Martin</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Designed Proton Wire</h4>
+                UMass researchers are designing proton wires for solar energy applications. Protons can hop from one imidazole ring to the next along this chain.
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://molecularplayground.org/JmolContent/Usha.html" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="http://people.chem.umass.edu/cmartin/" class="mdl-button">Craig Martin</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Simple Proton Wire</h4>
+                UMass researchers are designing proton wires for solar energy applications. Protons can hop from one imidazole ring to the next along this chain.
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://molecularplayground.org/JmolContent/IMAZOL_chem_playground.html" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--1-col"></div>
+                <div class="mdl-cell mdl-cell--5-col">
+                    Author:
+                    <a href="http://people.chem.umass.edu/cmartin/" class="mdl-button">Craig Martin</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i></a>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>PPCA</h4>
+                Human lysosomal protease helps proteins fold properly to prevent a metabolic disorder with no known treatment (Garman lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--6-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/Molecular_Playground/Human_PPCA" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--6-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI Student Nilima Kolli</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>M2 Transporter</h4>
+                Region of Influenza A Viral Protein M2 Responsible for proton transport across membranes during infection by the Influenza virus (Hardy lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/Molecular_Playground/Influenza_A_M2_transmembrane_domain" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI Student Samantha Nicholls</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>CRABP I</h4>
+                CRABP I carries retinoic acid, essential for vision (Gierasch lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/CRABP_I_%28_Cellular_Retinoic_Acid_Binding_Protein_%29" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI students Jinyi Lim, Kristine Faye Pobre, Mangai Periasamy & Mylene Ferrolino</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>a-mannosidase I</h4>
+                Alpha mannosidase I is a catalytic timer for protein degradation (Hebert lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/Molecular_Playground/ERMan1" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI Student Johan Sunryd</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Prolyl hydroxylase</h4>
+                Prolyl Hydroxylase Domain (PHD) enzyme is a cellular oxygen sensor (Knapp lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/Molecular_Playground/Prolyl_Hydroxylase_Domain_%28PHD%29_Enzyme" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI Student Cristina B. Martin</a>
+                </div>
+              </div>
+            </div>
+            </section>
+            
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Taxol</h4>
+                Paclitaxel (Taxol), a plant-derived natural product used to treat cancer (Roberts lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/Molecular_Playground/Taxol" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI Student Rohan Patil</a>
+                </div>
+              </div>
+            </div>
+            </section> 
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Chymotrypsin</h4>
+               Chymotrypsin is a digestive enzyme that breaks down proteins. The Rotello lab is designing nanoparticles to target this enzyme (Rotello lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/Molecular_playground/Chymotrypsin" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI Student Bradley Duncan</a>
+                </div>
+              </div>
+            </div>
+            </section> 
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Bio-machine</h4>
+                Erythromycin dehydratase is one component of a multi-protein machine for making new antibiotics (Schnarr lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/6-deoxyerythronolide_B_synthase_%28DEBS%29" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI students Tsung-Yi Lin & Jon Amoroso</a>
+                </div>
+              </div>
+            </div>
+            </section> 
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Biotin-Avidin</h4>
+                Once a biotin has bound a pocket in avidin, it is almost impossible to remove (used in the Thayumanavan lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="hhttp://www.proteopedia.org/wiki/index.php/Molecular_Playground/Biotin_binding_avidin" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI Student Diego Amado-Torres</a>
+                </div>
+              </div>
+            </div>
+            </section> 
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Asp Receptor</h4>
+                A bacterial chemotaxis receptor protein used by bacteria to 'smell' their environment (Thompson & Weis labs, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/Molecular_Playground/Bacterial_Chemotaxis_Receptors" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI students Shiela M. Jones & Daniel Moyano-Marino</a>
+                </div>
+              </div>
+            </div>
+            </section> 
+
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>Beta2 microglobulin</h4>
+                Copper binding leads beta 2 microglobulin to form amyloid fibers in kidney dialysis patients (Vachet lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/Molecular_playground/beta_2_microglobulin" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI student Nick Borotto</a>
+                </div>
+              </div>
+            </div>
+            </section> 
+            
+            <section class="section--center mdl-grid mdl-grid--no-spacing mdl-shadow--2dp">
+            <header class="section__play-btn mdl-cell mdl-cell--3-col-desktop mdl-cell--2-col-tablet mdl-cell--4-col-phone mdl-color--teal-100 mdl-color-text--white">
+              <i class="material-icons">play_circle_filled</i>
+            </header>
+            <div class="mdl-card mdl-cell mdl-cell--9-col-desktop mdl-cell--6-col-tablet mdl-cell--4-col-phone">
+              <div class="mdl-card__supporting-text">
+                <h4>FIH Protein</h4>
+               The iron site in FIH protein helps cells respond to oxygen levels (Knapp lab, UMass)
+              </div>
+              <div class="mdl-card__actions mdl-grid">
+                <div class="mdl-cell mdl-cell--5-col">
+                   <a href="http://www.proteopedia.org/wiki/index.php/Molecular_Playground/FIH" class="mdl-button">See Molecular Animation!</a>
+                </div>
+                <div class="mdl-cell mdl-cell--7-col">
+                    Author:
+                    <a href="http://www.proteopedia.org/wiki/index.php/CBI_Molecules" class="mdl-button">CBI students Jon Hangasky & Breanne Holmes</a>
+                </div>
+              </div>
+            </div>
+            </section>
+
+            
+
+            
+
+
+
+
+            <section class="section--footer mdl-color--white mdl-grid">
+            <div class="section__circle-container mdl-cell mdl-cell--2-col mdl-cell--1-col-phone">
+            </div>
+            <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+            </div>
+            <div class="section__text mdl-cell mdl-cell--4-col-desktop mdl-cell--6-col-tablet mdl-cell--3-col-phone">
+            </div>
+          </section>
+        </div>
+        <div class="mdl-layout__tab-panel" id="features">
+          <section class="section--center mdl-grid mdl-grid--no-spacing">
+          </section>
+        </div>
+        <footer class="mdl-mega-footer">
+        </footer>
+      </main>
+    </div>
+    <script src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+  </body>
+</html>
