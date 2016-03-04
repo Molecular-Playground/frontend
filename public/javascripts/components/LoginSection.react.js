@@ -9,12 +9,6 @@ var ReactPropTypes = React.PropTypes;
 var LoginAction = require('../actions/LoginAction');
 var ModelViewer = require('../components/ModelViewer.react');
 
-var modelstyle = {
-  height: '400px',
-  width: '400px',
-  position: 'relative'
-}
-
 var LoginSection = React.createClass({
   getInitialState : function() {
     return {
@@ -67,9 +61,31 @@ var LoginSection = React.createClass({
           <input type="submit" value = "Login" />
         </form>
 
-        <div>
-          <ModelViewer domstyle={modelstyle} model="2POR" bckgrndcolor="0xffffff" modelstyle="stick"/>
-        </div>
+
+        <div className="android-more-section">
+          <div className="android-section-title mdl-typography--display-1-color-contrast">More from Android</div>
+            <div className="android-card-container mdl-grid">
+
+              <div className="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
+                <div className="mdl-card__media">
+                  <ModelViewer model="2POR"/>
+                </div>
+                <div className="mdl-card__title">
+                   <h4 className="mdl-card__title-text">Get going on Android</h4>
+                </div>
+                <div className="mdl-card__supporting-text">
+                  <span className="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
+                </div>
+                <div className="mdl-card__actions">
+                  <a className="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
+                    Make the switch
+                    <i className="material-icons">chevron_right</i>
+                  </a>
+                </div>
+              </div>
+            </div>
+
+          </div>
 
       </div>
 
