@@ -20,12 +20,12 @@ var ModelViewer = React.createClass({
 
   getInitialState : function() {
     return {
-      style: {
+      modelStyle: {
         position:"relative",
         width: "0",
         height: "0"
       },
-      bckgrndColor: '0xffffff',
+      bckgrndColor: '0x000000',
       dataStyle: 'stick'
     };
   },
@@ -33,7 +33,7 @@ var ModelViewer = React.createClass({
   componentDidMount: function() {
     var parentWidth = ReactDOM.findDOMNode(this).parentNode.offsetWidth;
     this.setState({
-      style: {
+      modelStyle: {
         position:"relative",
         width: parentWidth,
         height: parentWidth
@@ -59,9 +59,7 @@ var ModelViewer = React.createClass({
   render: function() {
       return (
         <div>
-
-
-          <div style={this.state.style} className='viewer_3Dmoljs' data-pdb={this.props.model} data-backgroundcolor={this.state.bckgrndColor} data-style={this.state.dataStyle}></div>
+          <div style={this.state.modelStyle} className='viewer_3Dmoljs' data-pdb={this.props.model} data-backgroundcolor={this.state.bckgrndColor} data-style={this.state.dataStyle}></div>
         </div>
       );
   },
