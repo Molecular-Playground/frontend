@@ -15,10 +15,10 @@ var api = {
       contentType: "application/json",
       dataType : "json",
       method : "POST",
-      url : "http://192.168.99.100:8000/api/login",
+      url : "http://192.168.99.100:8000/api/login/",
       success : params.success || function (data) {console.log("data uncaught for /api/login");},
       error : params.error || function (data) {/* error will be handled by browser*/},
-      data : params.data
+      data : JSON.stringify(params.data)
     });
   }
 };
