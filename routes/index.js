@@ -8,4 +8,9 @@ router.get('/', function(req, res, next) {
   res.sendFile(path.join(__dirname+'/../views/index.html'));
 });
 
+router.get('/molecules', function(req, res, next){
+	console.log(path.join(__dirname+'/../views/molecules.html'));
+	res.sendFile(path.join(__dirname+'/../views/molecules.html'));
+})
+
 module.exports = router;
