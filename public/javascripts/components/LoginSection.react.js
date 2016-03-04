@@ -8,6 +8,9 @@ var React = require('react');
 var ReactPropTypes = React.PropTypes;
 var LoginAction = require('../actions/LoginAction');
 
+var login = function(data) {
+  LoginAction.login(data);
+};
 
 var LoginSection = React.createClass({
   getInitialState : function() {
@@ -16,30 +19,28 @@ var LoginSection = React.createClass({
       passwordPrompt : ""
     };
   },
-  login : function(data) {
-    LoginAction.login(data);
-  },
   __passwordEntry : function(e){
-    this.setState({usernameInput : e.target.value.trim(),
-                    passwordPrompt : ''});
-  },
-  __usernameEntry : function(e){
     this.setState({passwordInput : e.target.value.trim(),
                     passwordPrompt : ''});
+  },
+  __emailEntry : function(e){
+    this.setState({emailInput : e.target.value.trim(),
+                    emailPrompt : ''});
   },
   handleOnSubmit : function(e) {
       // prevent conventional form submission...
       e.preventDefault();
       // error checking on fields
       this.setState({
-        usernamePrompt : (this.state.usernameInput ? "" : "Please enter a username"),
+        emailPrompt : (this.state.emailInput ? "" : "Please enter an email"),
         passwordPrompt : (this.state.passwordInput ? "" : "Please enter a password")
       });
-      if ((!this.state.usernameInput) || (!this.state.passwordInput))
+      console.log((!this.state.emailInput) || (!this.state.passwordInput));
+      if ((!this.state.emailInput) || (!this.state.passwordInput))
         return;
       // login() to start the Flux lifecycle for a user interaction.
-      this.login({
-          username : this.state.usernameInput,
+      login({
+          email : this.state.emailInput,
           password : this.state.passwordInput
       });
   },
@@ -51,9 +52,9 @@ var LoginSection = React.createClass({
     return (
       <div>
         <form className="loginForm" onSubmit={this.handleOnSubmit}>
-          <p className="prompt">{this.state.usernamePrompt}</p>
-          <input type = "text" placeholder="Username"
-            onChange={this.__usernameEntry} />
+          <p className="prompt">{this.state.emailPrompt}</p>
+          <input type = "text" placeholder="email"
+            onChange={this.__emailEntry} />
           <br />
           <p className="prompt">{this.state.passwordPrompt}</p>
           <input type = "password" placeholder="Password"
