@@ -7,6 +7,7 @@
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
 var LoginAction = require('../actions/LoginAction');
+var ModelViewer = require('../components/ModelViewer.react');
 
 var login = function(data) {
   LoginAction.login(data);
