@@ -9,6 +9,12 @@ var ReactPropTypes = React.PropTypes;
 var LoginAction = require('../actions/LoginAction');
 var ModelCard = require('../components/ModelCard.react');
 
+var testStyle = {
+  height: '400px',
+  width: '400px',
+  position: 'relative'
+}
+
 var LoginSection = React.createClass({
   getInitialState : function() {
     return {
@@ -50,7 +56,6 @@ var LoginSection = React.createClass({
   render : function() {
     return (
       <div>
-
         <div className="mdl-grid">
           <div className="mdl-cell mdl-cell--2-col">
             <ModelCard />
@@ -62,17 +67,10 @@ var LoginSection = React.createClass({
             <ModelCard />
           </div>
 
-          <div className="mdl-cell mdl-cell--2-col">
-            <ModelCard />
-          </div>
-          <div className="mdl-cell mdl-cell--2-col">
-            <ModelCard />
-          </div>
-          <div className="mdl-cell mdl-cell--2-col">
+          <div className="mdl-cell mdl-cell--6-col">
             <ModelCard />
           </div>
         </div>
-
       </div>
     );
   }

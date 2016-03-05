@@ -41,6 +41,18 @@ var ModelViewer = React.createClass({
     });
   },
 
+  handleResize: function(e) {
+    var parentWidth = ReactDOM.findDOMNode(this).parentNode.offsetWidth + 1;
+    this.setState({
+      modelStyle: {
+        position:"relative",
+        width: parentWidth,
+        height: parentWidth
+      }
+    });
+ },
+
+
   /**
    * @return {object}
    */

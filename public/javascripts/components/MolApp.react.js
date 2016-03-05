@@ -6,6 +6,8 @@
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
 var LoginStore = require('../stores/LoginStore');
+var NavMenu = require('../components/NavMenu.react');
+var LoginSection = require('../components/LoginSection.react');
 
 /**
  * Retrieve the current Login data from the LoginStore
@@ -16,6 +18,11 @@ function getLoginState() {
     user: LoginStore.getUser()
   };
 }
+
+var bodyStyle = {
+  backgroundColor: "#EFEFEF"
+}
+
 
 var MolApp = React.createClass({
   // pull down context to interact with Router
@@ -44,9 +51,14 @@ var MolApp = React.createClass({
    */
   render: function() {
     return(
-      <div>
-        {this.props.children}
-      </div>
+        <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header" style={bodyStyle}>
+          <NavMenu />
+          <main className="mdl-layout__content">
+            <div className="page-content">
+              {this.props.children}
+            </div>
+          </main>
+        </div>
     );
   },
   /**
