@@ -250,6 +250,45 @@ a img{
   text-decoration: none;
 }
 
+/*-------------*/
+.molplay-screen-section-dark {
+  position: relative;
+  padding-top: 60px;
+  padding-bottom: 80px;
+  background-color: #37474f;
+}
+
+.molplay-screen-section-dark-text {
+  max-width: 800px;
+  margin-left: 25%;
+  padding: 24px;
+  text-align: left;
+  color: white;
+}
+
+  .molplay-screen-section-dark-text p {
+    padding-top: 8px;
+  }
+
+.molplay-screens {
+  text-align: right;
+  width: 100%;
+  white-space: nowrap;
+  overflow-x: auto;
+}
+
+.molplay-screen {
+  text-align: center;
+}
+
+.molplay-screen .android-link {
+  margin-top: 16px;
+  display: block;
+  z-index: 1;
+}
+
+/*-----------------*/
+
 .android-wear {
   display: inline-block;
   width: 160px;
@@ -548,7 +587,8 @@ a img{
     display: none;
   }
 
-  .android-wear-band-text {
+  .android-wear-band-text,
+  .molplay-screen-section-dark-text {
     margin-left: 0;
     padding: 16px;
   }
