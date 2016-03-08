@@ -43,11 +43,13 @@
   </head>
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-
+      <!-- Header -->
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
+            <!-- TODO: Figure out how to display text! -->
+            <img class="mp-logo-image" src="media/img/logo.png">
+            <!--<img class="android-logo-image" src="images/android-logo.png">-->
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -67,10 +69,12 @@
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Set Up</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FAQ</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Login</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Sign Up</a>
             </nav>
           </div>
           <span class="android-mobile-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
+            <!--<img class="android-logo-image" src="images/android-logo.png">-->
+            <img class="mp-logo-image" src="media/img/logo.png">
           </span>
           <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
             <i class="material-icons">more_vert</i>
@@ -83,13 +87,16 @@
 
       <div class="android-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
-          <img class="android-logo-image" src="images/android-logo-white.png">
+          <img class="mp-logo-image" src="media/img/logo.png">
+          <!--<img class="mp-logo-image" src="images/android-logo-white.png">-->
         </span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="">Molecules</a>
           <a class="mdl-navigation__link" href="">Locations</a>
           <a class="mdl-navigation__link" href="">Set Up</a>
           <a class="mdl-navigation__link" href="">FAQ</a>
+          <a class="mdl-navigation__link" href="">Sign Up</a>
+          <a class="mdl-navigation__link" href="">Login</a>
           <div class="android-drawer-separator"></div>
           <span class="mdl-navigation__link" href="">Versions</span>
         </nav>
@@ -98,8 +105,8 @@
       <div class="android-content mdl-layout__content">
         <a name="top"></a>
         <div class="android-be-together-section mdl-typography--text-center">
-          <div class="logo-font android-slogan">be together. not the same.</div>
-          <div class="logo-font android-sub-slogan">welcome to android... be yourself. do your thing. see what's going on.</div>
+          <div class="logo-font android-slogan">play. learn. be inspired.</div>
+          <div class="logo-font android-sub-slogan">welcome to molecular playground... come see how beautiful molecules really are.</div>
           <div class="logo-font android-create-character">
             <!-- <a href=""><img src="images/molecule.png"> Molecular Play</a> -->
           </div>
@@ -107,8 +114,20 @@
         </div>
         <div class="android-screen-section mdl-typography--text-center">
           <a name="screens"></a>
-          <div class="mdl-typography--display-1-color-contrast">Powering screens of all sizes</div>
-          <div class="android-screens">
+          <div class="android-screen-section-text">
+          <div class="mdl-typography--display-1-color-contrast">Molecules are beautiful, too!</div>
+
+            <p class="mdl-typography--font-light">
+              The molecular aspects of nature are too often viewed as inaccessible and uninteresting to the general public. While the public can appreciate the beauty of a flower or a swan, the molecular basis of these organisms goes unnoticed. While scientists appreciate the awe-inspiring beauty of both small and macromolecules, this is rarely communicated to the public. Consequently, the public sees molecular science as something removed from their everyday life. Even worse, much of the public associates 'chemicals' with toxins and pollution.
+              <br></p>
+              <div class="mdl-typography--display-1-color-contrast">Beyond the microscope</div><p>
+              With support from the Camille and Henry Dreyfus Foundation and the College of Natural Sciences at the University of Massachusetts Amherst and its supporters and alumni, this project has developed a system for displaying large-scale interactive molecules in prominent public spaces. The first such system was installed in the new Integrated Sciences Building on campus (see Current Installations for others). The aim is to capture the public's attention and to prod individuals to explore personally a vast array of molecular structures in a human-size "molecular playground," as shown in the movie below.
+              <br>
+              <a href="" class="android-link mdl-typography--font-light">Find an installation near you</a>
+            </p>
+          </div>
+          <!-- SLIDING IMAGE GALLERY. MAY BE USEFUL? -->
+          <!--<div class="android-screens">
             <div class="android-wear android-screen">
               <a class="android-image-link" href="">
                 <img class="android-screen-image" src="images/wear-silver-on.png">
@@ -140,9 +159,10 @@
               </a>
               <a class="android-link mdl-typography--font-regular mdl-typography--text-uppercase mdl-typography--text-left" href="">Coming Soon: Android Auto</a>
             </div>
-          </div>
+          </div>-->
         </div>
         <div class="android-wear-section">
+          <!-- Video? -->
           <div class="android-wear-band">
             <div class="android-wear-band-text">
               <div class="mdl-typography--display-2 mdl-typography--font-thin">The best of Google built in</div>

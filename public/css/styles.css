@@ -62,9 +62,9 @@ a img{
 }
 
 
-.android-logo-image {
-  height: 28px;
-  width: 140px;
+.mp-logo-image {
+  height: 40px;
+  width: auto;/**140px;**/
 }
 
 
@@ -166,17 +166,21 @@ a img{
     height: 160px;
   }
 
-    .android-drawer .android-logo-image {
+    /**.android-drawer .android-logo-image**/
+    .android-drawer .mp-logo-image {
       position: absolute;
       bottom: 16px;
     }
 
 .android-be-together-section {
   position: relative;
-  height: 800px;
+  height:350px;
+  /*height: 800px;*/
   width: auto;
   background-color: #f3f3f3;
-  background: url('images/slide01.jpg') center 30% no-repeat;
+  /* TODO: Add image in background? Note you'll have to lower opacity in PS */
+  /*background: url('../images/molecule.png') center 30% no-repeat;*/
+  /*background: url('../images/slide01.jpg') center 30% no-repeat;*/
   background-size: cover;
 }
 
@@ -213,6 +217,17 @@ a img{
   padding-top: 60px;
   padding-bottom: 80px;
 }
+
+.android-screen-section-text {
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  /*padding: 80px 16px 0 16px;*/
+}
+
+  .android-screen-section-text p {
+    padding-top: 16px;
+  }
 
 .android-screens {
   text-align: right;
@@ -303,7 +318,7 @@ a img{
 
 .android-wear-section {
   position: relative;
-  background: url('images/wear.png') center top no-repeat;
+  background: url('../images/wear.png') center top no-repeat;
   background-size: cover;
   height: 800px;
 }
@@ -478,7 +493,8 @@ a img{
   .android-mobile-title {
     display: block !important;
     position: absolute;
-    left: calc(50% - 70px);
+    /**left: calc(50% - 70px);**/
+    left: calc(50% - 30px);
     top: 12px;
     transition: opacity 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
@@ -541,4 +557,3 @@ a img{
     display: none;
   }
 }
-
