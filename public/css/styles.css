@@ -162,14 +162,17 @@ a img{
 
   .android-drawer .mdl-layout-title {
     position: relative;
-    background: #6ab344;
+    background: #f3f3f3;
     height: 160px;
+    line-height: 35px;
+    padding: 0px;
+    padding-top:30px;
   }
 
     /**.android-drawer .android-logo-image**/
     .android-drawer .mp-logo-image {
-      position: absolute;
-      bottom: 16px;
+      /*margin-top: 50px;
+      margin-left: 55px;*/
     }
 
 .android-be-together-section {
