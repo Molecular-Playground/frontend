@@ -6,6 +6,9 @@
 var React = require('react');
 var ReactPropTypes = React.PropTypes;
 var LoginStore = require('../stores/LoginStore');
+var NavigationBar = require('../components/NavigationBar.react')
+var NavigationSideBar = require('../components/NavigationSideBar.react')
+var Footer = require('../components/Footer.react')
 
 /**
  * Retrieve the current Login data from the LoginStore
@@ -44,8 +47,15 @@ var MolApp = React.createClass({
    */
   render: function() {
     return(
-      <div>
-        {this.props.children}
+      <div className="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+        <NavigationBar />
+        <NavigationSideBar />
+
+        <div className="android-content mdl-layout__content">
+          {this.props.children}
+          
+          <Footer />
+        </div>
       </div>
     );
   },

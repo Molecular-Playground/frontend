@@ -2,13 +2,10 @@
 <!--
   Material Design Lite
   Copyright 2015 Google Inc. All rights reserved.
-
   Licensed under the Apache License, Version 2.0 (the "License");
   you may not use this file except in compliance with the License.
   You may obtain a copy of the License at
-
       https://www.apache.org/licenses/LICENSE-2.0
-
   Unless required by applicable law or agreed to in writing, software
   distributed under the License is distributed on an "AS IS" BASIS,
   WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
@@ -39,15 +36,54 @@
       margin-bottom: 40px;
       z-index: 900;
     }
+    #foot {
+      top: 100px;
+    }
+    #smallText{
+      font-size: 80%;
+    }
+    #shiftRight{
+      left:100px;
+    }
     </style>
-  </head>
+
+    <style>
+      #smallText{
+        font-size: 80%;
+      }
+      #cardTitle{
+        font-size: 200%;
+      }
+      .demo-card-square.mdl-card {
+        width: 340px;
+        height: 390px;
+      }
+      .demo-card-square > .mdl-card__title {
+        color: #fff;
+        background: #8bc34a;
+      }
+      .grayBack{
+        background: #F0F0F0; 
+      }
+      .mdl-grid{
+        position: relative;
+        top:50px;
+      }
+      
+    </style>
+</head>
+  
+
+  
   <body>
     <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
 
       <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <div class="mdl-layout__header-row">
           <span class="android-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
+            <!-- TODO: Figure out how to display text! -->
+            <img class="mp-logo-image" src="media/img/logo.png">
+            <!--<img class="android-logo-image" src="images/android-logo.png">-->
           </span>
           <!-- Add spacer, to align navigation to the right in desktop -->
           <div class="android-header-spacer mdl-layout-spacer"></div>
@@ -67,10 +103,12 @@
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Set Up</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FAQ</a>
               <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Login</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Sign Up</a>
             </nav>
           </div>
           <span class="android-mobile-title mdl-layout-title">
-            <img class="android-logo-image" src="images/android-logo.png">
+            <!--<img class="android-logo-image" src="images/android-logo.png">-->
+            <img class="mp-logo-image" src="media/img/logo.png">
           </span>
           <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
             <i class="material-icons">more_vert</i>
@@ -83,57 +121,270 @@
 
       <div class="android-drawer mdl-layout__drawer">
         <span class="mdl-layout-title">
-          <img class="android-logo-image" src="images/android-logo-white.png">
+          <img class="mp-logo-image" src="media/img/logo.png">
+          <!--<img class="mp-logo-image" src="images/android-logo-white.png">-->
         </span>
         <nav class="mdl-navigation">
           <a class="mdl-navigation__link" href="">Molecules</a>
           <a class="mdl-navigation__link" href="">Locations</a>
           <a class="mdl-navigation__link" href="">Set Up</a>
           <a class="mdl-navigation__link" href="">FAQ</a>
+          <a class="mdl-navigation__link" href="">Sign Up</a>
+          <a class="mdl-navigation__link" href="">Login</a>
           <div class="android-drawer-separator"></div>
           <span class="mdl-navigation__link" href="">Versions</span>
         </nav>
       </div>
 
-      <div class="android-content mdl-layout__content">
-
-<!-- Square card -->
-<style>
-.demo-card-square.mdl-card {
-  width: 320px;
-  height: 320px;
-}
-.demo-card-square > .mdl-card__title {
-  color: #fff;
-  background-color: blue;
-}
-</style>
-
-<div class="demo-card-square mdl-card mdl-shadow--2dp">
-  <div class="mdl-card__title mdl-card--expand">
-    <h2 class="mdl-card__title-text">Update</h2>
-  </div>
-  <div class="mdl-card__supporting-text">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-    Aenan convallis.
-
-  </div>
-  <div class="mdl-card__actions mdl-card--border">
-    <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-      View Updates
-    </a>
-  </div>
-</div>
 
 
 
-        <footer class="android-footer mdl-mega-footer">
+<div class="content-grid grayBack">
+    <!--NEW ROW of MOLECULES-->
+    <div id="shiftRight" class="mdl-grid content-grid">
+      
+      <!--LEFT MOLECULE-->
+      <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title right">
+          <span class="mdl-layout-title">Tamiflu</span>
+          <button id="tamifluButton" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">more_vert</i>
+          </button>
+          
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+              for="tamifluButton">
+            <li class="mdl-menu__item">Add Molecule to Playlist</li>
+            <li class="mdl-menu__item">See Author</li>
+            <li class="mdl-menu__item">Etc...</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
+          width="340" height="200">  
+        </div>
+        <div id="smallText" class="mdl-card__actions mdl-card--border mdl-card__supporting-text">
+          The Tamiflu® drug binds to a protein on the influenza virus (neuraminidase) that the virus needs in order to infect cells. This structure shows the drug binding to, and inhibiting, the target protein, and hence helping to control infection by flu, including H1N1.
+        </div>
+      </div>
+
+      <!--LEFT MOLECULE-->
+      <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title right">
+          <span class="mdl-layout-title">HIV Protease</span>
+          <button id="hivButton" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">more_vert</i>
+          </button>
+          
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+              for="hivButton">
+            <li class="mdl-menu__item">Add Molecule to Playlist</li>
+            <li class="mdl-menu__item">See Author</li>
+            <li class="mdl-menu__item">Etc...</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
+          width="340" height="200">  
+        </div>
+        <div id="smallText" class="mdl-card__actions mdl-card--border mdl-card__supporting-text">
+          The Human Immunodeficiency Virus (HIV), responsible for AIDS, uses a protease (an enzyme) that is essential to its infection and reproduction. Scientists have designed an inhibitor of this enzyme that effectively stops viral growth, and has dramatically extended the healthy lifespans of HIV-infected individuals. This structure shows an animation of the drug binding to, and inhibiting, the HIV protease.
+        </div>
+      </div>
+
+      <!--RIGHT MOLECULE-->
+      <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title right">
+          <span class="mdl-layout-title">Ribosome</span>
+          <button id="ribosomeButton" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">more_vert</i>
+          </button>
+          
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+              for="ribosomeButton">
+            <li class="mdl-menu__item">Add Molecule to Playlist</li>
+            <li class="mdl-menu__item">See Author</li>
+            <li class="mdl-menu__item">Etc...</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
+          width="340" height="200">  
+        </div>
+        <div id="smallText" class="mdl-card__actions mdl-card--border mdl-card__supporting-text">
+          The Ribosome - the machine that makes protein is largely RNA! This structure led to the Nobel Prize in Chemistry in 2009. We used to think that proteins were the only biomacromolecules that could achieve catalysis. We now think that RNA was the primordialy enzyme.
+        </div>
+      </div>
+    
+    </div>
+
+
+
+
+
+
+
+
+
+     <!--NEW ROW of MOLECULES-->
+    <div id="shiftRight" class="mdl-grid">
+      
+      <!--LEFT MOLECULE-->
+      <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title right">
+          <span class="mdl-layout-title">RNA Polymerase</span>
+          <button id="rnaButton" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">more_vert</i>
+          </button>
+          
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+              for="rnaButton">
+            <li class="mdl-menu__item">Add Molecule to Playlist</li>
+            <li class="mdl-menu__item">See Author</li>
+            <li class="mdl-menu__item">Etc...</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
+          width="340" height="200">  
+        </div>
+        <div id="smallText" class="mdl-card__actions mdl-card--border mdl-card__supporting-text">
+          RNA polymerase transcribes DNA in cells into RNA copies - studied by the Martin lab at UMass.
+        </div>
+      </div>
+
+      <!--LEFT MOLECULE-->
+      <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title right">
+          <span class="mdl-layout-title">DNA</span>
+          <button id="dnaButton" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">more_vert</i>
+          </button>
+          
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+              for="dnaButton">
+            <li class="mdl-menu__item">Add Molecule to Playlist</li>
+            <li class="mdl-menu__item">See Author</li>
+            <li class="mdl-menu__item">Etc...</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
+          width="340" height="200">  
+        </div>
+        <div id="smallText" class="mdl-card__actions mdl-card--border mdl-card__supporting-text">
+          DNA - the information storage molecule of life.
+        </div>
+      </div>
+
+      <!--RIGHT MOLECULE-->
+      <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title right">
+          <span class="mdl-layout-title">CRABP</span>
+          <button id="crabpButton" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">more_vert</i>
+          </button>
+          
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+              for="crabpButton">
+            <li class="mdl-menu__item">Add Molecule to Playlist</li>
+            <li class="mdl-menu__item">See Author</li>
+            <li class="mdl-menu__item">Etc...</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
+          width="340" height="200">  
+        </div>
+        <div id="smallText" class="mdl-card__actions mdl-card--border mdl-card__supporting-text">
+          Cellular retinoic acid binding protein transports fatty acids in your cells - studied by the Gierasch lab at UMass.
+        </div>
+      </div>
+    
+    </div>
+
+
+
+    <!--NEW ROW of MOLECULES-->
+    <div id="shiftRight" class="mdl-grid">
+      
+      <!--LEFT MOLECULE-->
+      <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title right">
+          <span class="mdl-layout-title">Acetophenone</span>
+          <button id="aceButton" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">more_vert</i>
+          </button>
+          
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+              for="aceButton">
+            <li class="mdl-menu__item">Add Molecule to Playlist</li>
+            <li class="mdl-menu__item">See Author</li>
+            <li class="mdl-menu__item">Etc...</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
+          width="340" height="200">  
+        </div>
+        <div id="smallText" class="mdl-card__actions mdl-card--border mdl-card__supporting-text">
+          Vibrational modes in acetophenone, a natural flavoring. Real molecules are not static, but vibrate with thermal energy.
+        </div>
+      </div>
+
+      <!--LEFT MOLECULE-->
+      <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title right">
+          <span class="mdl-layout-title">Zero Calorie Fat I</span>
+          <button id="zCalIButton" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">more_vert</i>
+          </button>
+          
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+              for="zCalIButton">
+            <li class="mdl-menu__item">Add Molecule to Playlist</li>
+            <li class="mdl-menu__item">See Author</li>
+            <li class="mdl-menu__item">Etc...</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
+          width="340" height="200">  
+        </div>
+        <div id="smallText" class="mdl-card__actions mdl-card--border mdl-card__supporting-text">
+          A sugar-based zero-calorie fat developed by Proctor & Gamble. Although chemically, this molecule should behave like a fat, the unnatural linkage makes it not digestable by our cellular enzymes.
+        </div>
+      </div>
+
+      <!--RIGHT MOLECULE-->
+      <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
+        <div class="mdl-card__title right">
+          <span class="mdl-layout-title">Zero Calorie Fat II</span>
+          <button id="zCalIIButton" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">more_vert</i>
+          </button>
+          
+          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
+              for="zCalIIButton">
+            <li class="mdl-menu__item">Add Molecule to Playlist</li>
+            <li class="mdl-menu__item">See Author</li>
+            <li class="mdl-menu__item">Etc...</li>
+          </ul>
+        </div>
+        <div>
+          <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
+          width="340" height="200">  
+        </div>
+        <div id="smallText" class="mdl-card__actions mdl-card--border mdl-card__supporting-text">
+          A zero-calorie fat developed by Proctor & Gamble. Although chemically, this molecule should behave like a fat, the unnatural linkage makes it not digestable by our cellular enzymes.
+        </div>
+      </div>
+    
+    </div>
+
+      
+  
+
+        <footer class="android-footer mdl-mega-footer" id="foot">
           <div class="mdl-mega-footer--top-section">
             <div class="mdl-mega-footer--left-section">
               <button class="mdl-mega-footer--social-btn"></button>
@@ -151,7 +402,8 @@
           </div>
 
           <div class="mdl-mega-footer--middle-section">
-            <p class="mdl-typography--font-light">Foooooter stuff goes -->here<-- </p>
+            <p class="mdl-typography--font-light">Satellite imagery: © 2014 Astrium, DigitalGlobe</p>
+            <p class="mdl-typography--font-light">Some features and devices may not be available in all areas</p>
           </div>
 
           <div class="mdl-mega-footer--bottom-section">
