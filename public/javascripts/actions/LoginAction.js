@@ -23,7 +23,8 @@ var LoginActions = {
       success : function(data){
         AppDispatcher.dispatch({ // the AppDispatcher notifies the store...
           actionType: LoginConstants.LOGIN,
-          jwt: data.token
+          jwt: data.token,
+          fake_jwt: 1
         });
       }
     });

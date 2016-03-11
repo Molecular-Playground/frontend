@@ -18,9 +18,13 @@ var _user = null;
  */
 function login(jwt) {
   _jwt = jwt;
+  fake_jwt = 1;
   //TODO : add user information to cookie
   var daysToExpire = 1;
   cookie.save('MolApp-clientCookie', jwt,
+  /*Set to expire in an absolute time interval of days*/
+  {maxAge : daysToExpire * 84600});
+  cookie.save('MolApp-clientCookie', fake_jwt,
   /*Set to expire in an absolute time interval of days*/
   {maxAge : daysToExpire * 84600});
 }
@@ -30,7 +34,11 @@ function login(jwt) {
  */
 function logout() {
   _jwt = null;
+  fake_jwt = null;
   _user = null;
+
+  cookie.remove('MolApp-clientCookie', jwt);
+  cookie.remove('MolApp-clientCookie', fake_jwt);
 }
 
 var LoginStore = assign({}, EventEmitter.prototype, {
@@ -41,6 +49,10 @@ var LoginStore = assign({}, EventEmitter.prototype, {
    */
   isLoggedIn: function() {
     return !!_jwt;
+  },
+
+  fakeIsLoggedIn: function(){
+    return !!fake_jwt;
   },
 
   /**
