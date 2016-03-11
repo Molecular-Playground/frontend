@@ -4,10 +4,13 @@ var NavigationBar = React.createClass({
   render : function( ){
     return(
       <div className="android-drawer mdl-layout__drawer">
-        <span className="mdl-layout-title">
-          <img className="mp-logo-image" src="media/img/logo.png" />
-        </span>
+        <a href="/">
+          <span className="mdl-layout-title">
+            <img className="mp-logo-image" src="media/img/logo.png" />
+          </span>
+        </a>
         <nav className="mdl-navigation">
+          <a className="mdl-navigation__link" href="/">Home</a>
           <a className="mdl-navigation__link" href="/molecules">Molecules</a>
           <a className="mdl-navigation__link" href="">Locations</a>
           <a className="mdl-navigation__link" href="">Set Up</a>
