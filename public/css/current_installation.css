@@ -12,18 +12,18 @@
     }
 
   .android-card-container .mdl-card__title {
-    background: rgb(255, 87, 34);
+    background: #8bc34a;
     align-items: center;
     padding: 16px;
     perspective-origin: 165px 56px;
     box-sizing: border-box;
-    color: #000;
+    color: #fff;
     transform-origin: 165px 56px;
   }
 
   .android-card-container .mdl-card__title-text {
-    color: black;
-    height: auto;
+    color: white;
+    height: 50px;
   }
 
   .android-card-container .mdl-card__supporting-text {
@@ -38,7 +38,12 @@
   }
 
   .android-card-container .mdl-card__actions a {
-    background: rgb(162, 30, 30);
+    background: #8bc34a;
     border-top: none;
     font-size: 16px;
   }
+
+  #center {
+    margin: auto;
+    width: 90%;
+    padding: 10px;
