@@ -45,6 +45,9 @@
     #shiftRight{
       left:100px;
     }
+    #searchMol{
+      left:100px;
+    }
     </style>
 
     <style>
@@ -68,6 +71,22 @@
       .mdl-grid{
         position: relative;
         top:50px;
+      }
+
+      .playlist-manager.mdl-card {
+        width: 1000px;
+        height: 400px;
+      }
+      .playlist-manager > .mdl-card__title {
+        color: #fff;
+        height: 400px;
+        background: url('../assets/demos/welcome_card.jpg') center / cover;
+      }
+      .playlist-manager > .mdl-card__menu {
+        color: #fff;
+      }
+      #playlist-main-section{
+        height:380px;
       }
       
     </style>
@@ -139,7 +158,59 @@
 
 
 
+
+
+
+
 <div class="content-grid grayBack">
+
+  <div class="mdl-grid">
+
+    <div class="mdl-cell mdl-cell--1-col"></div>
+    
+    
+      <div class="playlist-manager mdl-cell mdl-cell--10-col mdl-card mdl-shadow--2dp">
+        
+        <div id="playlist-main-section" class="mdl-card__supporting-text">
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
+          Mauris sagittis pellentesque lacus eleifend lacinia...
+        </div>
+
+        <div class="mdl-card__actions mdl-card--border">
+          <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            Create New Playlist
+          </a>
+        </div>
+
+        
+      </div>
+    
+  
+    <div class="mdl-cell mdl-cell--1-col"></div>
+
+  </div>
+
+  <div class="mdl-grid">
+    
+    <div class="mdl-cell mdl-cell--3-col"></div>
+
+    <div class="mdl-cell mdl-cell--4-col"></div>
+
+    <div class="mdl-layout mdl-js-layout mdl-cell" id="searchMol">
+        <main class="mdl-layout__content">
+            <form action="#">
+                <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+                    <input class="mdl-textfield__input" type="text" id="username"/>
+                    <label class="mdl-textfield__label" for="username">Search Molecules</label>
+                </div>
+            </form>
+        </main>
+    </div>
+  
+
+
+  </div>
+
     <!--NEW ROW of MOLECULES-->
     <div id="shiftRight" class="mdl-grid content-grid">
       
