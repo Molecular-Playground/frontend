@@ -177,12 +177,15 @@ a img{
 
 .android-be-together-section {
   position: relative;
-  height:350px;
-  /*height: 800px;*/
+  /*height:350px;*/
+  height: 750px;
   width: auto;
   background-color: #f3f3f3;
-  /* TODO: Add image in background? Note you'll have to lower opacity in PS */
-  /*background: url('../images/molecule.png') center 30% no-repeat;*/
+  /* Background Image */
+  /* Entire background, including behind text, transparent */
+  /*background: url('../images/mol-icons/molecule-icon_vinyl-alcohol_opacity-20.png') center 80% no-repeat;*/
+  /* Below text */
+  background: url('../images/mol-icons/molecule-icon_vinyl-alcohol_more-border_bottom-align-02.png') center 80% no-repeat;
   /*background: url('../images/slide01.jpg') center 30% no-repeat;*/
   background-size: cover;
 }
@@ -196,7 +199,8 @@ a img{
 
 .android-slogan {
   font-size: 60px;
-  padding-top: 160px;
+  /*padding-top: 160px;*/
+  padding-top:100px;
 }
 
 .android-sub-slogan {
@@ -562,7 +566,8 @@ a img{
   }
 
   .android-be-together-section {
-    height: 350px;
+    /*height: 350px;*/
+    height: 390px;
   }
 
   .android-slogan {
