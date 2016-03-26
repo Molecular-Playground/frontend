@@ -65,12 +65,14 @@
         <!-- Navigation -->
         <div class="android-navigation-container">
           <nav class="android-navigation mdl-navigation">
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="molecules.html">Molecules</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="molecules">Molecules</a>
             <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Locations</a>
             <a class="mdl-navigation__link mdl-typography--text-uppercase">Set Up</a>
             <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FAQ</a>
-            <a id="show-dialog" type="button" class="mdl-navigation__link mdl-typography--text-uppercase">Login</a>
+            <a id="show-dialog" type="button" class="mdl-navigation__link mdl-typography--text-uppercase" href="/login">Login</a>
+            <!--
             <dialog class="mdl-dialog">
+            TODO : figure this out for Firefox, it's not working properly as of 3/26
             <h4 class="mdl-dialog__title">Login</h4>
               <div class="mdl-dialog__content">
                 <form action="#">
@@ -90,7 +92,7 @@
                 <button type="button" class="mdl-button">Submit</button>
                 <button type="button" class="mdl-button close">Register</button>
               </div>
-            </dialog>
+            </dialog> -->
             <script>
               var dialog = document.querySelector('dialog');
               var showDialogButton = document.querySelector('#show-dialog');
@@ -140,7 +142,7 @@
           <a class="mdl-navigation__link" href="">Set Up</a>
           <a class="mdl-navigation__link" href="">FAQ</a>
           <a class="mdl-navigation__link" href="">Sign Up</a>
-          <a class="mdl-navigation__link" href="">Login</a>
+          <a class="mdl-navigation__link" href="/login">Login</a>
           <div class="android-drawer-separator"></div>
           <span class="mdl-navigation__link" href="">Versions</span>
         </nav>

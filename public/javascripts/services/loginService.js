@@ -13,8 +13,7 @@ angular.module('MolApp').factory('loginService', ['$http', '$cookies', function(
       }).then(function(success){
         var expire = new Date();
         expire.setDate(expire.getDate()+1);
-        $cookies.put('MolPlayground', {token : success.data.token}, {expires : expire});
-        console.log($cookies.get('MolPlayground'));
+        $cookies.put('MolPlayground', JSON.stringify({token : success.data.token}), {expires : expire});
         params.success(success);
       },
       params.error || function(error) {/*Set state items for login state messages*/});

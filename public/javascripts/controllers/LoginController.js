@@ -10,7 +10,7 @@ angular.module('MolApp').controller('LoginCtrl', ['$scope', 'loginService', func
         password : $scope.password.trim()
       },
       success : function(resp){
-
+        window.location = "/";
         console.log(resp);
       },
       // TODO : display errors when backend gets back about ms-users ticket for Login error reporting.
