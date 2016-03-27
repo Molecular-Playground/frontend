@@ -11,11 +11,14 @@ pids
 #jshint stuff
 .jshintrc
 
+#pdb files
+*.pdb
+
 # Dependency directory
 # https://docs.npmjs.com/misc/faq#should-i-check-my-node-modules-folder-into-git
 node_modules
 
-# Bundling for Flux/React
+# Bundling
 .bundle.js
 bundle.js
 bundle.min.js

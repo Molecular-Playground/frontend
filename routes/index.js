@@ -27,15 +27,13 @@ router.get('/register', function(req,res,next){
 });
 
 router.get('/testpdb', function(req,res,next){
-	console.log('reading file');
-	fs.readFile('views/test.pdb', function (err,data) {
-  if (err) {
-    return console.log(err);
-  }
-	console.log('sending...');
-	res.set('Content-Type', 'text/plain');
-	res.send(data);
-	});
+	console.log(path.join(__dirname+'/../views/test.pdb'));
+	res.sendFile(path.join(__dirname+'/../views/test.pdb'));
+});
+
+router.get('testmorepdb', function(req,res,next){
+	console.log(path.join(__dirname+'/../views/othertest.pdb'));
+	res.sendFile(path.join(__dirname+'/../views/othertest.pdb'));
 });
 
 module.exports = router;

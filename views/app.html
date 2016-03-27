@@ -43,13 +43,13 @@
       //'data' is a string containing molecule data in pdb format
       myviewer.setBackgroundColor(0xffffff);
       myviewer.addModel(data, "pdb");
-      myviewer.setStyle({}, $3Dmol.specStringToObject('cartoon;stick'));
+      myviewer.setStyle({}, {"cartoon":{"color":"spectrum"}, stick : {}});
       myviewer.render();
       myviewer.zoomTo();
       console.log('render');
     };
     $.ajax({
-      url : '/testpdb',
+      url : '/othertest.pdb',
       settings : {
         dataType : 'json',
         method : "GET"
