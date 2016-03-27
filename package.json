@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "bundle": "watchify -o public/javascripts/bundle.js -v -d public/javascripts/app.js > bundleoutput.txt",
-    "build": "browserify . -t [envify --NODE_ENV production] | uglifyjs -cm > public/javascripts/bundle.min.js"
+    "build": "browserify -o public/javascripts/bundle.js -v -d public/javascripts/app.js > bundleoutput.txt"
   },
 
   "dependencies": {
@@ -21,6 +21,6 @@
   },
   "devDependencies": {
     "browserify": "^6.2.0",
-    "watchify": "^2.1.1"
+    "watchify": "^2.1.1",
   }
 }
