@@ -5,8 +5,8 @@ var router = express.Router();
 
 /* GET home page. */
 router.get('/', function(req, res, next) {
-	console.log(path.join(__dirname+'/../views/test.html'));
-  res.sendFile(path.join(__dirname+'/../views/test.html'));
+	console.log(path.join(__dirname+'/../views/pageTemplate.html'));
+  res.sendFile(path.join(__dirname+'/../views/pageTemplate.html'));
 });
 
 /*

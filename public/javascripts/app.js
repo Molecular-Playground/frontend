@@ -1,23 +1,26 @@
 (function() {
   var angular = require('angular');
-  var angularRoute = require('angular-router-browserify')(angular);
   angular.module('MolApp', [require('angular-cookies'), require('angular-route')]);
 
 
-  var molApp = angular.module('MolApp', [require('angular-cookies'), require('angular-route')]);
+  // MolApp Module, and Config for routing (express serves same page for all requests, so
+  // add new routes here)
+  var molApp = angular.module('MolApp', [require('angular-cookies'), require('angular-route')])
+    .config(['$routeProvider', '$locationProvider', function($routeProvider, $locationProvider) {
+      $locationProvider.html5Mode(true);
 
-    molApp.config(['$routeProvider', function($routeProvider) {
-        $routeProvider
-          .when('/molecules', {
-            templateUrl: 'javascripts/templates/molecules.html',
-            controller: 'MoleculesCtrl as molecules'
-          })
-          .otherwise({
-            templateUrl: 'javascripts/templates/landing.html',
-            controller: 'LandingCtrl as landing'
-          });
+      $routeProvider
+        .when('/molecules', {
+          templateUrl: 'javascripts/templates/molecules.html',
+          controller: 'MoleculesCtrl as molecules'
+        })
+        .otherwise({
+          templateUrl: 'javascripts/templates/landing.html',
+          controller: 'LandingCtrl as landing'
+        });
       }
     ]);
+
 
   /* --------- SERVICES --------- */
   require('./services/userService.js');
