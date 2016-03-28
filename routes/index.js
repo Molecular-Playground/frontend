@@ -26,14 +26,4 @@ router.get('/register', function(req,res,next){
 	res.sendFile(path.join(__dirname+'/../views/register.html'));
 });
 
-router.get('/testpdb', function(req,res,next){
-	console.log(path.join(__dirname+'/../views/test.pdb'));
-	res.sendFile(path.join(__dirname+'/../views/test.pdb'));
-});
-
-router.get('testmorepdb', function(req,res,next){
-	console.log(path.join(__dirname+'/../views/othertest.pdb'));
-	res.sendFile(path.join(__dirname+'/../views/othertest.pdb'));
-});
-
 module.exports = router;
