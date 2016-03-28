@@ -1,6 +1,8 @@
 (function() {
   var angular = require('angular');
   var angularRoute = require('angular-router-browserify')(angular);
+  angular.module('MolApp', [require('angular-cookies'), require('angular-route')]);
+
 
   var molApp = angular.module('MolApp', [require('angular-cookies'), require('angular-route')]);
 

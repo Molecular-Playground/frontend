@@ -30,12 +30,32 @@
       }
     </style>
   </head>
-  <body ng-app = "MolApp">
-    <div ng-controller="LoginCtrl">
-      <input type="text" ng-model="email"></input>
-      <input type="button" ng-click="login()"></input>
+  <body>
+    <div id="MolApp" style="width: 100%; height: 100vh;">
     </div>
-
-
   </body>
+  <script type="text/javascript">
+    var successFunct = function(data){
+      // Viewer config - properties 'defaultcolors' and 'callback'
+      var config = {defaultcolors : $3Dmol.rasmolElementColors};
+      // Create GLViewer within 'MolApp'
+      var myviewer = $3Dmol.createViewer("MolApp", config);
+      //'data' is a string containing molecule data in pdb format
+      myviewer.setBackgroundColor(0xffffff);
+      myviewer.addModel(data, "pdb");
+      myviewer.setStyle({}, $3Dmol.specStringToObject('cartoon;stick'));
+      myviewer.render();
+      myviewer.zoomTo();
+      console.log('render');
+    };
+    $.ajax({
+      url : '/testpdb',
+      settings : {
+        dataType : 'json',
+        method : "GET"
+      },
+      success : successFunct
+    });
+
+  </script>
 </html>
