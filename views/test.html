@@ -1,0 +1,61 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Molecular Playground</title>
+    <link rel="stylesheet" href="css/styles.css">
+
+    <!-- Page Styles LIBRARIES -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+
+    <style>
+      #view-source {
+        position: fixed;
+        display: block;
+        right: 0;
+        bottom: 0;
+        margin-right: 40px;
+        margin-bottom: 40px;
+        z-index: 900;
+      }
+    </style>
+  </head>
+  <body ng-app="MolApp">
+
+    <!-- Div container for whole everything -->
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
+
+      <!-- Div container for the navigation menu -->
+      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+        <navigation-bar />
+      </div>
+      <!-- Div container for the navigation side menu -->
+      <div class="android-drawer mdl-layout__drawer">
+        <navigation-menu />
+      </div>
+
+      <!-- Div container for the content of the page-->
+      <div class="android-content mdl-layout__content">
+        <div>
+          <content />
+        </div>
+
+        <!-- footer container for the footer -->
+        <footer class="android-footer mdl-mega-footer">
+          <navigation-footer />
+        </footer>
+      </div>
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
+    <script src="javascripts/bundle.js"></script>
+  </body>
+</html>
