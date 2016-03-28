@@ -7,15 +7,18 @@
     "bundle": "watchify -o public/javascripts/bundle.js -v -d public/javascripts/app.js > bundleoutput.txt",
     "build": "browserify -o public/javascripts/bundle.js -v -d public/javascripts/app.js > bundleoutput.txt"
   },
-
   "dependencies": {
     "angular": "1.5.3",
     "angular-cookies": "1.5.3",
+    "angular-resource": "1.5.3",
+    "angular-route": "1.5.3",
+    "angular-router-browserify": "0.0.2",
     "body-parser": "~1.13.2",
     "classnames": "^2.1.3",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
     "express": "~4.13.1",
+    "material-design-lite": "^1.1.3",
     "morgan": "~1.6.1",
     "serve-favicon": "~2.3.0"
   },
