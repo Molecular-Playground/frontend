@@ -1,0 +1,50 @@
+
+<dialog id="loginDialog" class="mdl-dialog">
+    <h4 class="mdl-dialog__title">Login</h4>
+    <div class="mdl-dialog__content">
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input id="loginUsername" class="mdl-textfield__input" type="text" ng-model='loginUsername'>
+        <label class="mdl-textfield__label" for="loginUsername">username</label>
+      </div>
+      <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+        <input id="loginPassword" class="mdl-textfield__input" type="password" ng-model='loginPassword'>
+        <label class="mdl-textfield__label" for="loginPassword">password</label>
+      </div>
+    </div>
+    <div class="mdl-dialog__actions" align="center">
+      <p>{{loginStatusMessage}}</p>
+      <a href="/">
+        <button type="button" class="mdl-button close"  ng-click='closeDialog("login")'>Cancel</button>
+      </a>
+      <button type="button" class="mdl-button" ng-click="login()">Login</button>
+    </div>
+  </dialog>
+
+<dialog id="signupDialog" class="mdl-dialog">
+  <h4 class="mdl-dialog__title">Sign Up</h4>
+  <div class="mdl-dialog__content">
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input id="signupEmail" class="mdl-textfield__input" type="text" ng-model='signupEmail'>
+      <label class="mdl-textfield__label" for="signupEmail">email</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input id="signupUsername" class="mdl-textfield__input" type="text" ng-model='signupUsername'>
+      <label class="mdl-textfield__label" for="signupUsername">username</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input id="signupPassword" class="mdl-textfield__input" type="password" ng-model='signupPassword'>
+      <label class="mdl-textfield__label" for="signupPassword">password</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label">
+      <input id="confirmSignupPassword" class="mdl-textfield__input" type="password" ng-model='signupConfPassword'>
+      <label class="mdl-textfield__label" for="confirmSignupPassword">confirm password</label>
+    </div>
+  </div>
+  <div class="mdl-dialog__actions" align="center">
+    <p>{{loginStatusMessage}}</p>
+    <a href="/">
+      <button type="button" class="mdl-button close" ng-click='closeDialog("signup")'>Cancel</button>
+    </a>
+    <button type="button" class="mdl-button" ng-click="register()">Signup</button>
+  </div>
+</dialog>

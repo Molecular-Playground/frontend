@@ -33,6 +33,7 @@
   require('./directives/NavigationFooterDirective.js');
   require('./directives/LandingDirective.js');
   require('./directives/MoleculesDirective.js');
+  require('./directives/LoginSignupDirective.js');
 
   /* -------- CONTROLLERS ------- */
   require('./controllers/LoginController.js');

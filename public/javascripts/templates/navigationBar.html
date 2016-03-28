@@ -21,46 +21,10 @@
     <nav class="android-navigation mdl-navigation">
       <a class="mdl-navigation__link mdl-typography--text-uppercase" href="molecules">Molecules</a>
       <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Locations</a>
-      <a class="mdl-navigation__link mdl-typography--text-uppercase">Set Up</a>
+      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Set Up</a>
       <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FAQ</a>
-      <a id="show-dialog" type="button" class="mdl-navigation__link mdl-typography--text-uppercase" href="/login">Login</a>
-      <!--
-      <dialog class="mdl-dialog">
-      TODO : figure this out for Firefox, it's not working properly as of 3/26
-      <h4 class="mdl-dialog__title">Login</h4>
-        <div class="mdl-dialog__content">
-          <form action="#">
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="text" id="name">
-              <label class="mdl-textfield__label" for="sample1">Email</label>
-            </div>
-          </form>
-          <form action="#">
-            <div class="mdl-textfield mdl-js-textfield">
-              <input class="mdl-textfield__input" type="password" id="pass">
-              <label class="mdl-textfield__label" for="sample1">Password</label>
-            </div>
-          </form>
-        </div>
-        <div class="mdl-dialog__actions">
-          <button type="button" class="mdl-button">Submit</button>
-          <button type="button" class="mdl-button close">Register</button>
-        </div>
-      </dialog> -->
-      <!--<script>
-        var dialog = document.querySelector('dialog');
-        var showDialogButton = document.querySelector('#show-dialog');
-        if (!dialog.showModal) {
-          dialogPolyfill.registerDialog(dialog);
-        }
-        showDialogButton.addEventListener('click', function() {
-          dialog.showModal();
-        });
-        dialog.querySelector('.close').addEventListener('click', function() {
-          dialog.close();
-        });
-      </script>-->
-      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/register">Sign Up</a>
+      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/login" ng-click='showModal("login")'>Login</a>
+      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/register" ng-click='showModal("signup")'>Sign Up</a>
     </nav>
   </div>
   <span class="android-mobile-title mdl-layout-title">
@@ -74,3 +38,5 @@
     <li class="mdl-menu__item">5.0 Lollipop</li>
   </ul>
 </div>
+
+<login-signup-dialog />
