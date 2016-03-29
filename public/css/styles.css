@@ -25,12 +25,12 @@ a img{
 }
 
 ::-moz-selection {
-  background-color: rgba(141,68,172,.6);
+  background-color: rgba(139, 195, 74, 0.6);
   color: #fff;
 }
 
 ::selection {
-  background-color: rgba(141,68,172,.6);
+  background-color: rgba(139, 195, 74, 0.6);
   color: #fff;
 }
 

@@ -23,8 +23,9 @@
       <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Locations</a>
       <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Set Up</a>
       <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FAQ</a>
-      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/login" ng-click='showModal("login")'>Login</a>
-      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/register" ng-click='showModal("signup")'>Sign Up</a>
+      <a ng-if="!userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/login" ng-click='showModal("login")'>Log In</a>
+      <a ng-if="!userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/register" ng-click='showModal("signup")'>Sign Up</a>
+      <a ng-controller="LoginCtrl as login" ng-if="userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/" ng-click='logout("login")'>Log Out</a>
     </nav>
   </div>
   <span class="android-mobile-title mdl-layout-title">
@@ -38,5 +39,3 @@
     <li class="mdl-menu__item">5.0 Lollipop</li>
   </ul>
 </div>
-
-<login-signup-dialog />

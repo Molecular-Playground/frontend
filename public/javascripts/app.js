@@ -12,18 +12,30 @@
       $routeProvider
         .when('/molecules', {
           templateUrl: 'javascripts/templates/molecules.html',
-          controller: 'MoleculesCtrl as molecules'
+          controller: 'MoleculesCtrl as molecules',
+          access: {
+            requiresLogin: true,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
         })
         .otherwise({
           templateUrl: 'javascripts/templates/landing.html',
-          controller: 'LandingCtrl as landing'
+          controller: 'LandingCtrl as landing',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
         });
       }
     ]);
 
 
+
+
+
   /* --------- SERVICES --------- */
   require('./services/userService.js');
+  require('./services/moleculeService.js');
 
 
   /* -------- DIRECTIVES ------- */
@@ -33,6 +45,8 @@
   require('./directives/NavigationFooterDirective.js');
   require('./directives/LandingDirective.js');
   require('./directives/MoleculesDirective.js');
+  require('./directives/MoleculeCardDirective.js');
+  require('./directives/MoleculeViewerDirective.js');
   require('./directives/LoginSignupDirective.js');
 
   /* -------- CONTROLLERS ------- */
@@ -44,6 +58,8 @@
   require('./controllers/NavigationFooterController.js');
   require('./controllers/LandingController.js');
   require('./controllers/MoleculesController.js');
+  require('./controllers/MoleculeCardController.js');
+  require('./controllers/MoleculeViewerController.js');
 
 
 

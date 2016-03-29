@@ -17,8 +17,9 @@
   <a class="mdl-navigation__link" href="">Locations</a>
   <a class="mdl-navigation__link" href="">Set Up</a>
   <a class="mdl-navigation__link" href="">FAQ</a>
-  <a class="mdl-navigation__link" href="/register">Sign Up</a>
-  <a class="mdl-navigation__link" href="/login">Login</a>
+  <a ng-if="!userIsLoggedIn" class="mdl-navigation__link" href="/register" ng-click='showModal("signup")'>Sign Up</a>
+  <a ng-if="!userIsLoggedIn" class="mdl-navigation__link" href="/login" ng-click='showModal("login")'>Login</a>
+  <a ng-controller="LoginCtrl as login" ng-if="userIsLoggedIn" class="mdl-navigation__link" href="/" ng-click='logout("login")'>Log Out</a>
   <div class="android-drawer-separator"></div>
   <span class="mdl-navigation__link" href="">Versions</span>
 </nav>

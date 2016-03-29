@@ -1,5 +1,5 @@
 var angular = require('angular');
-angular.module('MolApp').controller('LoginCtrl', ['$scope', 'userService', function($scope, userService){
+angular.module('MolApp').controller('LoginCtrl', ['$scope', '$location', 'userService', function($scope, $location, userService){
   $scope.loginUsername = "";
   $scope.loginPassword = "";
 
@@ -17,8 +17,9 @@ angular.module('MolApp').controller('LoginCtrl', ['$scope', 'userService', funct
         password : $scope.loginPassword.trim()
       },
       success : function(resp){
-        window.location = "/";
-        console.log(resp);
+        $location.path('/');
+        $scope.closeDialog("login");
+        //console.log(resp);
       },
       // TODO : display errors when backend gets back about ms-users ticket for login error reporting.
     });
@@ -35,8 +36,9 @@ angular.module('MolApp').controller('LoginCtrl', ['$scope', 'userService', funct
         confpassword : $scope.signupConfPassword.trim()
       },
       success : function(resp){
-        window.location = "/";
-        console.log(resp);
+        $location.path('/');
+        $scope.closeDialog("signup");
+        //console.log(resp);
       },
       // TODO : display errors when backend gets back about ms-users ticket for login error reporting.
     });
@@ -45,6 +47,13 @@ angular.module('MolApp').controller('LoginCtrl', ['$scope', 'userService', funct
     $scope.signupPassword = "";
     $scope.signupConfPassword = "";
   };
+
+  $scope.logout = function(e){
+    userService.logout({});
+    $location.path('/');
+  };
+
+  componentHandler.upgradeDom();
 
   /*$scope.toRegister = function(){
     window.location="register";
