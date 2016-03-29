@@ -43,90 +43,89 @@
     }
     </style>
   </head>
-  <body ng-app = "MolApp">
-    <div ng-controller="CurrentInstallationCtrl">
-      <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> <!-- CONTAINER FOR EVERYTHING (HEADER, CONTENT, FOOTER) -->
+  <body>
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header"> <!-- CONTAINER FOR EVERYTHING (HEADER, CONTENT, FOOTER) -->
 
-        <!-- Header -->
-        <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
-          <div class="mdl-layout__header-row">
-            <span class="android-title mdl-layout-title">
-              <!-- TODO: Figure out how to display text! -->
-              <img class="mp-logo-image" src="media/img/logo.png">
-              <!--<img class="android-logo-image" src="images/android-logo.png">-->
-            </span>
-            <!-- Add spacer, to align navigation to the right in desktop -->
-            <div class="android-header-spacer mdl-layout-spacer"></div>
-            <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
-              <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
-                <i class="material-icons">search</i>
-              </label>
-              <div class="mdl-textfield__expandable-holder">
-                <input class="mdl-textfield__input" type="text" id="search-field">
-              </div>
+      <!-- Header -->
+      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+        <div class="mdl-layout__header-row">
+          <span class="android-title mdl-layout-title">
+            <!-- TODO: Figure out how to display text! -->
+            <img class="mp-logo-image" src="media/img/logo.png">
+            <!--<img class="android-logo-image" src="images/android-logo.png">-->
+          </span>
+          <!-- Add spacer, to align navigation to the right in desktop -->
+          <div class="android-header-spacer mdl-layout-spacer"></div>
+          <div class="android-search-box mdl-textfield mdl-js-textfield mdl-textfield--expandable mdl-textfield--floating-label mdl-textfield--align-right mdl-textfield--full-width">
+            <label class="mdl-button mdl-js-button mdl-button--icon" for="search-field">
+              <i class="material-icons">search</i>
+            </label>
+            <div class="mdl-textfield__expandable-holder">
+              <input class="mdl-textfield__input" type="text" id="search-field">
             </div>
-            <!-- Navigation -->
-            <div class="android-navigation-container">
-              <nav class="android-navigation mdl-navigation">
-                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="molecules">Molecules</a>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/current_installation">Locations</a>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase">Set Up</a>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FAQ</a>
-                <a id="show-dialog" type="button" class="mdl-navigation__link mdl-typography--text-uppercase" href="/login">Login</a>
-                <!--
-                <dialog class="mdl-dialog">
-                TODO : figure this out for Firefox, it's not working properly as of 3/26
-                <h4 class="mdl-dialog__title">Login</h4>
-                  <div class="mdl-dialog__content">
-                    <form action="#">
-                      <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="text" id="name">
-                        <label class="mdl-textfield__label" for="sample1">Email</label>
-                      </div>
-                    </form>
-                    <form action="#">
-                      <div class="mdl-textfield mdl-js-textfield">
-                        <input class="mdl-textfield__input" type="password" id="pass">
-                        <label class="mdl-textfield__label" for="sample1">Password</label>
-                      </div>
-                    </form>
-                  </div>
-                  <div class="mdl-dialog__actions">
-                    <button type="button" class="mdl-button">Submit</button>
-                    <button type="button" class="mdl-button close">Register</button>
-                  </div>
-                </dialog> -->
-                <script>
-                  var dialog = document.querySelector('dialog');
-                  var showDialogButton = document.querySelector('#show-dialog');
-                  if (! dialog.showModal) {
-                    dialogPolyfill.registerDialog(dialog);
-                  }
-                  showDialogButton.addEventListener('click', function() {
-                    dialog.showModal();
-                  });
-                  dialog.querySelector('.close').addEventListener('click', function() {
-                    dialog.close();
-                  });
-                </script>
-                <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/register">Sign Up</a>
-              </nav>
-            </div>
-            <span class="android-mobile-title mdl-layout-title">
-              <!--<img class="android-logo-image" src="images/android-logo.png">-->
-              <img class="mp-logo-image" src="media/img/logo.png">
-            </span>
-            <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
-              <i class="material-icons">more_vert</i>
-            </button>
-            <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-              <li class="mdl-menu__item">5.0 Lollipop</li>
-            </ul>
           </div>
+          <!-- Navigation -->
+          <div class="android-navigation-container">
+            <nav class="android-navigation mdl-navigation">
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/molecules">Molecules</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/current_installation">Locations</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase">Set Up</a>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FAQ</a>
+              <a id="show-dialog" type="button" class="mdl-navigation__link mdl-typography--text-uppercase" href="/login">Login</a>
+              <!--
+              <dialog class="mdl-dialog">
+              TODO : figure this out for Firefox, it's not working properly as of 3/26
+              <h4 class="mdl-dialog__title">Login</h4>
+                <div class="mdl-dialog__content">
+                  <form action="#">
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <input class="mdl-textfield__input" type="text" id="name">
+                      <label class="mdl-textfield__label" for="sample1">Email</label>
+                    </div>
+                  </form>
+                  <form action="#">
+                    <div class="mdl-textfield mdl-js-textfield">
+                      <input class="mdl-textfield__input" type="password" id="pass">
+                      <label class="mdl-textfield__label" for="sample1">Password</label>
+                    </div>
+                  </form>
+                </div>
+                <div class="mdl-dialog__actions">
+                  <button type="button" class="mdl-button">Submit</button>
+                  <button type="button" class="mdl-button close">Register</button>
+                </div>
+              </dialog> -->
+              <script>
+                var dialog = document.querySelector('dialog');
+                var showDialogButton = document.querySelector('#show-dialog');
+                if (! dialog.showModal) {
+                  dialogPolyfill.registerDialog(dialog);
+                }
+                showDialogButton.addEventListener('click', function() {
+                  dialog.showModal();
+                });
+                dialog.querySelector('.close').addEventListener('click', function() {
+                  dialog.close();
+                });
+              </script>
+              <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/register">Sign Up</a>
+            </nav>
+          </div>
+          <span class="android-mobile-title mdl-layout-title">
+            <!--<img class="android-logo-image" src="images/android-logo.png">-->
+            <img class="mp-logo-image" src="media/img/logo.png">
+          </span>
+          <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+            <i class="material-icons">more_vert</i>
+          </button>
+          <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+            <li class="mdl-menu__item">5.0 Lollipop</li>
+          </ul>
         </div>
+      </div>
 
-        <div class="android-drawer mdl-layout__drawer">
-          <span class="mdl-layout-title mdl-typography--text-center">
+      <div class="android-drawer mdl-layout__drawer">
+        <span class="mdl-layout-title mdl-typography--text-center">
             <!--<div class="mdl-grid mdl-typography--text-center">
               <div><img class="mp-logo-image" src="media/img/logo.png"></div>
               <div>Molecular Playground</div>
@@ -141,22 +140,22 @@
           </span>
           <nav class="mdl-navigation">
             <a class="mdl-navigation__link" href="">Molecules</a>
-            <a class="mdl-navigation__link" href="../views/current_installation.html">Locations</a>
+            <a class="mdl-navigation__link" href="">Locations</a>
             <a class="mdl-navigation__link" href="">Set Up</a>
             <a class="mdl-navigation__link" href="">FAQ</a>
-            <a class="mdl-navigation__link" href="">Sign Up</a>
-            <a class="mdl-navigation__link" href="">Login</a>
+            <a class="mdl-navigation__link" href="/register">Sign Up</a>
+            <a class="mdl-navigation__link" href="/login">Login</a>
             <div class="android-drawer-separator"></div>
             <span class="mdl-navigation__link" href="">Versions</span>
           </nav>
         </div>
 
 
-        <!-- CONENT OF PAGE -->
-        <!--<div class="android-content mdl-layout__content">
-          <a name="top"></a>
+      <!-- CONENT OF PAGE -->
+      <div class="android-content mdl-layout__content">
+        <a name="top"></a>
 
-        </div>-->
+
         <div class="grayBack">
           <div class="android-screen-section mdl-typography--text-center">
 
@@ -410,61 +409,61 @@
                   </div>
 
                 </div>
+              </div>
 
-                <footer class="android-footer mdl-mega-footer" id="foot">
-                  <div class="mdl-mega-footer--top-section">
-                    <div class="mdl-mega-footer--left-section">
-                      <button class="mdl-mega-footer--social-btn"></button>
-                      &nbsp;
-                      <button class="mdl-mega-footer--social-btn"></button>
-                      &nbsp;
-                      <button class="mdl-mega-footer--social-btn"></button>
-                    </div>
-                    <div class="mdl-mega-footer--right-section">
-                      <a class="mdl-typography--font-light" href="#top">
-                        Back to Top
-                        <i class="material-icons">expand_less</i>
-                      </a>
-                    </div>
+              <footer class="android-footer mdl-mega-footer" id="foot">
+                <div class="mdl-mega-footer--top-section">
+                  <div class="mdl-mega-footer--left-section">
+                    <button class="mdl-mega-footer--social-btn"></button>
+                    &nbsp;
+                    <button class="mdl-mega-footer--social-btn"></button>
+                    &nbsp;
+                    <button class="mdl-mega-footer--social-btn"></button>
                   </div>
-
-                  <div class="mdl-mega-footer--middle-section">
-                    <p class="mdl-typography--font-light">Satellite imagery: © 2014 Astrium, DigitalGlobe</p>
-                    <p class="mdl-typography--font-light">Some features and devices may not be available in all areas</p>
-                  </div>
-
-                  <div class="mdl-mega-footer--bottom-section">
-                    <a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
-                      Versions
-                      <i class="material-icons">arrow_drop_up</i>
+                  <div class="mdl-mega-footer--right-section">
+                    <a class="mdl-typography--font-light" href="#top">
+                      Back to Top
+                      <i class="material-icons">expand_less</i>
                     </a>
-                    <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
-                      <li class="mdl-menu__item">5.0 Lollipop</li>
-                      <li class="mdl-menu__item">4.4 KitKat</li>
-                      <li class="mdl-menu__item">4.3 Jelly Bean</li>
-                      <li class="mdl-menu__item">Android History</li>
-                    </ul>
-                    <a class="android-link android-link-menu mdl-typography--font-light" id="developers-dropdown">
-                      For Developers
-                      <i class="material-icons">arrow_drop_up</i>
-                    </a>
-                    <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
-                      <li class="mdl-menu__item">App developer resources</li>
-                      <li class="mdl-menu__item">Android Open Source Project</li>
-                      <li class="mdl-menu__item">Android SDK</li>
-                      <li class="mdl-menu__item">Android for Work</li>
-                    </ul>
-                    <a class="android-link mdl-typography--font-light" href="">Blog</a>
-                    <a class="android-link mdl-typography--font-light" href="">Privacy Policy</a>
                   </div>
+                </div>
 
-                </footer>
-          </div>
+                <div class="mdl-mega-footer--middle-section">
+                  <p class="mdl-typography--font-light">Satellite imagery: © 2014 Astrium, DigitalGlobe</p>
+                  <p class="mdl-typography--font-light">Some features and devices may not be available in all areas</p>
+                </div>
+
+                <div class="mdl-mega-footer--bottom-section">
+                  <a class="android-link android-link-menu mdl-typography--font-light" id="version-dropdown">
+                    Versions
+                    <i class="material-icons">arrow_drop_up</i>
+                  </a>
+                  <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="version-dropdown">
+                    <li class="mdl-menu__item">5.0 Lollipop</li>
+                    <li class="mdl-menu__item">4.4 KitKat</li>
+                    <li class="mdl-menu__item">4.3 Jelly Bean</li>
+                    <li class="mdl-menu__item">Android History</li>
+                  </ul>
+                  <a class="android-link android-link-menu mdl-typography--font-light" id="developers-dropdown">
+                    For Developers
+                    <i class="material-icons">arrow_drop_up</i>
+                  </a>
+                  <ul class="mdl-menu mdl-js-menu mdl-menu--top-left mdl-js-ripple-effect" for="developers-dropdown">
+                    <li class="mdl-menu__item">App developer resources</li>
+                    <li class="mdl-menu__item">Android Open Source Project</li>
+                    <li class="mdl-menu__item">Android SDK</li>
+                    <li class="mdl-menu__item">Android for Work</li>
+                  </ul>
+                  <a class="android-link mdl-typography--font-light" href="">Blog</a>
+                  <a class="android-link mdl-typography--font-light" href="">Privacy Policy</a>
+                </div>
+
+              </footer>
         </div>
       </div>
-
-      <script src="https://code.getmdl.io/1.1.1/material.min.js"></script>
-      <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
     </div>
+
+    <script src="https://code.getmdl.io/1.1.1/material.min.js"></script>
+    <script src="http://3Dmol.csb.pitt.edu/build/3Dmol-min.js"></script>
   </body>
 </html>

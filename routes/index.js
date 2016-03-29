@@ -26,6 +26,12 @@ router.get('/register', function(req,res,next){
 	res.sendFile(path.join(__dirname+'/../views/register.html'));
 });
 
+/* GET molecules page. */
+router.get('/molecules', function(req,res,next){
+	console.log(path.join(__dirname+'/../views/molecules.html'));
+	res.sendFile(path.join(__dirname+'/../views/molecules.html'));
+});
+
 router.get('/testpdb', function(req,res,next){
 	console.log('reading file');
 	fs.readFile('views/test.pdb', function (err,data) {
