@@ -1,7 +1,7 @@
 var angular = require('angular');
 angular.module('MolApp').controller('MolViewCtrl', ['$scope', 'MolService', function($scope, MolService){
   $scope.viewers = {};
-
+  
   //load a molecule from a given url, with the targetDiv as targetAsString, and dataType as the file ext.h
   $scope.showMolecule = function(targetAsString, url, dataType,scope){
    // TODO: load molecule onto targetAsString

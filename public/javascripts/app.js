@@ -6,6 +6,7 @@
   require('./services/MolService.js');
 
   require('./directives/Molecule.js');
+  require('./directives/MolViewer.js');
 
   require('./controllers/LoginController.js');
   require('./controllers/RegistrationController.js');
