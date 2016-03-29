@@ -38,4 +38,9 @@ router.get('/testpdb', function(req,res,next){
 	});
 });
 
+router.get('/current_installation', function(req, res, next){
+	console.log(path.join(__dirname+'/../views/current_installation.html'));
+	res.sendFile(path.join(__dirname+'/../views/current_installation.html'));
+});
+
 module.exports = router;
