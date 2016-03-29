@@ -5,6 +5,5 @@
   require('./services/userService.js');
   require('./controllers/LoginController.js');
   require('./controllers/RegistrationController.js');
-  require('./controllers/CurrentInstallationController.js');
 
 })();
