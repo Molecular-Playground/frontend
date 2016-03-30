@@ -26,11 +26,13 @@ angular.module('MolApp').controller('ContentCtrl', ['$scope', '$location', '$ele
 
   $scope.showModal = function(which){
     var dialog = $('#'+which+"Dialog")[0];
-
+  //  dialogPolyfill.registerDialog(dialog);
+    console.log(dialog);
     dialog.showModal();
   };
   $scope.closeDialog = function(which){
     var dialog = $('#'+which+"Dialog")[0];
+  //  dialogPolyfill.registerDialog(dialog);
 
     dialog.close();
   };

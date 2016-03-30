@@ -15,6 +15,7 @@
     "classnames": "^2.1.3",
     "cookie-parser": "~1.3.5",
     "debug": "~2.2.0",
+    "dialog-polyfill": "^0.4.3",
     "express": "~4.13.1",
     "material-design-lite": "^1.1.3",
     "morgan": "~1.6.1",
