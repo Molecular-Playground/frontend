@@ -1,0 +1,12 @@
+<div class=" mdl-typography--text-center" style="background-color: #37474f;">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield">
+    <input id="searchMolecules" class="mdl-textfield__input" type="text" ng-model='search.name' style="color:white">
+    <label class="mdl-textfield__label" for="searchMolecules" style="color:lightgray;">search</label>
+  </div>
+</div>
+
+<div class="mdl-grid">
+  <div class="mdl-cell mdl-cell--3-col" ng-repeat="mol in molecules.mols | filter:search" style="background:red;" viewerId="{{mol.id}}">
+    <molecule-card url='{{mol.url}}' dataType='{{mol.datatype}}' molName='{{mol.name}}' molDescription='{{mol.description}}' molAuthor='{{mol.author}}' molCreationDate='{{mol.creationDate}}'/>
+  </div>
+</div>

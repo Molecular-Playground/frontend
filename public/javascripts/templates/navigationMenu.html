@@ -1,0 +1,25 @@
+<span class="mdl-layout-title mdl-typography--text-center">
+  <!--<div class="mdl-grid mdl-typography--text-center">
+    <div><img class="mp-logo-image" src="media/img/logo.png"></div>
+    <div>Molecular Playground</div>
+
+  </div>-->
+  <img class="mp-logo-image" src="media/img/logo.png">
+  <br>
+  Molecular Playground
+
+
+  <!--<img class="mp-logo-image" src="images/android-logo-white.png">-->
+</span>
+<nav class="mdl-navigation">
+  <a class="mdl-navigation__link" href="/">Landing</a>
+  <a class="mdl-navigation__link" href="/molecules">Molecules</a>
+  <a class="mdl-navigation__link" href="">Locations</a>
+  <a class="mdl-navigation__link" href="">Set Up</a>
+  <a class="mdl-navigation__link" href="">FAQ</a>
+  <a ng-if="!userIsLoggedIn" class="mdl-navigation__link" href="/register" ng-click='showModal("signup")'>Sign Up</a>
+  <a ng-if="!userIsLoggedIn" class="mdl-navigation__link" href="/login" ng-click='showModal("login")'>Login</a>
+  <a ng-controller="LoginCtrl as login" ng-if="userIsLoggedIn" class="mdl-navigation__link" href="/" ng-click='logout("login")'>Log Out</a>
+  <div class="android-drawer-separator"></div>
+  <span class="mdl-navigation__link" href="">Versions</span>
+</nav>
