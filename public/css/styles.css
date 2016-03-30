@@ -200,7 +200,7 @@ a img{
 .android-slogan {
   font-size: 60px;
   /*padding-top: 160px;*/
-  padding-top:100px;
+  padding-top:60px;
 }
 
 .android-sub-slogan {
@@ -475,14 +475,17 @@ a img{
   }
 
   .android-card-container .mdl-card__supporting-text {
-    height: auto;
+    /*height: auto;*/
+    height:180px;
     color: black;
     padding-bottom: 56px;
+    overflow: hidden;
   }
 
   .android-card-container .mdl-card__actions {
     position: absolute;
     bottom: 0;
+    background: #fff;
   }
 
   .android-card-container .mdl-card__actions a {

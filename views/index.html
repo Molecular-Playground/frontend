@@ -17,19 +17,19 @@
 -->
 
 <html lang="en">
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Molecular Playground</title>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="description" content="Introducing Lollipop, a sweet new take on Android.">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Molecular Playground</title>
 
-  <!-- Page styles -->
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
-  <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
-  <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.min.css">
-  <link rel="stylesheet" href="css/styles.css">
-  <style>
+    <!-- Page styles -->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:regular,bold,italic,thin,light,bolditalic,black,medium&amp;lang=en">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
+    <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
     #view-source {
       position: fixed;
       display: block;
@@ -49,7 +49,7 @@
       <div class="mdl-layout__header-row">
         <span class="android-title mdl-layout-title">
           <!-- TODO: Figure out how to display text! -->
-          <img class="mp-logo-image" src="media/img/logo.png">
+          <a href="/"><img class="mp-logo-image" src="media/img/logo.png"></a>
           <!--<img class="android-logo-image" src="images/android-logo.png">-->
         </span>
         <!-- Add spacer, to align navigation to the right in desktop -->
@@ -65,12 +65,14 @@
         <!-- Navigation -->
         <div class="android-navigation-container">
           <nav class="android-navigation mdl-navigation">
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="molecules.html">Molecules</a>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Locations</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/molecules">Molecules</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/current_installation">Locations</a>
             <a class="mdl-navigation__link mdl-typography--text-uppercase">Set Up</a>
             <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FAQ</a>
-            <a id="show-dialog" type="button" class="mdl-navigation__link mdl-typography--text-uppercase">Login</a>
+            <a id="show-dialog" type="button" class="mdl-navigation__link mdl-typography--text-uppercase" href="/login">Login</a>
+            <!--
             <dialog class="mdl-dialog">
+            TODO : figure this out for Firefox, it's not working properly as of 3/26
             <h4 class="mdl-dialog__title">Login</h4>
               <div class="mdl-dialog__content">
                 <form action="#">
@@ -90,7 +92,7 @@
                 <button type="button" class="mdl-button">Submit</button>
                 <button type="button" class="mdl-button close">Register</button>
               </div>
-            </dialog>
+            </dialog> -->
             <script>
               var dialog = document.querySelector('dialog');
               var showDialogButton = document.querySelector('#show-dialog');
@@ -104,7 +106,7 @@
                 dialog.close();
               });
             </script>
-            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="signup">Sign Up</a>
+            <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/register">Sign Up</a>
           </nav>
         </div>
         <span class="android-mobile-title mdl-layout-title">
@@ -135,12 +137,12 @@
           <!--<img class="mp-logo-image" src="images/android-logo-white.png">-->
         </span>
         <nav class="mdl-navigation">
-          <a class="mdl-navigation__link" href="">Molecules</a>
+          <a class="mdl-navigation__link" href="/molecules">Molecules</a>
           <a class="mdl-navigation__link" href="">Locations</a>
           <a class="mdl-navigation__link" href="">Set Up</a>
           <a class="mdl-navigation__link" href="">FAQ</a>
-          <a class="mdl-navigation__link" href="signup">Sign Up</a>
-          <a class="mdl-navigation__link" href="login">Login</a>
+          <a class="mdl-navigation__link" href="/register">Sign Up</a>
+          <a class="mdl-navigation__link" href="/login">Login</a>
           <div class="android-drawer-separator"></div>
           <span class="mdl-navigation__link" href="">Versions</span>
         </nav>
@@ -161,7 +163,7 @@
         <div class="android-screen-section mdl-typography--text-center">
           <a name="screens"></a>
           <div class="android-screen-section-text">
-            <div class="mdl-typography--display-1-color-contrast">Molecules are beautiful, too!</div>
+          <div class="mdl-typography--display-1-color-contrast">Molecules are beautiful, too!</div>
 
             <p class="mdl-typography--font-light">
               <a href="http://people.chem.umass.edu/cmartin/Jmol/IntroToMolecules/" target="_blank" class="android-link">The molecular aspects of nature</a> are too often viewed as inaccessible and uninteresting to the general public. While the public can appreciate the beauty of a flower or a swan, the molecular basis of these organisms goes unnoticed. While scientists appreciate the awe-inspiring beauty of both small and macromolecules, this is rarely communicated to the public. Consequently, the public sees molecular science as something removed from their everyday life. Even worse, much of the public associates 'chemicals' with toxins and pollution.
@@ -230,14 +232,14 @@
         <div class="molplay-screen-section-dark mdl-typography--text-center">
           <a name="screens"></a>
           <div class="molplay-screen-section-dark-text">
-            <div class="mdl-typography--display-2 mdl-typography--font-thin">Accessible to anyone</div>
+          <div class="mdl-typography--display-2 mdl-typography--font-thin">Accessible to anyone</div>
 
             <p class="mdl-typography mdl-typography--font-thin">
               The presentations are targeted primarily to the nonscientist, focusing on the symmetry and beauty of molecules, large and small. Natural small molecule cofactors or life saving drugs are placed into larger ribbon view protein structures, for example, to illustrate their functional synergy. Authors strive for art-like presentations, while remaining true to the underlying chemistry. Animation, even in the absence of user interaction, is key. <a href="" class="android-alt-link">Help is available for those interested in authoring new presentations.</a>
               <br></p>
               <a class="mdl-typography--font-regular mdl-typography--text-uppercase android-alt-link" href="">
-                Browse through our collection of molecules<i class="material-icons">chevron_right</i>
-              </a>
+                  Browse through our collection of molecules<i class="material-icons">chevron_right</i>
+                </a>
             </p>
           </div>
         </div>
@@ -257,21 +259,27 @@
 
         <!-- Card section -->
         <div class="android-more-section">
-          <div class="android-section-title mdl-typography--display-1-color-contrast">More schtuff here</div>
+          <div class="android-section-title mdl-typography--display-1-color-contrast">Some Current Installations</div>
           <div class="android-card-container mdl-grid">
             <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
               <div class="mdl-card__media">
-                <img src="images/more-from-1.png">
+                <img src="images/current_installations/umass.png">
               </div>
               <div class="mdl-card__title">
-               <h4 class="mdl-card__title-text">Some dude with glasses</h4>
+               <h4 class="mdl-card__title-text">UMass Amherst Integrated Sciences Bldg</h4>
              </div>
              <div class="mdl-card__supporting-text">
-              <span class="mdl-typography--font-light mdl-typography--subhead">Four tips to make your switch to Android quick and easy</span>
+              <span class="mdl-typography--font-light mdl-typography--subhead">The 157,000 square foot Integrated Sciences Building,
+                  which opened in 2009 at a cost of $114.5 million, integrates life and chemical sciences, including:
+                  85,000 square feet of modern classrooms and laboratories for basic and advanced courses in chemistry, biochemistry, and biology;
+                  a 300-seat auditorium;
+                  and flexible research laboratories for life sciences research teams.
+                </br></br>
+                  In addition, the high-performance design incorporates many environmentally friendly and energy-saving green-building techniques</span>
             </div>
             <div class="mdl-card__actions">
              <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-               Make the switch
+               Read More
                <i class="material-icons">chevron_right</i>
              </a>
            </div>
@@ -279,17 +287,25 @@
 
          <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
           <div class="mdl-card__media">
-            <img src="images/more-from-4.png">
+            <img src="images/current_installations/springfield.png">
           </div>
           <div class="mdl-card__title">
-           <h4 class="mdl-card__title-text">"Doesn't she look like me?"</h4>
+           <h4 class="mdl-card__title-text">Springfield Science Museum</h4>
          </div>
          <div class="mdl-card__supporting-text">
-          <span class="mdl-typography--font-light mdl-typography--subhead">Turn the little green Android mascot into you, your friends, anyone!</span>
+          <span class="mdl-typography--font-light mdl-typography--subhead">The Springfield Science Museum, founded in 1859 in City Hall,
+                  officially opened in 1899 in a classical revival building,
+                  expanded in 1932 with an Art Deco addition, and expanded again
+                  in 1970 with the Tolman addition that included a public observatory.
+                  In 2004, the Welcome Center was added to the Science Museum to serve
+                  as the main entrance to the entire campus. The Science Museum houses
+                  permanent collections of Natural Science, Anthropology and Physical Science.
+                  The Science Museum’s Seymour Planetarium consists of the historic Korkosz Starball,
+                  now the oldest operating star-projector in the United States.</span>
         </div>
         <div class="mdl-card__actions">
          <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-           androidify.com
+           Read More
            <i class="material-icons">chevron_right</i>
          </a>
        </div>
@@ -297,17 +313,21 @@
 
      <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
       <div class="mdl-card__media">
-        <img src="images/more-from-2.png">
+        <img src="images/current_installations/stOlaf.png">
       </div>
       <div class="mdl-card__title">
-       <h4 class="mdl-card__title-text">Buttons</h4>
+       <h4 class="mdl-card__title-text">St Olaf College</h4>
      </div>
      <div class="mdl-card__supporting-text">
-      <span class="mdl-typography--font-light mdl-typography--subhead">A clean, simple, customisable home screen that comes with the power of Google Now: Traffic alerts, weather and much more, just a swipe away.</span>
+      <span class="mdl-typography--font-light mdl-typography--subhead">St. Olaf College Chemistry Department!
+                  The Chemistry Department offers courses in the traditional major areas
+                  of chemistry, as well as in interdisciplinary areas, such as biochemistry,
+                  bioanalytical chemistry, biophysical chemistry, environmental chemistry
+                  and organometallic chemistry.</span>
     </div>
     <div class="mdl-card__actions">
      <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-       Download now
+       Read More
        <i class="material-icons">chevron_right</i>
      </a>
    </div>
@@ -315,17 +335,20 @@
 
  <div class="mdl-cell mdl-cell--3-col mdl-cell--4-col-tablet mdl-cell--4-col-phone mdl-card mdl-shadow--3dp">
   <div class="mdl-card__media">
-    <img src="images/more-from-3.png">
+    <img src="images/current_installations/okinawa.png">
   </div>
   <div class="mdl-card__title">
-   <h4 class="mdl-card__title-text">More buttons</h4>
+   <h4 class="mdl-card__title-text">Okinawa Institute of Science &amp; Technology</h4>
  </div>
  <div class="mdl-card__supporting-text">
-  <span class="mdl-typography--font-light mdl-typography--subhead">Hail a taxi, find a recipe, run through a temple – Google Play has all the apps and games that let you make your Android device uniquely yours.</span>
+  <span class="mdl-typography--font-light mdl-typography--subhead">The Okinawa Institute of Science and Technology is an interdisciplinary
+                  graduate school offering a 5-year PhD program in Science. Over half of
+                  the faculty and students are recruited from outside Japan, and all education
+                  and research is conducted entirely in English.</span>
 </div>
 <div class="mdl-card__actions">
  <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="">
-   Find apps
+   Read More
    <i class="material-icons">chevron_right</i>
  </a>
 </div>

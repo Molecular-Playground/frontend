@@ -38,12 +38,11 @@
   }
 
   .android-card-container .mdl-card__actions a {
-    background: #8bc34a;
+    background: #E0E0E0;
     border-top: none;
     font-size: 16px;
   }
 
-  #center {
-    margin: auto;
-    width: 90%;
-    padding: 10px;
+  .grayBack{
+    background: #F0F0F0;
+  }
