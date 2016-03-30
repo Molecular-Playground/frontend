@@ -27,35 +27,57 @@
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.1/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
     <style>
-    #view-source {
-      position: fixed;
-      display: block;
-      right: 0;
-      bottom: 0;
-      margin-right: 40px;
-      margin-bottom: 40px;
-      z-index: 900;
-    }
-    #foot {
-      top: 100px;
-    }
-    #smallText{
-      font-size: 80%;
-    }
-    #shiftRight{
-      left:100px;
-    }
-    #searchMol{
-      left:100px;
-    }
-    </style>
+      #view-source {
+        position: fixed;
+        display: block;
+        right: 0;
+        bottom: 0;
+        margin-right: 40px;
+        margin-bottom: 40px;
+        z-index: 900;
+      }
+      #foot {
+        top: 100px;
+      }
+      #smallText{
+        font-size: 80%;
+      }
+      #shiftRight{
+        left:100px;
+      }
+      #searchMol{
+        left:100px;
+      }
+      #playlist-card{
+        height: 300px;
+        width: 200px;
+      }
+      #playlist{
+        overflow: hidden;
+        overflow-y: scroll;
+      }
+      #playlist-title{
+        left:50px;
 
-    <style>
+      }
       #smallText{
         font-size: 80%;
       }
       #cardTitle{
         font-size: 200%;
+      }
+      #editButton{
+        position: relative;
+        left:65px;
+      }
+      #infoButton{
+        position:relative;
+        left:180px;
+      }
+      #addButton{
+        position:absolute;
+        left:290px;
+        top:10px;
       }
       .demo-card-square.mdl-card {
         width: 340px;
@@ -80,7 +102,6 @@
       .playlist-manager > .mdl-card__title {
         color: #fff;
         height: 400px;
-        background: url('../assets/demos/welcome_card.jpg') center / cover;
       }
       .playlist-manager > .mdl-card__menu {
         color: #fff;
@@ -168,22 +189,48 @@
 
     <div class="mdl-cell mdl-cell--1-col"></div>
     
-    
+    <!--Beginning of Playlist Section-->
       <div class="playlist-manager mdl-cell mdl-cell--10-col mdl-card mdl-shadow--2dp">
-        
         <div id="playlist-main-section" class="mdl-card__supporting-text">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-          Mauris sagittis pellentesque lacus eleifend lacinia...
+          
+          <div id="playlist-card" class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
+            <div class="mdl-card__title">
+              <span id="playlist-title">Playlist #1</span>
+              <button id="editButton" class="mdl-button mdl-js-button mdl-button--icon">
+                <i title="Edit" class="material-icons">edit</i>
+              </button>
+            </div>
+            <div id="playlist" class="mdl-card__actions mdl-card--border mdl-card__supporting-text">
+              <ul>
+                <li>Molecule 1</li>
+                <li>Molecule 2</li>
+                <li>Molecule 3</li>
+                <li>Molecule 4</li>
+                <li>Molecule 5</li>
+                <li>Molecule 6</li> 
+                <li>Molecule 7</li> 
+                <li>Molecule 8</li>
+                <li>Molecule 9</li>
+                <li>Molecule 10</li>
+                <li>Molecule 11</li>
+                <li>Molecule 13</li>
+                <li>Molecule 14</li>
+                <li>Molecule 15</li>
+                <li>Molecule 16</li>
+                <li>Molecule 17</li>
+                <li>Molecule 18</li>
+                <li>Molecule 19</li>
+              </ul>
+            </div>
+          </div>
         </div>
-
         <div class="mdl-card__actions mdl-card--border">
           <a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             Create New Playlist
           </a>
         </div>
-
-        
       </div>
+    <!--End of Playlist Section-->
     
   
     <div class="mdl-cell mdl-cell--1-col"></div>
@@ -266,16 +313,10 @@
       <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title right">
           <span class="mdl-layout-title">Ribosome</span>
-          <button id="ribosomeButton" class="mdl-button mdl-js-button mdl-button--icon right">
-            <i class="material-icons">more_vert</i>
+          <button id="infoButton" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">info</i>
           </button>
           
-          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-              for="ribosomeButton">
-            <li class="mdl-menu__item">Add Molecule to Playlist</li>
-            <li class="mdl-menu__item">See Author</li>
-            <li class="mdl-menu__item">Etc...</li>
-          </ul>
         </div>
         <div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
@@ -303,16 +344,9 @@
       <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title right">
           <span class="mdl-layout-title">RNA Polymerase</span>
-          <button id="rnaButton" class="mdl-button mdl-js-button mdl-button--icon right">
-            <i class="material-icons">more_vert</i>
+          <button id="addButton" title="Add To Playlist" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">add_circle_outline</i>
           </button>
-          
-          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-              for="rnaButton">
-            <li class="mdl-menu__item">Add Molecule to Playlist</li>
-            <li class="mdl-menu__item">See Author</li>
-            <li class="mdl-menu__item">Etc...</li>
-          </ul>
         </div>
         <div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
@@ -327,16 +361,9 @@
       <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title right">
           <span class="mdl-layout-title">DNA</span>
-          <button id="dnaButton" class="mdl-button mdl-js-button mdl-button--icon right">
-            <i class="material-icons">more_vert</i>
+          <button id="addButton" title="Add To Playlist" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">add_circle_outline</i>
           </button>
-          
-          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-              for="dnaButton">
-            <li class="mdl-menu__item">Add Molecule to Playlist</li>
-            <li class="mdl-menu__item">See Author</li>
-            <li class="mdl-menu__item">Etc...</li>
-          </ul>
         </div>
         <div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
@@ -351,16 +378,9 @@
       <div class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp">
         <div class="mdl-card__title right">
           <span class="mdl-layout-title">CRABP</span>
-          <button id="crabpButton" class="mdl-button mdl-js-button mdl-button--icon right">
-            <i class="material-icons">more_vert</i>
+          <button id="addButton" title="Add To Playlist" class="mdl-button mdl-js-button mdl-button--icon right">
+            <i class="material-icons">add_circle_outline</i>
           </button>
-          
-          <ul class="mdl-menu mdl-menu--bottom-left mdl-js-menu mdl-js-ripple-effect"
-              for="crabpButton">
-            <li class="mdl-menu__item">Add Molecule to Playlist</li>
-            <li class="mdl-menu__item">See Author</li>
-            <li class="mdl-menu__item">Etc...</li>
-          </ul>
         </div>
         <div>
           <img src="https://upload.wikimedia.org/wikipedia/commons/7/74/Riboflavin_molecule_animated.gif"
