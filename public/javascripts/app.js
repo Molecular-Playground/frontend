@@ -14,7 +14,15 @@
           templateUrl: 'javascripts/templates/molecules.html',
           controller: 'MoleculesCtrl as molecules',
           access: {
-            requiresLogin: true,
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
+        .when('/schedule', {
+          templateUrl: 'javascripts/templates/schedule.html',
+          controller: 'ScheduleCtrl as molecules',
+          access: {
+            requiresLogin: false,
             requiresPermission: undefined //TODO: add perimission info for authenitication
           }
         })
