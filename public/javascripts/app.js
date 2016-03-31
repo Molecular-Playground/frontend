@@ -56,6 +56,7 @@
   require('./directives/MoleculeCardDirective.js');
   require('./directives/MoleculeViewerDirective.js');
   require('./directives/LoginSignupDirective.js');
+  require('./directives/scheduleListDirective.js');
 
   /* -------- CONTROLLERS ------- */
   require('./controllers/LoginController.js');
@@ -68,6 +69,7 @@
   require('./controllers/MoleculesController.js');
   require('./controllers/MoleculeCardController.js');
   require('./controllers/MoleculeViewerController.js');
+  require('./controllers/ScheduleController.js');
 
 
 
