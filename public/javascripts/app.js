@@ -14,7 +14,15 @@
           templateUrl: 'javascripts/templates/molecules.html',
           controller: 'MoleculesCtrl as molecules',
           access: {
-            requiresLogin: true,
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
+        .when('/test', {
+          templateUrl: 'javascripts/templates/test.html',
+          controller: 'TestCtrl as test',
+          access: {
+            requiresLogin: false,
             requiresPermission: undefined //TODO: add perimission info for authenitication
           }
         })
@@ -60,6 +68,7 @@
   require('./controllers/MoleculesController.js');
   require('./controllers/MoleculeCardController.js');
   require('./controllers/MoleculeViewerController.js');
+  require('./controllers/TestController.js');
 
 
 
