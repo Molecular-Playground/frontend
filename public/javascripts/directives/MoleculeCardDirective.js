@@ -7,8 +7,6 @@ angular.module('MolApp').directive('moleculeCard', function() {
     controller: "moleculeCardCtrl as moleculeCard",
     scope: {},
     link: function(scope, element, attrs) {
-      //console.log(element.context);
-      //console.log(scope.viewerId);
       scope.url = attrs.url;
       scope.dataType = attrs.datatype;
       scope.molName = attrs.molname;
