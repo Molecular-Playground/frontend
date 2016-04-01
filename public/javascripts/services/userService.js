@@ -21,7 +21,7 @@ angular.module('MolApp').factory('userService', ['$http', '$cookies', function($
       callback();
     });
   }
-  
+
   return {
     login : function(params){
       $http({

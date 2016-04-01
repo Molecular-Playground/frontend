@@ -10,8 +10,6 @@ angular.module('MolApp').controller('LoginCtrl', ['$scope', '$location', '$eleme
 
   $scope.loginStatusMessage = "";
 
-  //dialogPolyfill.registerDialog($element);
-
   $scope.login = function(e){
     userService.login({
       data : {
@@ -21,12 +19,14 @@ angular.module('MolApp').controller('LoginCtrl', ['$scope', '$location', '$eleme
       success : function(resp){
         $location.path('/');
         $scope.closeDialog("login");
-        //console.log(resp);
+        $scope.loginUsername = "";
+        $scope.loginPassword = "";
       },
-      // TODO : display errors when backend gets back about ms-users ticket for login error reporting.
+      error : function(resp){
+        if (resp.status === 403)
+          $scope.loginStatusMessage = resp.data.message;
+      }
     });
-    $scope.loginUsername = "";
-    $scope.loginPassword = "";
   };
 
   $scope.register = function(e){
@@ -40,14 +40,16 @@ angular.module('MolApp').controller('LoginCtrl', ['$scope', '$location', '$eleme
       success : function(resp){
         $location.path('/');
         $scope.closeDialog("signup");
-        //console.log(resp);
+        $scope.signupEmail = "";
+        $scope.signupUsername = "";
+        $scope.signupPassword = "";
+        $scope.signupConfPassword = "";
       },
-      // TODO : display errors when backend gets back about ms-users ticket for login error reporting.
+      error : function(resp){
+        if (resp.error.status === 403)
+          $scope.loginStatusMessage = resp.message;
+      }
     });
-    $scope.signupEmail = "";
-    $scope.signupUsername = "";
-    $scope.signupPassword = "";
-    $scope.signupConfPassword = "";
   };
 
   $scope.logout = function(e){
