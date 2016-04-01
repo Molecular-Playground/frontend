@@ -18,6 +18,14 @@
             requiresPermission: undefined //TODO: add perimission info for authenitication
           }
         })
+        .when('/test', {
+          templateUrl: 'javascripts/templates/test.html',
+          controller: 'TestCtrl as test',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
         .when('/schedule', {
           templateUrl: 'javascripts/templates/schedule.html',
           controller: 'ScheduleCtrl as molecules',
@@ -71,8 +79,7 @@
   require('./controllers/MoleculesController.js');
   require('./controllers/MoleculeCardController.js');
   require('./controllers/MoleculeViewerController.js');
+  require('./controllers/TestController.js');
   require('./controllers/ScheduleController.js');
-
-
 
 })();
