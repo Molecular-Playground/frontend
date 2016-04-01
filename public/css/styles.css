@@ -532,7 +532,7 @@ a img{
 
 /** Schedule Page **/
 #molplay-sched-container {
-  padding-bottom: 60px;
+  padding-bottom: 10px;
 }
 
 #molplay-sched-container .mdl-cell {
@@ -553,7 +553,7 @@ a img{
 }
 
 #molplay-sched-container .mdl-card__actions .mdl-button {
-  float:right;
+  /*float:right;*/
 }
 
 

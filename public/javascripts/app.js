@@ -57,6 +57,8 @@
   require('./directives/MoleculeViewerDirective.js');
   require('./directives/LoginSignupDirective.js');
   require('./directives/scheduleListDirective.js');
+  require('./directives/scheduleListItemDirective.js');
+
 
   /* -------- CONTROLLERS ------- */
   require('./controllers/LoginController.js');
