@@ -1,6 +1,5 @@
-<h3>Title</h3>
 <div class="mdl-grid">
-  <div class="mdl-cell mdl-cell--2-col" ng-repeat="loc in locations.locs" viewerId="{{loc.id}}">
+  <div class="mdl-cell mdl-cell--1-col" ng-repeat="loc in locations.locs" viewerId="{{loc.id}}">
     <location-card url='{{loc.url}}' dataType='{{loc.datatype}}' locName='{{loc.name}}' locDescription='{{loc.description}}'/>
   </div>
 </div>
