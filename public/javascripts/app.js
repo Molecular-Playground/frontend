@@ -35,11 +35,13 @@
           }
         })
         .when('/locations', {
-          templatesUrl: 'javascripts/templates/locations.html',
+          //templatesUrl: 'javascripts/templates/locations.html',
+          //controller: 'LocationsCtrl as locations',
+          templateUrl: 'javascripts/templates/locations.html',
           controller: 'LocationsCtrl as locations',
           access: {
             requiresLogin: false,
-            requiresPermission: undefined //TODO: add permission info for authenitication
+            requiresPermission: undefined //TODO: add perimission info for authenitication
           }
         })
         .otherwise({

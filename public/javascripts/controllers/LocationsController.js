@@ -36,7 +36,7 @@ angular.module('MolApp').controller('LocationsCtrl', ['$scope', 'userService', f
       'name' : 'Universidad de Alcalá, Madrid, Spain',
       'description': 'Molecular Playground is financed by the University of Alcalá (UAH) as a project for promoting innovation in the teaching and learning process, 2012 call.',
       'dataType' : 'png',
-      'url' : '../../media/img/current_installations/uAlcala.png'
+      'url' : '../../images/current_installations/uAlcala.png'
     },
     {
       'viewerId' : 'locUEKentucky',
