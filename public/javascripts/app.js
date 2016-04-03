@@ -34,6 +34,14 @@
             requiresPermission: undefined //TODO: add perimission info for authenitication
           }
         })
+        .when('/locations', {
+          templatesUrl: 'javascripts/templates/locations.html',
+          controller: 'LocationCtrl as locations',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add permission info for authenitication
+          }
+        })
         .otherwise({
           templateUrl: 'javascripts/templates/landing.html',
           controller: 'LandingCtrl as landing',
