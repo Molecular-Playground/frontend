@@ -35,8 +35,6 @@
           }
         })
         .when('/locations', {
-          //templatesUrl: 'javascripts/templates/locations.html',
-          //controller: 'LocationsCtrl as locations',
           templateUrl: 'javascripts/templates/locations.html',
           controller: 'LocationsCtrl as locations',
           access: {
