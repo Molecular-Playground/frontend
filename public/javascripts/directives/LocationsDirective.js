@@ -4,6 +4,6 @@ angular.module('MolApp').directive('locationsPage', function() {
   return{
     restrict: 'E',
     templateUrl: 'javascripts/templates/locations.html',
-    controller: "LocationCtrl as locations"
+    controller: "LocationsCtrl as locations"
   };
 });

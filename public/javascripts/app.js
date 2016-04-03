@@ -36,7 +36,7 @@
         })
         .when('/locations', {
           templatesUrl: 'javascripts/templates/locations.html',
-          controller: 'LocationCtrl as locations',
+          controller: 'LocationsCtrl as locations',
           access: {
             requiresLogin: false,
             requiresPermission: undefined //TODO: add permission info for authenitication
@@ -74,6 +74,8 @@
   require('./directives/LoginSignupDirective.js');
   require('./directives/scheduleListDirective.js');
   require('./directives/scheduleListItemDirective.js');
+  require('./directives/LocationsDirective.js');
+  require('./directives/LocationCardDirective.js');
 
 
   /* -------- CONTROLLERS ------- */
@@ -89,5 +91,7 @@
   require('./controllers/MoleculeViewerController.js');
   require('./controllers/TestController.js');
   require('./controllers/ScheduleController.js');
+  require('./controllers/LocationsController.js');
+  require('./controllers/LocationCardController.js');
 
 })();

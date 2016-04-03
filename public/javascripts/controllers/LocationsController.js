@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-angular.module('MolApp').controller('LocationCtrl', ['$scope', 'userService', function($scope, userService){
+angular.module('MolApp').controller('LocationsCtrl', ['$scope', 'userService', function($scope, userService){
 
   this.locs = [
     {
@@ -66,4 +66,7 @@ angular.module('MolApp').controller('LocationCtrl', ['$scope', 'userService', fu
       'dataType' : 'png',
       'url' : '../../images/current_installations/gilead.png'
     }
-  ]
+  ];
+
+  componentHandler.upgradeDom();
+}]);
