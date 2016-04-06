@@ -528,6 +528,34 @@ a img{
   cursor: pointer;
 }
 
+/**************************************************/
+
+/** Schedule Page **/
+#molplay-sched-container {
+  padding-bottom: 10px;
+}
+
+#molplay-sched-container .mdl-cell {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 950px;
+}
+
+#molplay-sched-container .mdl-card {
+  overflow-y:scroll;
+  width:100%;
+}
+
+#molplay-sched-container .mdl-card__media {
+  background-color:rgba(139, 195, 74, 1);
+  color:white;
+  padding-left: 60px;
+}
+
+#molplay-sched-container .mdl-card__actions .mdl-button {
+  /*float:right;*/
+}
+
 
 /**** Mobile layout ****/
 @media (max-width: 900px) {

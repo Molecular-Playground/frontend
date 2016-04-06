@@ -1,1 +1,47 @@
-<h1> SCHEDULE </h1>
+<div class="android-screen-section">
+  <a name="screens"></a>
+
+  <div class="mdl-grid" id="molplay-sched-container">
+    <!--<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet"></div>-->
+    <div class="mdl-cell mdl-cell--8-col">
+      <div class="mdl-card mdl-shadow--4dp">
+        <div class="mdl-card__media">
+          <h3>My Playground Schedule</h3>
+        </div>
+        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable" style="position:relative;width:100%;">
+          <thead>
+            <tr>
+              <th class="mdl-data-table__cell--non-numeric">Playlist</th>
+              <th>Start Time</th>
+              <th>End Time</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr data-mdl-data-table-selectable-name="materials[]" data-mdl-data-table-selectable-value="acrylic" schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr> 
+          </tbody>
+        </table>
+        <div class="mdl-card__actions mdl-card--border">
+          <!--<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">build</i>
+          </a>-->
+          <a class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">add</i>
+          </a>
+        </div>
+        <div class="mdl-card__menu">
+          <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
+            <i class="material-icons">settings</i>
+          </button>
+        </div>
+      </div>
+    </div>
+    <!--<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet"></div>-->
+  </div>
+
+  <div class="android-screen-section mdl-typography--text-center">
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+      Run Schedule
+    </button>
+  </div>
+
+</div>
