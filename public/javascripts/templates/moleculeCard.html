@@ -1,19 +1,25 @@
-<div class="mdl-card mdl-shadow--4dp" style='width:{{width}}px; height:{{width+88}}px;overflow-y:scroll;'>
+<div class="mdl-card mdl-shadow--4dp" style='width:{{width}}px; height:{{width+88}}px;'>
   <div class="mdl-card__media" style="background-color:rgba(139, 195, 74, 1);color:white;" align="center">
-    <!-- Molecule Viewer -->
-    <div molecule-viewer url="media/pdb/1mbs.pdb" moltype='pdb' style='width:{{width}}px; height:{{width}}px;'>
+    
+    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="descriptionShown = !descriptionShown" style="margin-top:5px">
+      Run Schedule
+    </button>
+    <h6 id="title">{{molName}}</h6>
+  </div>
+  <div ng-show="descriptionShown" id="test" style='overflow-y:scroll;'>
+    <div style="padding-left:2em;padding-right:2em;">
+      <h6>{{desc}}</h6>
     </div>
-
-    <h3>{{molName}}</h3>
+    <div style="padding-left:2em;padding-right:2em;">
+      <p>{{author}}</p>
+    </div>
+    <div style="padding-left:2em;padding-right:2em;">
+      <p>{{creationDate}}</p>
+    </div>
   </div>
-  <div style="padding-left:2em;padding-right:2em;">
-    <h6>{{desc}}</h6>
-  </div>
-  <div style="padding-left:2em;padding-right:2em;">
-    <p>{{author}}</p>
-  </div>
-  <div style="padding-left:2em;padding-right:2em;">
-    <p>{{creationDate}}</p>
-  </div>
+  <div ng-show="!descriptionShown"class="mdl-card__media" style="background-color:rgba(139, 195, 74, 1);color:white;" align="center">
+      <div molecule-viewer url="../../media/pdb/1mbs.pdb" moltype="pdb" style='width:{{width}}px; height:{{width}}px; padding-top:0px; position:relative;'>
+      </div>
   </div>
 </div>
+
