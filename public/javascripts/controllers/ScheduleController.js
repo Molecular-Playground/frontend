@@ -4,19 +4,19 @@ angular.module('MolApp').controller('ScheduleCtrl', ['$scope', '$location', 'use
 	$scope.playlists = [
 		{
 			name : "PlayList ONE",
-			startTime : "8 AM, everyone loves 8AMs",
-			endTime : "DEATH"
+			startTime : "8:00 AM",
+			endTime : "10:00 AM"
 		},
 		{
 			name : "PlayList TWO",
-			startTime : "8 AM, everyone loves 8AMs",
-			endTime : "DEATH"
+			startTime : "10:00 AM",
+			endTime : "12:00 PM"
 		},
 		{
 			name : "PlayList THREE",
-			startTime : "8 AM, everyone loves 8AMs",
-			endTime : "DEATH"
-		},
+			startTime : "12:00 PM",
+			endTime : "4:00 PM"
+		}
 	]
 
 }]);
