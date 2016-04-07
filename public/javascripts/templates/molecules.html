@@ -7,6 +7,6 @@
 
 <div class="mdl-grid">
   <div class="mdl-cell mdl-cell--4-col" ng-repeat="mol in molecules.mols | filter:search" viewerId="{{mol.id}}">
-    <molecule-card url='{{mol.url}}' dataType='{{mol.datatype}}' molName='{{mol.name}}' molDescription='{{mol.description}}' molAuthor='{{mol.author}}' molCreationDate='{{mol.creationDate}}'/>
+    <molecule-card id='molecule-{{$index}}' url='{{mol.url}}' dataType='{{mol.datatype}}' molName='{{mol.name}}' molDescription='{{mol.description}}' molAuthor='{{mol.author}}' molCreationDate='{{mol.creationDate}}'/>
   </div>
 </div>
