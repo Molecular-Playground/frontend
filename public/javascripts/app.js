@@ -28,7 +28,7 @@
         })
         .when('/schedule', {
           templateUrl: 'javascripts/templates/schedule.html',
-          controller: 'ScheduleCtrl as molecules',
+          controller: 'ScheduleCtrl as schedule',
           access: {
             requiresLogin: false,
             requiresPermission: undefined //TODO: add perimission info for authenitication
