@@ -1,0 +1,33 @@
+<div class="playlist-manager mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp">
+	<div id="playlist-main-section" class="mdl-card__supporting-text">
+		<div class="mdl-grid">
+			<div id="playlist-card" class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp" ng-repeat="play in playlists.playLists">
+				<div class="mdl-card__title">
+					<div class="mdl-card__title">{{ play.name }}</div>
+					<button id="editButton" class="mdl-button mdl-js-button mdl-button--icon">
+						<i title="Edit" class="material-icons">edit</i>
+					</button>
+				</div>
+			<!-- TODO: get MDL list type to work
+			<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable mdl-shadow--2dp">
+				<thead>
+					<tr>
+						<th class="mdl-data-table__cell--non-numeric">Molecules in Playlist</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr class="mdl-data-table__cell--non-numeric" ng-repeat="mol in playlists.playMols">
+						<td> {{ mol.name }} </td>
+					</tr>
+				</tbody>
+			</table> -->
+			<ul class="playlistElmement" ng-repeat="mol in play.molList">
+				<li>{{ mol.name }}</li>
+			</ul>
+		</div>
+	</div>
+</div>
+<div class="mdl-card__actions mdl-card--border">
+	<button class="mdl-button mdl-js-button mdl-button--primary">Create New Playlist</button>
+</div>
+</div>

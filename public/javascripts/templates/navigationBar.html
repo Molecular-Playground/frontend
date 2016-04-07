@@ -28,10 +28,12 @@
       <a ng-controller="LoginCtrl as login" ng-if="userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/" ng-click='logout("login")'>Log Out</a>
     </nav>
   </div>
-  <span class="android-mobile-title mdl-layout-title">
-    <!--<img class="android-logo-image" src="images/android-logo.png">-->
-    <img class="mp-logo-image" src="media/img/logo.png">
-  </span>
+  <a href="/">
+    <span class="android-mobile-title mdl-layout-title">
+      <!--<img class="android-logo-image" src="images/android-logo.png">-->
+      <img class="mp-logo-image" src="media/img/logo.png">
+    </span>
+  </a>
   <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
     <i class="material-icons">more_vert</i>
   </button>
