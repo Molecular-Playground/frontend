@@ -35,21 +35,5 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', 'userService', f
     }
   ];
 
-  this.playMols = [
-  {
-      'name' : 'Zero Calorie Fat II',
-      'playName' : 'Proteins'
-    },
-    {
-      'name' : 'RNA Polymerase'
-    },
-    {
-      'name' : 'Ribosome'
-    },
-    {
-      'name' : 'Acetophenone'
-    }
-  ];
-
   componentHandler.upgradeDom();
 }]);
