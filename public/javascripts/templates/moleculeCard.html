@@ -1,10 +1,14 @@
 <div class="mdl-card mdl-shadow--4dp" style='width:{{width}}px; height:{{width+88}}px;'>
   <div class="mdl-card__media" style="background-color:rgba(139, 195, 74, 1);color:white;" align="center">
     
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="descriptionShown = !descriptionShown" style="margin-top:5px">
-      Run Schedule
-    </button>
     <h6 id="title">{{molName}}</h6>
+    <button class="mdl-button mdl-js-button mdl-button--primary" ng-click="descriptionShown = !descriptionShown" style="margin-bottom:0px">
+      Show Molecule
+    </button>
+
+<!--     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-click="descriptionShown = !descriptionShown" style="margin-bottom:0px">
+      <i class="material-icons">remove_red_eye</i>
+    </button> -->
   </div>
   <div ng-show="descriptionShown" id="test" style='overflow-y:scroll;'>
     <div style="padding-left:2em;padding-right:2em;">
