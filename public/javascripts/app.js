@@ -42,6 +42,14 @@
             requiresPermission: undefined //TODO: add perimission info for authenitication
           }
         })
+        .when('/fullScreenMode', {
+          templateUrl: 'javascripts/templates/fullScreenMolecule.html',
+          controller: 'FullScreenMoleculeCtrl as fullScreenMolecule',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
         .when('/playlists', {
           templateUrl: 'javascripts/templates/playlists.html',
           controller: 'PlaylistsCtrl as playlists',
@@ -88,6 +96,7 @@
 
 
   /* -------- CONTROLLERS ------- */
+  require('./controllers/MasterController.js');
   require('./controllers/LoginController.js');
   require('./controllers/RegistrationController.js');
   require('./controllers/ContentController.js');
@@ -102,6 +111,7 @@
   require('./controllers/ScheduleController.js');
   require('./controllers/LocationsController.js');
   require('./controllers/LocationCardController.js');
+  require('./controllers/FullScreenMoleculeController.js');
   require('./controllers/PlaylistController.js');
 
 })();

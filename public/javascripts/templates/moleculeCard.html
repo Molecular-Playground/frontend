@@ -1,10 +1,11 @@
 <div class="mdl-card mdl-shadow--4dp" style='width:{{width}}px; height:{{width+88}}px;'>
   <div class="mdl-card__media" style="background-color:rgba(139, 195, 74, 1);color:white;" align="center">
-    
+
     <h6 id="title">{{molName}}</h6>
     <button class="mdl-button mdl-js-button mdl-button--primary" ng-click="descriptionShown = !descriptionShown" style="margin-bottom:0px">
       Show Molecule
     </button>
+
 
 <!--     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-click="descriptionShown = !descriptionShown" style="margin-bottom:0px">
       <i class="material-icons">remove_red_eye</i>
@@ -22,8 +23,7 @@
     </div>
   </div>
   <div ng-show="!descriptionShown"class="mdl-card__media" style="background-color:rgba(139, 195, 74, 1);color:white;" align="center">
-      <div molecule-viewer url="../../media/pdb/1mbs.pdb" moltype="pdb" style='width:{{width}}px; height:{{width}}px; padding-top:0px; position:relative;'>
-      </div>
+      <div molecule-viewer url="../../media/pdb/1mbs.pdb" moltype="pdb" style='width:{{viewerWidth}}px; height:{{viewerHeight}}px; padding-top:0px; position:relative;'>
+  </div>
   </div>
 </div>
-

@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-angular.module('MolApp').controller('ContentCtrl', ['$scope', '$location', '$element', 'userService', function($scope, $location, $element, userService){
+angular.module('MolApp').controller('ContentCtrl', ['$rootScope', '$scope', '$location', '$element', 'userService', function($rootScope, $scope, $location, $element, userService){
 
   // on route change sucess (aka putting URL directly into browser)
   $scope.$on('$routeChangeSuccess', function (event, current) {
@@ -22,18 +22,5 @@ angular.module('MolApp').controller('ContentCtrl', ['$scope', '$location', '$ele
         $location.path("/");
       }
     }
-  };
-
-  $scope.showModal = function(which){
-    var dialog = $('#'+which+"Dialog")[0];
-  //  dialogPolyfill.registerDialog(dialog);
-    console.log(dialog);
-    dialog.showModal();
-  };
-  $scope.closeDialog = function(which){
-    var dialog = $('#'+which+"Dialog")[0];
-  //  dialogPolyfill.registerDialog(dialog);
-
-    dialog.close();
   };
 }]);
