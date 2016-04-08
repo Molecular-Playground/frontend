@@ -10,8 +10,6 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
 
   $scope.loginStatusMessage = "";
 
-<<<<<<< HEAD
-=======
 
   $rootScope.showModal = function(which){
     var dialog = $('#'+which+"Dialog")[0];
@@ -25,7 +23,6 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
     dialog.close();
   };
 
->>>>>>> 91e85863774bb96b51a119b00aa7f637907f7748
   $scope.login = function(e){
     userService.login({
       data : {
