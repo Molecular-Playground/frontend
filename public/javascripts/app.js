@@ -50,6 +50,14 @@
             requiresPermission: undefined //TODO: add perimission info for authenitication
           }
         })
+        .when('/playlists', {
+          templateUrl: 'javascripts/templates/playlists.html',
+          controller: 'PlaylistsCtrl as playlists',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
         .otherwise({
           templateUrl: 'javascripts/templates/landing.html',
           controller: 'LandingCtrl as landing',
@@ -84,6 +92,7 @@
   require('./directives/scheduleListItemDirective.js');
   require('./directives/LocationsDirective.js');
   require('./directives/LocationCardDirective.js');
+  require('./directives/PlaylistsDirective.js');
 
 
   /* -------- CONTROLLERS ------- */
@@ -103,5 +112,6 @@
   require('./controllers/LocationsController.js');
   require('./controllers/LocationCardController.js');
   require('./controllers/FullScreenMoleculeController.js');
+  require('./controllers/PlaylistController.js');
 
 })();
