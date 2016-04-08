@@ -1,6 +1,6 @@
 var angular = require('angular');
 
-angular.module('MolApp').controller('NavigationMenuCtrl', ['$scope', 'userService', function($scope, userService){
+angular.module('MolApp').controller('NavigationMenuCtrl', ['$rootScope', '$scope', 'userService', function($rootScope, $scope, userService){
   $scope.userIsLoggedIn = userService.isLoggedIn();
 
 

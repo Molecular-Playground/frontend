@@ -28,7 +28,31 @@
         })
         .when('/schedule', {
           templateUrl: 'javascripts/templates/schedule.html',
-          controller: 'ScheduleCtrl as molecules',
+          controller: 'ScheduleCtrl as schedule',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
+        .when('/locations', {
+          templateUrl: 'javascripts/templates/locations.html',
+          controller: 'LocationsCtrl as locations',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
+        .when('/fullScreenMode', {
+          templateUrl: 'javascripts/templates/fullScreenMolecule.html',
+          controller: 'FullScreenMoleculeCtrl as fullScreenMolecule',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
+        .when('/playlists', {
+          templateUrl: 'javascripts/templates/playlists.html',
+          controller: 'PlaylistsCtrl as playlists',
           access: {
             requiresLogin: false,
             requiresPermission: undefined //TODO: add perimission info for authenitication
@@ -66,9 +90,13 @@
   require('./directives/LoginSignupDirective.js');
   require('./directives/scheduleListDirective.js');
   require('./directives/scheduleListItemDirective.js');
+  require('./directives/LocationsDirective.js');
+  require('./directives/LocationCardDirective.js');
+  require('./directives/PlaylistsDirective.js');
 
 
   /* -------- CONTROLLERS ------- */
+  require('./controllers/MasterController.js');
   require('./controllers/LoginController.js');
   require('./controllers/RegistrationController.js');
   require('./controllers/ContentController.js');
@@ -81,5 +109,9 @@
   require('./controllers/MoleculeViewerController.js');
   require('./controllers/TestController.js');
   require('./controllers/ScheduleController.js');
+  require('./controllers/LocationsController.js');
+  require('./controllers/LocationCardController.js');
+  require('./controllers/FullScreenMoleculeController.js');
+  require('./controllers/PlaylistController.js');
 
 })();

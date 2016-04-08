@@ -15,6 +15,7 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons">
     <link rel="stylesheet" href="https://code.getmdl.io/1.1.3/material.min.css">
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/current_installation.css">
 
     <style>
       #view-source {
@@ -31,10 +32,9 @@
   <body ng-app="MolApp">
 
     <!-- Div container for whole everything -->
-    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header">
-
+    <div class="mdl-layout mdl-js-layout mdl-layout--fixed-header" ng-controller="MasterCtrl as master">
       <!-- Div container for the navigation menu -->
-      <div class="android-header mdl-layout__header mdl-layout__header--waterfall">
+      <div ng-if='!fullScreenMode' class="android-header mdl-layout__header mdl-layout__header--waterfall">
         <navigation-bar />
       </div>
       <!-- Div container for the navigation side menu -->
@@ -49,12 +49,13 @@
         </div>
 
         <!-- footer container for the footer -->
-        <footer class="android-footer mdl-mega-footer">
+        <footer ng-if='!fullScreenMode' class="android-footer mdl-mega-footer">
           <navigation-footer />
         </footer>
       </div>
 
       <login-signup-dialog />
+
     </div>
 
 

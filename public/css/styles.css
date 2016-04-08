@@ -548,12 +548,23 @@ a img{
 
 #molplay-sched-container .mdl-card__media {
   background-color:rgba(139, 195, 74, 1);
-  color:white;
+  color:#fff;
   padding-left: 60px;
+}
+
+#molplay-sched-container .mdl-card__actions {
+  /*float:right;*/
+  color:rgba(0, 0, 0, 0.54);
 }
 
 #molplay-sched-container .mdl-card__actions .mdl-button {
   /*float:right;*/
+  color:rgba(0, 0, 0, 0.54)
+}
+
+#molplay-sched-container .mdl-card__menu .mdl-button {
+  /*float:right;*/
+  color:rgba(255, 255, 255, 0.85)
 }
 
 

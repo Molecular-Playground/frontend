@@ -8,25 +8,41 @@
         <div class="mdl-card__media">
           <h3>My Playground Schedule</h3>
         </div>
-        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable" style="position:relative;width:100%;">
+        <table class="mdl-data-table mdl-js-data-table" style="position:relative;width:100%;">
           <thead>
             <tr>
+              <!--<th></th>-->
+              <!--<th>
+                <label data-upgraded=",MaterialCheckbox,MaterialRipple" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select mdl-js-ripple-effect--ignore-events is-upgraded">
+                  <input class="mdl-checkbox__input" type="checkbox">
+                  <span class="mdl-checkbox__focus-helper"></span>
+                  <span class="mdl-checkbox__box-outline">
+                    <span class="mdl-checkbox__tick-outline">
+                    </span>
+                  </span>
+                    <span data-upgraded=",MaterialRipple" class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center">
+                      <span style="width: 103.823px; height: 103.823px; transform: translate(-50%, -50%) translate(18px, 18px);" class="mdl-ripple is-animating">
+                      </span>
+                    </span>
+                </label>
+              </th>-->
               <th class="mdl-data-table__cell--non-numeric">Playlist</th>
               <th>Start Time</th>
               <th>End Time</th>
             </tr>
           </thead>
           <tbody>
-            <tr data-mdl-data-table-selectable-name="materials[]" data-mdl-data-table-selectable-value="acrylic" schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr> 
+            <tr data-mdl-data-table-selectable-name="materials[]" data-mdl-data-table-selectable-value="acrylic" schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr>
           </tbody>
         </table>
-        <div class="mdl-card__actions mdl-card--border">
+        <div class="mdl-card__actions mdl-card--border mdl-typography--text-uppercase">
           <!--<a class="mdl-button mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             <i class="material-icons">build</i>
           </a>-->
           <a class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect">
             <i class="material-icons">add</i>
           </a>
+          Add Playlist
         </div>
         <div class="mdl-card__menu">
           <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect">
@@ -39,9 +55,11 @@
   </div>
 
   <div class="android-screen-section mdl-typography--text-center">
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-      Run Schedule
-    </button>
+    <a href="/fullScreenMode">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Run Schedule
+      </button>
+    </a>
   </div>
 
 </div>
