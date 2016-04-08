@@ -17,7 +17,7 @@
             </tr>
           </thead>
           <tbody>
-            <tr data-mdl-data-table-selectable-name="materials[]" data-mdl-data-table-selectable-value="acrylic" schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr> 
+            <tr data-mdl-data-table-selectable-name="materials[]" data-mdl-data-table-selectable-value="acrylic" schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr>
           </tbody>
         </table>
         <div class="mdl-card__actions mdl-card--border">
@@ -39,9 +39,11 @@
   </div>
 
   <div class="android-screen-section mdl-typography--text-center">
-    <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
-      Run Schedule
-    </button>
+    <a href="/fullScreenMode">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent">
+        Run Schedule
+      </button>
+    </a>
   </div>
 
 </div>

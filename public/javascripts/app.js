@@ -42,6 +42,14 @@
             requiresPermission: undefined //TODO: add perimission info for authenitication
           }
         })
+        .when('/fullScreenMode', {
+          templateUrl: 'javascripts/templates/fullScreenMolecule.html',
+          controller: 'FullScreenMoleculeCtrl as fullScreenMolecule',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
         .otherwise({
           templateUrl: 'javascripts/templates/landing.html',
           controller: 'LandingCtrl as landing',
@@ -79,6 +87,7 @@
 
 
   /* -------- CONTROLLERS ------- */
+  require('./controllers/MasterController.js');
   require('./controllers/LoginController.js');
   require('./controllers/RegistrationController.js');
   require('./controllers/ContentController.js');
@@ -93,5 +102,6 @@
   require('./controllers/ScheduleController.js');
   require('./controllers/LocationsController.js');
   require('./controllers/LocationCardController.js');
+  require('./controllers/FullScreenMoleculeController.js');
 
 })();

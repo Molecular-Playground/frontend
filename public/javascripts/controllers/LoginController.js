@@ -1,5 +1,5 @@
 var angular = require('angular');
-angular.module('MolApp').controller('LoginCtrl', ['$scope', '$location', '$element', 'userService', function($scope, $location, $element, userService){
+angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$location', '$element', 'userService', function($rootScope, $scope, $location, $element, userService){
   $scope.loginUsername = "";
   $scope.loginPassword = "";
 
@@ -10,7 +10,18 @@ angular.module('MolApp').controller('LoginCtrl', ['$scope', '$location', '$eleme
 
   $scope.loginStatusMessage = "";
 
-  //dialogPolyfill.registerDialog($element);
+
+  $rootScope.showModal = function(which){
+    var dialog = $('#'+which+"Dialog")[0];
+    //dialogPolyfill.registerDialog(dialog);
+    dialog.showModal();
+  };
+  $rootScope.closeDialog = function(which){
+    var dialog = $('#'+which+"Dialog")[0];
+    //dialogPolyfill.registerDialog(dialog);
+
+    dialog.close();
+  };
 
   $scope.login = function(e){
     userService.login({
