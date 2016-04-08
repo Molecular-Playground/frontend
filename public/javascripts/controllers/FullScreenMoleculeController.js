@@ -21,7 +21,7 @@ angular.module('MolApp').controller('FullScreenMoleculeCtrl', ['$rootScope','$sc
   });
 
   $scope.goBack = function(){
-    $location.path("schedule");
+    $location.path("/schedule");
   };
 
 }]);
