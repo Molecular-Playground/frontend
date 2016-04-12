@@ -1,5 +1,12 @@
+<div class=" mdl-typography--text-center" style="background-color: #37474f;">
+  <div class="mdl-textfield mdl-js-textfield mdl-textfield">
+    <input id="searchMolecules" class="mdl-textfield__input" type="text" ng-model='search.name' style="color:white">
+    <label class="mdl-textfield__label" for="searchMolecules" style="color:lightgray;">search</label>
+  </div>
+</div>
+
 <div class="mdl-grid" style="max-width:1000px;margin:auto;">
-  <div class="mdl-cell" ng-repeat="loc in locations.locs">
+  <div class="mdl-cell" ng-repeat="loc in locations.locs | filter:search">
     <location-card url='{{loc.url}}' dataType='{{loc.datatype}}' locname='{{loc.name}}' locdescription='{{loc.description}}'/>
   </div>
 </div>
