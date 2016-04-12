@@ -1,0 +1,50 @@
+<div class="mdl-grid" style="padding-top:4em;">
+  <div class="mdl-cell mdl-cell--2-col"></div>
+  <div class="mdl-cell mdl-cell--3-col" align="right">
+    <div class="mdl-typography--display-1-color-contrast" align="left" style="padding-bottom:1em;">Login</div>
+
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" ng-keypress='keyPressHandler($event,login)'>
+      <input id="loginUsername" class="mdl-textfield__input" type="text" ng-model='loginUsername'>
+      <label class="mdl-textfield__label" for="loginUsername">username</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" ng-keypress='keyPressHandler($event,login)'>
+      <input id="loginPassword" class="mdl-textfield__input" type="password" ng-model='loginPassword'>
+      <label class="mdl-textfield__label" for="loginPassword">password</label>
+    </div>
+    <div align="center">
+      <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="login()" ng-keypress="login()">Login</button>
+    </div>
+  </div>
+
+  <div class="mdl-cell mdl-cell--2-col"></div>
+
+  <div class="mdl-cell mdl-cell--3-col" align="left">
+    <div class="mdl-typography--display-1-color-contrast" style="padding-bottom:1em;">Sign Up</div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" ng-keypress='keyPressHandler($event,register)'>
+      <input id="signupEmail" class="mdl-textfield__input" type="text" ng-model='signupEmail'>
+      <label class="mdl-textfield__label" for="signupEmail">email</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" ng-keypress='keyPressHandler($event,register)'>
+      <input id="signupUsername" class="mdl-textfield__input" type="text" ng-model='signupUsername'>
+      <label class="mdl-textfield__label" for="signupUsername">username</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" ng-keypress='keyPressHandler($event,register)'>
+      <input id="signupPassword" class="mdl-textfield__input" type="password" ng-model='signupPassword'>
+      <label class="mdl-textfield__label" for="signupPassword">password</label>
+    </div>
+    <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" ng-keypress='keyPressHandler($event,register)'>
+      <input id="confirmSignupPassword" class="mdl-textfield__input" type="password" ng-model='signupConfPassword'>
+      <label class="mdl-textfield__label" for="confirmSignupPassword">confirm password</label>
+    </div>
+    <div align="center">
+      <button type="button" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="register()" ng-keypress="register()">Signup</button>
+    </div>
+  </div>
+  <div class="mdl-cell mdl-cell--2-col"></div>
+</div>
+
+<div class="mdl-grid" style="padding-bottom:4em;">
+  <div class="mdl-cell mdl-cell--12-col" align="center">
+    <a href="/landing"> go back </a>
+  </div>
+</div>

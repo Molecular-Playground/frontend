@@ -18,6 +18,14 @@
             requiresPermission: undefined //TODO: add perimission info for authenitication
           }
         })
+        .when('/loginRegister', {
+          templateUrl: 'javascripts/templates/loginRegister.html',
+          controller: 'LoginCtrl',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
         .when('/test', {
           templateUrl: 'javascripts/templates/test.html',
           controller: 'TestCtrl as test',
@@ -93,6 +101,7 @@
   require('./directives/LocationsDirective.js');
   require('./directives/LocationCardDirective.js');
   require('./directives/PlaylistsDirective.js');
+  require('./directives/KeyPressDirective.js');
 
 
   /* -------- CONTROLLERS ------- */
