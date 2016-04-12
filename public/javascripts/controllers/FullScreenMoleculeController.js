@@ -21,15 +21,10 @@ angular.module('MolApp').controller('FullScreenMoleculeCtrl', ['$rootScope','$sc
     $scope.$digest();
   });
 
-  $scope.goBack = function(){
-    $location.path("/schedule");
-  };
-
-
   $scope.$on('keyup', function (e, key) {
     if (key.which === 27) {
       $scope.$apply(function () {
-        $location.path("/schedule");
+        $window.close();
       });
     }
   });
