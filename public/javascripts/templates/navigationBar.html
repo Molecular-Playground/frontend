@@ -21,14 +21,15 @@
     <nav class="android-navigation mdl-navigation">
       <a class="mdl-navigation__link mdl-typography--text-uppercase" href="molecules">Molecules</a>
       <a class="mdl-navigation__link mdl-typography--text-uppercase" href="locations">Locations</a>
-      <a class="mdl-navigation__link mdl-typography--text-uppercase" href="schedule">Schedule</a>
       <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">Set Up</a>
       <a class="mdl-navigation__link mdl-typography--text-uppercase" href="">FAQ</a>
+      <a ng-if="!userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/loginRegister">Login or Sign Up</a>
+      <!--<a class="mdl-navigation__link mdl-typography--text-uppercase" href="schedule">Schedule</a>-->
       <!--<a ng-if="!userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/login" ng-click='showModal("login")'>Log In</a>
       <a ng-if="!userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/register" ng-click='showModal("signup")'>Sign Up</a>-->
-      <a ng-if="!userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/loginRegister">Log In</a>
+      <!--<a ng-if="!userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/loginRegister">Log In</a>
       <a ng-if="!userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/loginRegister">Sign Up</a>
-      <a ng-controller="LoginCtrl as login" ng-if="userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/" ng-click='logout("login")'>Log Out</a>
+      <a ng-controller="LoginCtrl as login" ng-if="userIsLoggedIn" class="mdl-navigation__link mdl-typography--text-uppercase" href="/" ng-click='logout("login")'>Log Out</a>-->
     </nav>
   </div>
   <a href="/">
@@ -37,10 +38,14 @@
       <img class="mp-logo-image" src="media/img/logo.png">
     </span>
   </a>
-  <button class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
+  <button ng-if="userIsLoggedIn" class="android-more-button mdl-button mdl-js-button mdl-button--icon mdl-js-ripple-effect" id="more-button">
     <i class="material-icons">person</i>
   </button>
-  <ul class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
-    <li class="mdl-menu__item">5.0 Lollipop</li>
+  <ul ng-if="userIsLoggedIn" class="mdl-menu mdl-js-menu mdl-menu--bottom-right mdl-js-ripple-effect" for="more-button">
+    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/schedule" style="padding:0;"><li class="mdl-menu__item">My Schedule</li></a>
+    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/playlists" style="padding:0;"><li class="mdl-menu__item">My Playlists</li></a>
+    <a class="mdl-navigation__link mdl-typography--text-uppercase" href="/molecules" style="padding:0;"><li class="mdl-menu__item">My Molecules</li></a>
+    <!--<a class="mdl-navigation__link mdl-typography--text-uppercase" href="/loginRegister" style="padding:0;"><li class="mdl-menu__item">Login or Signup</li></a>-->
+    <a ng-controller="LoginCtrl as login" class="mdl-navigation__link mdl-typography--text-uppercase" href="/"  ng-click='logout()' style="padding:0;"><li class="mdl-menu__item">Logout</li></a>
   </ul>
 </div>
