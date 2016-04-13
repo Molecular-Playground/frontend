@@ -1,5 +1,5 @@
 var angular = require('angular');
-angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$location', '$element', 'userService', function($rootScope, $scope, $location, $element, userService){
+angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$location', 'userService', function($rootScope, $scope, $location, userService){
   $scope.loginUsername = "";
   $scope.loginPassword = "";
 
@@ -21,6 +21,12 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
     //dialogPolyfill.registerDialog(dialog);
 
     dialog.close();
+  };
+
+  $scope.keyPressHandler = function(keyEvent, callback) {
+    if (keyEvent.which === 13) {
+      callback();
+    }
   };
 
   $scope.login = function(e){

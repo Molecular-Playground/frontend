@@ -1,29 +1,31 @@
-<div class="mdl-card mdl-shadow--4dp" style='width:{{width}}px; height:{{width+88}}px;'>
+<div class="mdl-card mdl-shadow--4dp" style="width:auto;height:{{viewerHeight+150}}px;min-height:300px;">
   <div class="mdl-card__media" style="background-color:rgba(139, 195, 74, 1);color:white;" align="center">
+    <h5 align="left" style="margin-left:2em;">
+      {{molName}}
 
-    <h6 id="title">{{molName}}</h6>
-    <button class="mdl-button mdl-js-button mdl-button--primary" ng-click="descriptionShown = !descriptionShown" style="margin-bottom:0px">
-      Show Molecule
-    </button>
+      <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="descriptionShown = !descriptionShown" style="margin-left:3em;">
+        <i class="material-icons" title="View Molecule">remove_red_eye</i>
+      </button>
+    </h5>
+  </div>
 
+  <div ng-show="descriptionShown" class="mdl-card__supporting-text" style='overflow-y:scroll;margin-bottom:53px;'>
+    <h6 align="center" style="margin:0; padding-top:1em;"><b>Description</b></h6>
+    <p align="center" style="margin:0; padding-top:0;">{{desc}}</p>
+    <h6 align="center" style="margin:0; padding-top:1em;"><b>Author</b></h6>
+    <p align="center" style="margin:0; padding-top:0;">{{author}}</p>
+    <h6 align="center" style="margin:0; padding-top:1em;"><b>Creation Date</b></h6>
+    <p align="center" style="margin:0; padding:0;">{{creationDate}}</p>
+  </div>
 
-<!--     <button class="mdl-button mdl-js-button mdl-button--fab mdl-js-ripple-effect" ng-click="descriptionShown = !descriptionShown" style="margin-bottom:0px">
-      <i class="material-icons">remove_red_eye</i>
-    </button> -->
+  <div class="loc-card__actions mdl-card__actions mdl-card--border" style="background-color:#fff;">
+    <a class="android-link mdl-button mdl-js-button mdl-typography--text-uppercase" href="/fullScreenMode" target="_blank">
+      View FullScreen
+      <i class="material-icons">chevron_right</i>
+    </a>
   </div>
-  <div ng-show="descriptionShown" id="test" style='overflow-y:scroll;'>
-    <div style="padding-left:2em;padding-right:2em;">
-      <h6>{{desc}}</h6>
-    </div>
-    <div style="padding-left:2em;padding-right:2em;">
-      <p>{{author}}</p>
-    </div>
-    <div style="padding-left:2em;padding-right:2em;">
-      <p>{{creationDate}}</p>
-    </div>
-  </div>
-  <div ng-show="!descriptionShown"class="mdl-card__media" style="background-color:rgba(139, 195, 74, 1);color:white;" align="center">
-      <div molecule-viewer url="../../media/pdb/1mbs.pdb" moltype="pdb" style='width:{{viewerWidth}}px; height:{{viewerHeight}}px; padding-top:0px; position:relative;'>
-  </div>
+
+  <div ng-show="!descriptionShown" class="mdl-card__supporting-text" align="center">
+      <div molecule-viewer url="../../media/pdb/1mbs.pdb" moltype="pdb" style='width:{{viewerWidth}}px; height:{{viewerHeight}}px; padding:0;margin:0; position:relative;'></div>
   </div>
 </div>
