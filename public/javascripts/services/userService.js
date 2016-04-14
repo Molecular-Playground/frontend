@@ -45,7 +45,7 @@ angular.module('MolApp').factory('userService', ['$http', '$cookies', function($
         data : JSON.stringify(params.data),
         dataType : 'application/json'
       }).then(function(success){
-        saveCookie(success.data.token);
+        //saveCookie(success.data.token);
         params.success(success);
         notifyObservers();
       },
