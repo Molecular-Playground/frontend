@@ -26,18 +26,20 @@
                     </span>
                 </label>
               </th>-->
-              <!--<th>
-                <label class="mdl-checkbox mdl-js-checkbox" for="checkbox1">
-                  <input type="checkbox" id="checkbox1" class="mdl-checkbox__input" checked>
+              <th>
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-checkbox" for="checkbox0">
+                  <input type="checkbox" id="checkbox0" class="mdl-checkbox__input">
                </label>
-              </th>-->
+              </th>
               <th class="mdl-data-table__cell--non-numeric">Playlist</th>
               <th>Start Time</th>
               <th>End Time</th>
             </tr>
           </thead>
           <tbody>
-            <tr data-mdl-data-table-selectable-name="materials[]" data-mdl-data-table-selectable-value="acrylic" schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr>
+            <!--
+            <tr data-mdl-data-table-selectable-name="schedulelist[]" data-mdl-data-table-selectable-value={{p.name}} schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr>-->
+            <tr schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr>
           </tbody>
         </table>
         <div class="mdl-card__actions mdl-card--border mdl-typography--text-uppercase">
