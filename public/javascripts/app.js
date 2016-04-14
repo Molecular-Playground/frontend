@@ -66,6 +66,14 @@
             requiresPermission: undefined //TODO: add perimission info for authenitication
           }
         })
+        .when('/validate', {
+          templateUrl: 'javascripts/templates/emailConfirmation.html',
+          controller: 'EmailConfirmationCtrl as emailConfirmation',
+          access: {
+            requiresLogin: false,
+            requiresPermission: undefined //TODO: add perimission info for authenitication
+          }
+        })
         .otherwise({
           templateUrl: 'javascripts/templates/landing.html',
           controller: 'LandingCtrl as landing',
@@ -102,6 +110,7 @@
   require('./directives/LocationCardDirective.js');
   require('./directives/PlaylistsDirective.js');
   require('./directives/KeyPressDirective.js');
+  require('./directives/EmailConfirmationDirective.js');
 
 
   /* -------- CONTROLLERS ------- */
@@ -122,5 +131,6 @@
   require('./controllers/LocationCardController.js');
   require('./controllers/FullScreenMoleculeController.js');
   require('./controllers/PlaylistController.js');
+  require('./controllers/EmailConfirmationController.js');
 
 })();
