@@ -1,21 +1,54 @@
 <div class="playlist-manager mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp">
 	<div id="playlist-main-section" class="mdl-card__supporting-text">
 		<div class="mdl-grid">
-			<div id="playlist-card" class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp" ng-repeat="play in playlists.playLists">
+			<!--repeating playlist div-->
+			<div id="playlist-card" class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp" ng-repeat="play in items">
 				<div class="mdl-card__title">
 					<div class="mdl-card__title">{{ play.name }}</div>
 					<button id="editButton" class="mdl-button mdl-js-button mdl-button--icon">
 						<i title="Edit" class="material-icons">edit</i>
 					</button>
 				</div>
-			<!-- TODO: get MDL table list type to work -->
-			<ul class="playlistElmement" ng-repeat="mol in play.molList" style="margin: 5px;">
-				<li>{{ mol.name }}</li>
-			</ul>
+				<!-- TODO: get MDL table list type to work -->
+				<!--repeating molucule list-->
+				<ul class="playlistElmement" ng-repeat="mol in play.molList" style="margin: 5px;">
+					<li>{{ mol.name }}</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="mdl-card__actions mdl-card--border">
-	<button class="mdl-button mdl-js-button mdl-button--primary">Create New Playlist</button>
-</div>
+	<!--new playlist button-->
+	<div class="mdl-card__actions mdl-card--border">
+		<button id="show-dialog" type="button" class="mdl-button mdl-js-button mdl-button--primary">Create New Playlist</button>
+		<dialog class="mdl-dialog">
+		<h5 class="mdl-dialog__title" style="text-align: center;">Name Your Playlist</h5>
+			<div class="mdl-dialog__content">
+				<p>
+					<form action="#">
+						<div class="mdl-textfield mdl-js-textfield">
+							<input class="mdl-textfield__input" type="text" ng-model="temp">
+							<label class="mdl-textfield__label">Text...</label>
+						</div>
+					</form>
+				</p>
+			</div>
+			<div class="mdl-dialog__actions">
+				<button type="button" class="mdl-button" ng-click="addItem()">Create</button>
+				<button type="button" class="mdl-button close">Cancel</button>
+			</div>
+		</dialog>
+		<script>
+			var dialog = document.querySelector('dialog');
+			var showDialogButton = document.querySelector('#show-dialog');
+			if (! dialog.showModal) {
+				dialogPolyfill.registerDialog(dialog);
+			}
+			showDialogButton.addEventListener('click', function() {
+				dialog.showModal();
+			});
+			dialog.querySelector('.close').addEventListener('click', function() {
+				dialog.close();
+			});
+		</script>
+	</div>
 </div>
