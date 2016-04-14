@@ -5,7 +5,6 @@ COPY . /src
 WORKDIR /src
 
 RUN npm install
-RUN npm run build
 RUN npm run bundle &
 
 CMD ["npm", "start"]
