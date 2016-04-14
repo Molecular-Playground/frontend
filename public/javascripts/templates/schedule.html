@@ -1,3 +1,13 @@
+<script>
+  $('#select-all').click(function(event) {
+      var selectstat = this.checked;   
+      // Iterate each checkbox
+      $(':checkbox').each(function() {
+          this.checked = selectstat;                        
+      });
+  });
+</script>
+
 <div class="android-screen-section">
   <a name="screens"></a>
 
@@ -27,8 +37,8 @@
                 </label>
               </th>-->
               <th>
-                <label class="mdl-checkbox mdl-js-checkbox mdl-js-checkbox" for="checkbox0">
-                  <input type="checkbox" id="checkbox0" class="mdl-checkbox__input">
+                <label class="mdl-checkbox mdl-js-checkbox mdl-js-checkbox" for="select-all">
+                  <input type="checkbox" class="mdl-checkbox__input" name="select-all" id="select-all">
                </label>
               </th>
               <th class="mdl-data-table__cell--non-numeric">Playlist</th>
