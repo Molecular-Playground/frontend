@@ -39,12 +39,13 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', 'userService', f
   // ];
 
   $scope.addItem = function () {
-
+    if($scope.temp != ""){
     $scope.items.push({
       'name' : $scope.temp
     });
     $scope.temp = "";
-
+    }
+    //TODO add error message upon failure
   };
 
 

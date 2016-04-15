@@ -19,36 +19,27 @@
 	</div>
 	<!--new playlist button-->
 	<div class="mdl-card__actions mdl-card--border">
-		<button id="show-dialog" type="button" class="mdl-button mdl-js-button mdl-button--primary">Create New Playlist</button>
-		<dialog class="mdl-dialog">
-		<h5 class="mdl-dialog__title" style="text-align: center;">Name Your Playlist</h5>
-			<div class="mdl-dialog__content">
-				<p>
-					<form action="#">
-						<div class="mdl-textfield mdl-js-textfield">
-							<input class="mdl-textfield__input" type="text" ng-model="temp">
-							<label class="mdl-textfield__label">Text...</label>
-						</div>
-					</form>
-				</p>
-			</div>
-			<div class="mdl-dialog__actions">
-				<button type="button" class="mdl-button" ng-click="addItem()">Create</button>
-				<button type="button" class="mdl-button close">Cancel</button>
-			</div>
-		</dialog>
-		<script>
-			var dialog = document.querySelector('dialog');
-			var showDialogButton = document.querySelector('#show-dialog');
-			if (! dialog.showModal) {
-				dialogPolyfill.registerDialog(dialog);
-			}
-			showDialogButton.addEventListener('click', function() {
-				dialog.showModal();
-			});
-			dialog.querySelector('.close').addEventListener('click', function() {
-				dialog.close();
-			});
-		</script>
+	<button type="button" class="mdl-button mdl-js-button mdl-button--primary" >Create New Playlist</button>
+	<div id="togg" class="mdl-cell mdl-cell--2-col" style="display: none;">
+		<h5 style="text-align: center;">Name Your Playlist</h5>
+		<div>
+			<p>
+				<form action="#">
+					<div class="mdl-textfield mdl-js-textfield">
+						<input class="mdl-textfield__input" type="text" ng-model="temp">
+						<label class="mdl-textfield__label" for="blah">Text...</label>
+					</div>
+				</form>
+			</p>
+		</div>
+		<div>
+			<button type="button" class="mdl-button close" style="align: left; color: #FF4081;">Cancel</button>
+			<button type="button" class="mdl-button" ng-click="addItem()" style="align: right; color: #FF4081;">Create</button>
+	</div>
+	<script type="text/javascript">
+		$("button").click(function(){
+			$("#togg").toggle();
+		});
+	</script>
 	</div>
 </div>
