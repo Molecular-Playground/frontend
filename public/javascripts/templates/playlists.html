@@ -1,21 +1,45 @@
 <div class="playlist-manager mdl-cell mdl-cell--12-col mdl-card mdl-shadow--2dp">
 	<div id="playlist-main-section" class="mdl-card__supporting-text">
 		<div class="mdl-grid">
-			<div id="playlist-card" class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp" ng-repeat="play in playlists.playLists">
+			<!--repeating playlist div-->
+			<div id="playlist-card" class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp" ng-repeat="play in items">
 				<div class="mdl-card__title">
 					<div class="mdl-card__title">{{ play.name }}</div>
 					<button id="editButton" class="mdl-button mdl-js-button mdl-button--icon">
 						<i title="Edit" class="material-icons">edit</i>
 					</button>
 				</div>
-			<!-- TODO: get MDL table list type to work -->
-			<ul class="playlistElmement" ng-repeat="mol in play.molList" style="margin: 5px;">
-				<li>{{ mol.name }}</li>
-			</ul>
+				<!-- TODO: get MDL table list type to work -->
+				<!--repeating molucule list-->
+				<ul class="playlistElmement" ng-repeat="mol in play.molList" style="margin: 5px;">
+					<li>{{ mol.name }}</li>
+				</ul>
+			</div>
 		</div>
 	</div>
-</div>
-<div class="mdl-card__actions mdl-card--border">
-	<button class="mdl-button mdl-js-button mdl-button--primary">Create New Playlist</button>
-</div>
+	<!--new playlist button-->
+	<div class="mdl-card__actions mdl-card--border">
+	<button type="button" class="mdl-button mdl-js-button mdl-button--primary" >Create New Playlist</button>
+	<div id="togg" class="mdl-cell mdl-cell--2-col" style="display: none;">
+		<h5 style="text-align: center;">Name Your Playlist</h5>
+		<div>
+			<p>
+				<form action="#">
+					<div class="mdl-textfield mdl-js-textfield">
+						<input class="mdl-textfield__input" type="text" ng-model="temp">
+						<label class="mdl-textfield__label" for="blah">Text...</label>
+					</div>
+				</form>
+			</p>
+		</div>
+		<div>
+			<button type="button" class="mdl-button close" style="align: left; color: #FF4081;">Cancel</button>
+			<button type="button" class="mdl-button" ng-click="addItem()" style="align: right; color: #FF4081;">Create</button>
+	</div>
+	<script type="text/javascript">
+		$("button").click(function(){
+			$("#togg").toggle();
+		});
+	</script>
+	</div>
 </div>

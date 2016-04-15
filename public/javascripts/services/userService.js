@@ -51,6 +51,20 @@ angular.module('MolApp').factory('userService', ['$http', '$cookies', function($
       },
       params.error || function(error) {/*Set state items for login state messages*/});
     },
+    validate : function(params){
+      $http({
+        method: 'POST',
+        url: 'http://104.236.54.250:8000/api/user/validate',
+        contentType : 'application/json',
+        data : JSON.stringify(params.data),
+        dataType : 'application/json'
+      }).then(function(success){
+        saveCookie(success.data.token);
+        params.success(success);
+        notifyObservers();
+      },
+      params.error || function(error) {/*Set state items for login state messages*/});
+    },
     logout : function(params){
       removeCookie();
       notifyObservers();

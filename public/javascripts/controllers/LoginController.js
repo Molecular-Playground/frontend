@@ -27,7 +27,7 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
         },
         success : function(resp){
           $location.path('/');
-          //console.log(resp);
+          console.log(resp);
         },
         // TODO : display errors when backend gets back about ms-users ticket for login error reporting.
       });
@@ -46,8 +46,8 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
           confpassword : $scope.signupConfPassword.trim()
         },
         success : function(resp){
-          $location.path('/');
-          //console.log(resp);
+          //$location.path('/');
+          console.log(resp);
         },
         // TODO : display errors when backend gets back about ms-users ticket for login error reporting.
       });
