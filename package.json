@@ -5,7 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "bundle": "watchify -o public/javascripts/bundle.js -v -d public/javascripts/app.js > bundleoutput.txt",
-    "build": "browserify -o public/javascripts/bundle.js -v -d public/javascripts/app.js > bundleoutput.txt"
+    "build": "browserify -o public/javascripts/bundle.js -d public/javascripts/app.js > bundleoutput.txt"
   },
   "dependencies": {
     "angular": "1.5.3",
