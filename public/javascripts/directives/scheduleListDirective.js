@@ -1,9 +1,8 @@
 var angular = require('angular');
 
-angular.module('MolApp').directive('scheduleList', function() {
+angular.module('MolApp').directive('scheduleListItem', function() {
   return{
     restrict: 'E',
-    templateUrl: 'javascripts/templates/schedule.html',
-    controller: "ScheduleCtrl as content"
+    templateUrl: 'javascripts/templates/scheduleListItem.html'
   };
 });

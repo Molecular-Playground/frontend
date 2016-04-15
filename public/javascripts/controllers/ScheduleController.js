@@ -19,7 +19,11 @@ angular.module('MolApp').controller('ScheduleCtrl', ['$scope', '$location', 'use
 		}
 	];
 
+	if ($scope.$last) {
+   console.log('please work :)');
+	}
+
 	// USE FOR MDL SELECTABLE TABLE
-	//componentHandler.upgradeDom();
+	componentHandler.upgradeDom();
 
 }]);
