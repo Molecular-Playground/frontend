@@ -17,6 +17,9 @@ angular.module('MolApp').controller('ScheduleCtrl', ['$scope', '$location', 'use
 			startTime : "12:00 PM",
 			endTime : "4:00 PM"
 		}
-	]
+	];
+
+	// USE FOR MDL SELECTABLE TABLE
+	//componentHandler.upgradeDom();
 
 }]);
