@@ -5,7 +5,7 @@
 			<div id="playlist-card" class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp" ng-repeat="play in items">
 				<div class="mdl-card__title">
 					<div class="mdl-card__title">{{ play.name }}</div>
-					<button id="editButton" class="mdl-button mdl-js-button mdl-button--icon">
+					<button  ng-click="toggleEdit()" id="editButton" class="mdl-button mdl-js-button mdl-button--icon">
 						<i title="Edit" class="material-icons">edit</i>
 					</button>
 				</div>
@@ -18,28 +18,44 @@
 		</div>
 	</div>
 	<!--new playlist button-->
-	<div class="mdl-card__actions mdl-card--border">
-	<button type="button" class="mdl-button mdl-js-button mdl-button--primary" >Create New Playlist</button>
-	<div id="togg" class="mdl-cell mdl-cell--2-col" style="display: none;">
-		<h5 style="text-align: center;">Name Your Playlist</h5>
+	<!-- <div class="mdl-card__actions mdl-card--border"> -->
+	<!-- <button type="button" class="mdl-button mdl-js-button mdl-button--primary" >Create New Playlist</button> -->
+	<button class="mdl-button mdl-js-button mdl-button--fab mdl-button--colored" style="position: fixed; bottom: 20px; right: 40px; z-index: 5;">
+		<i class="material-icons">add</i>
+	</button>
+	<div id="togg" class="mdl-cell mdl-cell--12-col" style="display: none; align: left;">
+		<h5>Name Your Playlist</h5>
 		<div>
 			<p>
 				<form action="#">
 					<div class="mdl-textfield mdl-js-textfield">
 						<input class="mdl-textfield__input" type="text" ng-model="temp">
-						<label class="mdl-textfield__label" for="blah">Text...</label>
+						<label class="mdl-textfield__label" for="blah">Playlist Name...</label>
 					</div>
 				</form>
 			</p>
 		</div>
-		<div>
-			<button type="button" class="mdl-button close" style="align: left; color: #FF4081;">Cancel</button>
-			<button type="button" class="mdl-button" ng-click="addItem()" style="align: right; color: #FF4081;">Create</button>
+		<button type="button" class="mdl-button close" style="align: left; color: #FF4081;">Cancel</button>
+		<button type="button" class="mdl-button" ng-click="addItem()" style="align: right; color: #FF4081;">Create</button>
+		<script type="text/javascript">
+			$("button").click(function(){
+				$("#togg").toggle();
+			});
+		</script>
 	</div>
-	<script type="text/javascript">
-		$("button").click(function(){
-			$("#togg").toggle();
-		});
-	</script>
+	<!-- </div> -->
+
+
+	<div class=" mdl-typography--text-center" style="background-color: #37474f;">
+		<div class="mdl-textfield mdl-js-textfield mdl-textfield">
+			<input id="searchMolecules" class="mdl-textfield__input" type="text" ng-model='search.name' style="color:white">
+			<label class="mdl-textfield__label" for="searchMolecules" style="color:lightgray;">search</label>
+		</div>
 	</div>
-</div>
+
+	<div class="mdl-grid" style="max-width:1000px;margin:auto;">
+		<div class="mdl-cell" ng-repeat="mol in playlists.mols | filter:search" viewerId="{{mol.id}}">
+			<molecule-card id='molecule-{{$index}}' url='{{mol.url}}' dataType='{{mol.datatype}}' molName='{{mol.name}}' molDescription='{{mol.description}}' molAuthor='{{mol.author}}' molCreationDate='{{mol.creationDate}}'/>
+		</div>
+	</div>
+

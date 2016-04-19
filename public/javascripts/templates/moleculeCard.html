@@ -6,6 +6,10 @@
       <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="descriptionShown = !descriptionShown" style="margin-left:3em;">
         <i class="material-icons" title="View Molecule">remove_red_eye</i>
       </button>
+
+      <button ng-show="playlistEdit" class="mdl-button mdl-js-button mdl-button--icon" ng-click="function()">
+        <i class="material-icons" title="View Molecule">add</i>
+      </button>
     </h5>
   </div>
 
@@ -26,6 +30,6 @@
   </div>
 
   <div ng-show="!descriptionShown" class="mdl-card__supporting-text" align="center">
-      <div molecule-viewer url="../../media/pdb/1mbs.pdb" moltype="pdb" style='width:{{viewerWidth}}px; height:{{viewerHeight}}px; padding:0;margin:0; position:relative;'></div>
+    <div molecule-viewer url="../../media/pdb/1mbs.pdb" moltype="pdb" style='width:{{viewerWidth}}px; height:{{viewerHeight}}px; padding:0;margin:0; position:relative;'></div>
   </div>
 </div>
