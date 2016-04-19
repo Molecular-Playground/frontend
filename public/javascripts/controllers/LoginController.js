@@ -46,7 +46,8 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
           confpassword : $scope.signupConfPassword.trim()
         },
         success : function(resp){
-          $location.path('/');
+          $scope.valid_email = true;
+          //$location.path('/');
           //console.log(resp);
         },
         // TODO : display errors when backend gets back about ms-users ticket for login error reporting.

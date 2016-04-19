@@ -8,7 +8,7 @@ angular.module('MolApp').controller('EmailConfirmationCtrl', ['$scope', 'userSer
       userService.validate({
         data : {
           email : $routeParams.email.trim(),
-          password : $routeParams.key.trim()
+          key : $routeParams.key.trim()
         },
         success : function(resp){
           //console.log(resp);
