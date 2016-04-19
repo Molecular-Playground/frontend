@@ -6,10 +6,10 @@ angular.module('MolApp').controller('moleculeCardCtrl', ['$scope', '$rootScope',
 
 	$scope.addToPlaylist = function () {
 		$rootScope.$broadcast('belch', $scope.molName);
-	}
+	};
 
-	$root.$on('burp', function() { 
-		$scope.playlistEdit = !$scope.playlistEdit; 
+	$rootScope.$on('burp', function() {
+		$scope.playlistEdit = !$scope.playlistEdit;
 		console.log("helloworld");
 		});
 

@@ -10,14 +10,14 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', '$rootScope', 'u
   //   'name' : 'Proteins',
   //   'molList' : [ //   {  //     'name' : 'Zero Calorie Fat II'  //   },  //   {  //     'name' : 'RNA Polymerase'  //   },  //   {  //     'name' : 'Ribosome'  //   },  //   {  //     'name' : 'Acetophenone'  //   },  //   {  //     'name' : 'whatever'  //   }  //   ]     // },  // {  //   'name' : 'Acids',  //   'molList' : [  //   {  //     'name' : 'DNA'  //   },  //   {  //     'name' : 'HIV Protease'
   //   }
-  //   ]   
+  //   ]
   // }
   // ];
 
   // $rootScope.$on;
 
   $scope.addItem = function () {
-    if($scope.temp != ""){
+    if($scope.temp !== ""){
       $scope.items.push({
         'name' : $scope.temp
       });
@@ -30,7 +30,7 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', '$rootScope', 'u
     $scope.playlistEdit = !$scope.playlistEdit;
     var sendBool = $scope.playlistEdit;
     $rootScope.$broadcast('burp');
-  }
+  };
 
   this.mols = [
     {
