@@ -11,6 +11,7 @@
 <div class="android-screen-section">
   <a name="screens"></a>
 
+  <!-- Container for schedule -->
   <div class="mdl-grid" id="molplay-sched-container">
     <!--<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet"></div>-->
     <div class="mdl-cell mdl-cell--8-col">
@@ -19,9 +20,16 @@
           <h3>My Playground Schedule</h3>
         </div>
         <!-- FOR MDL SELECTABLE -->
-        <table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable" style="width:100%">
+        <table class="mdl-data-table mdl-js-data-table" style="width:100%">
           <thead>
             <tr>
+              <th class="mdl-data-table__cell--non-numeric">
+                <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" id="select-all" for="checkbox-head">-->
+                <label class="mdl-checkbox" id="select-all" for="checkbox-all">
+                  <!-- Include name=__? -->
+                  <input type="checkbox" id="checkbox-all" class="mdl-checkbox__input">
+                </label>
+              </th>
               <th class="mdl-data-table__cell--non-numeric">Playlist</th>
               <th class="mdl-data-table__cell--non-numeric">Start Time</th>
               <th class="mdl-data-table__cell--non-numeric">End Time</th>
@@ -32,12 +40,22 @@
               <schedule-list-item></schedule-list-item>
             </tr>-->
             <tr ng-repeat="playlist in playlists">
-              <td class="mdl-data-table__cell--non-numeric">{{playlist.name}}</td>
+              <td class="mdl-data-table__cell--non-numeric">
+                <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{$index}}">-->
+                <label class="mdl-checkbox" for="checkbox-{{$index}}">
+                  <!-- Include name=__? -->
+                  <input type="checkbox" id="checkbox-{{$index}}" class="mdl-checkbox__input">
+                </label>
+
+              </td>
+              <td class="mdl-data-table__cell--non-numeric">
+                <span class="mdl-checkbox__label">{{playlist.name}}</span>
+              </td>
               <td class="mdl-data-table__cell--non-numeric">{{playlist.startTime}}</td>
               <td class="mdl-data-table__cell--non-numeric">{{playlist.endTime}}</td>
-              <script>
+              <!--<script>
                 componentHandler.upgradeDom();
-              </script>
+              </script>-->
             </tr>
           </tbody>
         </table>
@@ -89,6 +107,9 @@
 
           </tbody>
         </table>-->
+
+
+
         <!-- Action buttons below table -->
         <div class="mdl-card__actions mdl-card--border mdl-typography--text-uppercase">
           <a class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect">
