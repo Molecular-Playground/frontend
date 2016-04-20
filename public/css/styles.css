@@ -573,6 +573,16 @@ a img{
   background-color:#444;
 }
 
+#molplay-sched-container .molplay-add-playlist .mdl-card__media {
+  background-color:#555;
+}
+
+#molplay-sched-container .molplay-add-playlist table,
+#molplay-sched-container .molplay-add-playlist thead,
+#molplay-sched-container .molplay-add-playlist tbody {
+  background-color:#ddd;
+}
+
 
 /**** Mobile layout ****/
 @media (max-width: 900px) {

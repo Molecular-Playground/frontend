@@ -12,131 +12,239 @@
   <a name="screens"></a>
 
   <!-- Container for schedule -->
-  <div class="mdl-grid" id="molplay-sched-container">
-    <!--<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet"></div>-->
-    <div class="mdl-cell mdl-cell--8-col">
-      <div class="mdl-card mdl-shadow--4dp">
-        <div class="mdl-card__media">
-          <h3>My Playground Schedule</h3>
-        </div>
-        <!-- FOR MDL SELECTABLE -->
-        <table class="mdl-data-table mdl-js-data-table" style="width:100%">
-          <thead>
-            <tr>
-              <th class="mdl-data-table__cell--non-numeric">
-                <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" id="select-all" for="checkbox-head">-->
-                <label class="mdl-checkbox" id="select-all" for="checkbox-all">
-                  <!-- Include name=__? -->
-                  <input type="checkbox" id="checkbox-all" class="mdl-checkbox__input">
-                </label>
-              </th>
-              <th class="mdl-data-table__cell--non-numeric">Playlist</th>
-              <th class="mdl-data-table__cell--non-numeric">Start Time</th>
-              <th class="mdl-data-table__cell--non-numeric">End Time</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!--<tr>
-              <schedule-list-item></schedule-list-item>
-            </tr>-->
-            <tr ng-repeat="playlist in playlists">
-              <td class="mdl-data-table__cell--non-numeric">
-                <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{$index}}">-->
-                <label class="mdl-checkbox" for="checkbox-{{$index}}">
-                  <!-- Include name=__? -->
-                  <input type="checkbox" id="checkbox-{{$index}}" class="mdl-checkbox__input">
-                </label>
-
-              </td>
-              <td class="mdl-data-table__cell--non-numeric">
-                <span class="mdl-checkbox__label">{{playlist.name}}</span>
-              </td>
-              <td class="mdl-data-table__cell--non-numeric">{{playlist.startTime}}</td>
-              <td class="mdl-data-table__cell--non-numeric">{{playlist.endTime}}</td>
-              <!--<script>
-                componentHandler.upgradeDom();
-              </script>-->
-            </tr>
-          </tbody>
-        </table>
+  <div id="molplay-sched-container">
 
 
-        <!--<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable" style="position:relative;width:100%;">-->
+    <div class="mdl-grid">
+      <div class="mdl-cell mdl-cell--8-col">
 
-        <!-- FOR CUSTOM SELECTABLE -->
-        <!--<table class="mdl-data-table mdl-js-data-table" style="position:relative;width:100%;">
+        <div class="mdl-card mdl-shadow--4dp">
+          <div class="mdl-card__media">
+            <h3>My Playground Schedule</h3>
+          </div>
+          <!-- FOR MDL SELECTABLE -->
+          <table class="mdl-data-table mdl-js-data-table" style="width:100%">
+            <thead>
+              <tr>
+                <th class="mdl-data-table__cell--non-numeric">
+                  <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" id="select-all" for="checkbox-head">-->
+                  <label class="mdl-checkbox" id="select-all" for="checkbox-all">
+                    <!-- Include name=__? -->
+                    <input type="checkbox" id="checkbox-all" class="mdl-checkbox__input">
+                  </label>
+                  <!-- NOTE: Could also put title in same column: include span for mdl-checkbox_label here -->
+                </th>
+                <th class="mdl-data-table__cell--non-numeric">Playlist</th>
+                <th class="mdl-data-table__cell--non-numeric">Start Time</th>
+                <th class="mdl-data-table__cell--non-numeric">End Time</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!--<tr>
+                <schedule-list-item></schedule-list-item>
+              </tr>-->
+              <!-- TODO: toggle "is-selected" class when checkbox is clicked-->
+              <tr ng-repeat="playlist in playlists">
+                <td class="mdl-data-table__cell--non-numeric">
+                  <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{$index}}">-->
+                  <label class="mdl-checkbox" for="checkbox-{{$index}}">
+                    <!-- Include name=__? -->
+                    <input type="checkbox" id="checkbox-{{$index}}" class="mdl-checkbox__input">
+                  </label>
+                  <!-- NOTE: Could also put title in same column: include span for mdl-checkbox_label here -->
+                </td>
+                <td class="mdl-data-table__cell--non-numeric">
+                  <span class="mdl-checkbox__label">{{playlist.name}}</span>
+                </td>
+                <td class="mdl-data-table__cell--non-numeric">{{playlist.startTime}}</td>
+                <td class="mdl-data-table__cell--non-numeric">{{playlist.endTime}}</td>
+                <!--<script>
+                  componentHandler.upgradeDom();
+                </script>-->
+              </tr>
+            </tbody>
+          </table>
 
-          <thead>
-            <tr>-->
-        <!-- A BUNCH OF INSPECT-ELEMENT GARBAGE (FOR REFERENCE) -->
-        <!--<th>
-                <label data-upgraded=",MaterialCheckbox,MaterialRipple" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select mdl-js-ripple-effect--ignore-events is-upgraded">
-                  <input class="mdl-checkbox__input" type="checkbox">
-                  <span class="mdl-checkbox__focus-helper"></span>
-                  <span class="mdl-checkbox__box-outline">
-                    <span class="mdl-checkbox__tick-outline">
-                    </span>
-                  </span>
-                    <span data-upgraded=",MaterialRipple" class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center">
-                      <span style="width: 103.823px; height: 103.823px; transform: translate(-50%, -50%) translate(18px, 18px);" class="mdl-ripple is-animating">
+          <!--<table class="mdl-data-table mdl-js-data-table mdl-data-table--selectable" style="position:relative;width:100%;">-->
+
+          <!-- FOR CUSTOM SELECTABLE -->
+          <!--<table class="mdl-data-table mdl-js-data-table" style="position:relative;width:100%;">
+
+            <thead>
+              <tr>-->
+          <!-- A BUNCH OF INSPECT-ELEMENT GARBAGE (FOR REFERENCE) -->
+          <!--<th>
+                  <label data-upgraded=",MaterialCheckbox,MaterialRipple" class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect mdl-data-table__select mdl-js-ripple-effect--ignore-events is-upgraded">
+                    <input class="mdl-checkbox__input" type="checkbox">
+                    <span class="mdl-checkbox__focus-helper"></span>
+                    <span class="mdl-checkbox__box-outline">
+                      <span class="mdl-checkbox__tick-outline">
                       </span>
                     </span>
-                </label>
-              </th>-->
+                      <span data-upgraded=",MaterialRipple" class="mdl-checkbox__ripple-container mdl-js-ripple-effect mdl-ripple--center">
+                        <span style="width: 103.823px; height: 103.823px; transform: translate(-50%, -50%) translate(18px, 18px);" class="mdl-ripple is-animating">
+                        </span>
+                      </span>
+                  </label>
+                </th>-->
 
-        <!-- FOR CUSTOM SELECTABLE -->
-        <!--<th>
-                <label class="mdl-checkbox mdl-js-checkbox" for="select-all">
-                  <input type="checkbox" class="mdl-checkbox__input" name="select-all" id="select-all">
-               </label>
-              </th>
-
-
-              <th class="mdl-data-table__cell--non-numeric">Playlist</th>
-              <th>Start Time</th>
-              <th>End Time</th>
-            </tr>
-          </thead>
-          <tbody>-->
-        <!-- FOR MDL SELECTABLE -->
-        <!--<tr data-mdl-data-table-selectable-name="schedulelist[]" data-mdl-data-table-selectable-value={{p.name}} schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr>-->
-
-        <!-- FOR CUSTOM SELECTABLE -->
-        <!-- TODO: toggle "is-selected" class when checkbox is clicked-->
-        <!--<tr schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr>
-
-          </tbody>
-        </table>-->
+          <!-- FOR CUSTOM SELECTABLE -->
+          <!--<th>
+                  <label class="mdl-checkbox mdl-js-checkbox" for="select-all">
+                    <input type="checkbox" class="mdl-checkbox__input" name="select-all" id="select-all">
+                 </label>
+                </th>
 
 
+                <th class="mdl-data-table__cell--non-numeric">Playlist</th>
+                <th>Start Time</th>
+                <th>End Time</th>
+              </tr>
+            </thead>
+            <tbody>-->
+          <!-- FOR MDL SELECTABLE -->
+          <!--<tr data-mdl-data-table-selectable-name="schedulelist[]" data-mdl-data-table-selectable-value={{p.name}} schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr>-->
 
-        <!-- Action buttons below table -->
-        <div class="mdl-card__actions mdl-card--border mdl-typography--text-uppercase">
-          <a class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect">
-            <i class="material-icons">add</i>
-          </a>
-          Add Playlist
-          <a class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect right-actions" style="float:right;">
-            <i class="material-icons">delete</i>
-          </a>
+          <!-- FOR CUSTOM SELECTABLE -->
+          <!-- TODO: toggle "is-selected" class when checkbox is clicked-->
+          <!--<tr schedule-list-item name="{{p.name}}" starttime="{{p.startTime}}" endtime="{{p.endTime}}" ng-repeat="p in playlists"> </tr>
+
+            </tbody>
+          </table>-->
+
+
+
+          <!-- Action buttons below table -->
+          <div class="mdl-card__actions mdl-card--border mdl-typography--text-uppercase">
+
+            <a id="demo-show-snackbar" class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="descriptionShown = !descriptionShown">
+              <i class="material-icons">add</i>
+            </a>
+            Add Playlist
+            <a class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect right-actions" style="float:right;">
+              <i class="material-icons">delete</i>
+            </a>
+
+
+
+            <!-- NESTED ADD CARD -->
+            <!-- <div ng-show="descriptionShown" class="molplay-add-playlist mdl-card mdl-shadow--4dp" style="padding-left:0px;padding-right:0px;background-color:#ddd;">
+              <div class="mdl-card__media">
+                <h5>Select Playlists</h5>
+              </div>
+              <table class="mdl-data-table mdl-js-data-table" style="width:100%;">
+                <thead>
+                  <tr>
+                    <th class="mdl-data-table__cell--non-numeric">
+                      <label class="mdl-checkbox" id="select-all" for="checkbox-all">
+                        <input type="checkbox" id="checkbox-all" class="mdl-checkbox__input">
+                      </label>
+    
+                    </th>
+                    <th class="mdl-data-table__cell--non-numeric">Playlist</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  <tr ng-repeat="playlist in playlists">
+                    <td class="mdl-data-table__cell--non-numeric">
+
+
+                        <input type="checkbox" id="checkbox-{{$index}}" class="mdl-checkbox__input">
+                     
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                      <span class="mdl-checkbox__label">{{playlist.name}}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="mdl-card__menu">
+                <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="descriptionShown = !descriptionShown">
+                  <i class="material-icons">cancel</i>
+                </button>
+              </div>
+            </div> -->
+            <!-- End nested card -->
+
+
+          </div>
+          <div class="mdl-card__menu">
+            <!-- Right aligned menu below button -->
+            <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
+              <i class="material-icons">more_vert</i>
+            </button>
+
+            <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
+              <li class="mdl-menu__item">Some Action</li>
+              <li class="mdl-menu__item">Another Action</li>
+              <li disabled class="mdl-menu__item">Disabled Action</li>
+              <li class="mdl-menu__item">Yet Another Action</li>
+            </ul>
+          </div>
         </div>
-        <div class="mdl-card__menu">
-          <!-- Right aligned menu below button -->
-          <button id="demo-menu-lower-right" class="mdl-button mdl-js-button mdl-button--icon">
-            <i class="material-icons">more_vert</i>
-          </button>
+      </div> <!-- end mdl-cell mdl-cell--8-col -->
+    </div>  
 
-          <ul class="mdl-menu mdl-menu--bottom-right mdl-js-menu mdl-js-ripple-effect" for="demo-menu-lower-right">
-            <li class="mdl-menu__item">Some Action</li>
-            <li class="mdl-menu__item">Another Action</li>
-            <li disabled class="mdl-menu__item">Disabled Action</li>
-            <li class="mdl-menu__item">Yet Another Action</li>
-          </ul>
+
+      <!-- Drop-down -->
+      <div ng-show="descriptionShown">
+        <div class="mdl-grid molplay-add-playlist">
+          <div class="mdl-cell mdl-cell--8-col">
+
+            <div class="mdl-card mdl-shadow--4dp">
+              <div class="mdl-card__media">
+                <h5>Select Playlists</h5>
+              </div>
+              <table class="mdl-data-table mdl-js-data-table" style="width:100%">
+                <thead>
+                  <tr>
+                    <th class="mdl-data-table__cell--non-numeric">
+                      <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" id="select-all" for="checkbox-head">-->
+                      <label class="mdl-checkbox" id="select-all" for="checkbox-all">
+                        <!-- Include name=__? -->
+                        <input type="checkbox" id="checkbox-all" class="mdl-checkbox__input">
+                      </label>
+                      <!-- NOTE: Could also put title in same column: include span for mdl-checkbox_label here -->
+                    </th>
+                    <th class="mdl-data-table__cell--non-numeric">Playlist</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <!--<tr>
+                    <schedule-list-item></schedule-list-item>
+                  </tr>-->
+                  <!-- TODO: toggle "is-selected" class when checkbox is clicked-->
+                  <tr ng-repeat="playlist in playlists">
+                    <td class="mdl-data-table__cell--non-numeric">
+
+                      <!--<label class="mdl-checkbox" for="checkbox-{{$index}}">-->
+                        <!-- Include name=__? -->
+                        <input type="checkbox" id="checkbox-{{$index}}" class="mdl-checkbox__input">
+                      <!--</label>-->
+                      <!-- NOTE: Could also put title in same column: include span for mdl-checkbox_label here -->
+                    </td>
+                    <td class="mdl-data-table__cell--non-numeric">
+                      <span class="mdl-checkbox__label">{{playlist.name}}</span>
+                    </td>
+                  </tr>
+                </tbody>
+              </table>
+
+              <!-- Cancel -->
+              <div class="mdl-card__menu">
+                <!-- Right aligned menu below button -->
+                <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="descriptionShown = !descriptionShown">
+                  <i class="material-icons">cancel</i>
+                </button>
+              </div>
+            </div>
+          </div> <!-- end mdl-cell mdl-cell--8-col -->
         </div>
       </div>
-    </div>
-    <!--<div class="mdl-cell mdl-cell--3-col mdl-cell--2-col-tablet"></div>-->
   </div>
+  <!-- END container for schedule -->
+
 
   <div class="android-screen-section mdl-typography--text-center">
     <a href="/fullScreenMode" target="_blank">
@@ -146,4 +254,4 @@
     </a>
   </div>
 
-</div>
+</div> <!-- end android-screen-section -->
