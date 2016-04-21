@@ -542,14 +542,7 @@ a img{
 }
 
 #molplay-sched-container .mdl-card {
-  overflow-y:scroll;
   width:100%;
-}
-
-#molplay-sched-container table {
-  overflow-y:scroll;
-  width:100%;
-  overflow-x:scroll;
 }
 
 #molplay-sched-container .mdl-card__media {
@@ -579,13 +572,24 @@ a img{
   background-color:#444;
 }
 
-#molplay-add-playlist .mdl-card__media {
+#molplay-table-current-schedule,
+#molplay-table-add-playlist {
+  overflow:auto;
+  width:100%;
+}
+
+#molplay-table-current-schedule table,
+#molplay-table-add-playlist table {
+  width:100%;
+}
+
+#molplay-table-add-playlist .mdl-card__media {
   /*background-color:rgba(225, 64, 129, .20);*/
   /*background-color:rgba(139, 195, 74, .65);*/
   background-color:rgb(150, 150, 150);
 }
 
-#molplay-add-playlist table {
+#molplay-table-add-playlist table {
   background-color:rgb(245, 245, 245);
   /*background-color:rgba(139,197,74,.05);*/
   /*background-color:rgba(139, 195, 74, .15);*/
