@@ -3,6 +3,13 @@
   <div class="mdl-cell mdl-cell--3-col" align="right">
     <div class="mdl-typography--display-1-color-contrast" align="left" style="padding-bottom:1em;">Login</div>
 
+    <!--warning dialog-->
+    <div ng-controller="LoginCtrl">
+      <div class="alert alert-warning" ng-if="showWarningLoginAlert">
+       <strong>{{warningLoginTextAlert}}</strong>
+     </div>
+    </div>
+
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" ng-keypress='keyPressHandler($event,login)'>
       <input id="loginEmail" class="mdl-textfield__input" type="text" ng-model='loginEmail'>
       <label class="mdl-textfield__label" for="loginEmail">email</label>
@@ -20,6 +27,14 @@
 
   <div class="mdl-cell mdl-cell--3-col" align="left">
     <div class="mdl-typography--display-1-color-contrast" style="padding-bottom:1em;">Sign Up</div>
+
+    <!--warning dialog-->
+    <div ng-controller="LoginCtrl">
+      <div class="alert alert-warning" ng-if="showWarningRegAlert">
+       <strong>{{warningRegAlert}}</strong>
+     </div>
+    </div>
+
     <div class="mdl-textfield mdl-js-textfield mdl-textfield--floating-label" ng-keypress='keyPressHandler($event,register)'>
       <input id="signupEmail" class="mdl-textfield__input" type="text" ng-model='signupEmail'>
       <label class="mdl-textfield__label" for="signupEmail">email</label>
