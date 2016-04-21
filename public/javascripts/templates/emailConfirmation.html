@@ -1,3 +1,17 @@
-<h1 ng-if="sucess">Email Confirmation</h1>
+<div style="max-width:1000px;margin:auto;">
+  <div class="head-container">
+    <div class="head-img"><img ng-if="!success" src="../../images/fail.jpg"\></div>
+    <div class="head-img"><img ng-if="success" src="../../images/success.png"\></div>
+    <div class="head-content">
+      <div class="head-title"><h2>Email Confirmation</h2></div>
+      <hr width="100%" size="12" noshade></hr>
+    </div>
+  </div>
 
-<h2>Thank you for your signing up<h2> <!--might be a string variable{{Test}}-->
+  <h4>Thank you for signing up to Molecular Playground</h4>
+
+  <p ng-if="success">{{text.success}}</p>
+  <p ng-if="!success">{{text.fail}}</p>
+
+  <a href="/landing">Go Back</a> to the main page.
+</div>
