@@ -583,6 +583,10 @@ a img{
   width:100%;
 }
 
+#molplay-table-current-schedule .mdl-button {
+  color:rgba(0,0,0,0.54);
+}
+
 #molplay-table-add-playlist .mdl-card__media {
   /*background-color:rgba(225, 64, 129, .20);*/
   /*background-color:rgba(139, 195, 74, .65);*/

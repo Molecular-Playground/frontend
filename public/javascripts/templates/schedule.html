@@ -22,7 +22,6 @@
           <div class="mdl-card__media">
             <h3>My Playground Schedule</h3>
           </div>
-          <!-- FOR MDL SELECTABLE -->
           <div id="molplay-table-current-schedule">
             <table class="mdl-data-table mdl-js-data-table">
             <thead>
@@ -54,11 +53,48 @@
                   </label>
                   <!-- NOTE: Could also put title in same column: include span for mdl-checkbox_label here -->
                 </td>
+
+                <!-- Playlist Name -->
                 <td class="mdl-data-table__cell--non-numeric">
                   <span class="mdl-checkbox__label">{{playlist.name}}</span>
                 </td>
-                <td class="mdl-data-table__cell--non-numeric">{{playlist.startTime}}</td>
-                <td class="mdl-data-table__cell--non-numeric">{{playlist.endTime}}</td>
+
+                <!-- Playlist Start Time -->
+                <td class="mdl-data-table__cell--non-numeric">
+                  <!-- DISPLAY WHEN CLICK TO EDIT -->
+                  <span ng-show="editStartTime">
+                    <input type="text" value="{{playlist.startTime}}" size="4">
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" ng-click="editStartTime = !editStartTime">
+                      <i class="material-icons">close</i>
+                    </button>
+                  </span>
+                  <!-- DISPLAY WHEN NOT EDITING -->
+                  <span ng-show="!editStartTime">
+                    {{playlist.endTime}}
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" ng-click="editStartTime = !editStartTime">
+                      <i class="material-icons">edit</i>
+                    </button>
+                  </span>
+                </td>
+
+                <!-- Playlist End Time -->
+                <td class="mdl-data-table__cell--non-numeric">
+                  <!-- DISPLAY WHEN CLICK TO EDIT -->
+                  <span ng-show="editEndTime">
+                    <input type="text" value="{{playlist.endTime}}" size="4">
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" ng-click="editEndTime = !editEndTime">
+                      <i class="material-icons">close</i>
+                    </button>
+                  </span>
+                  <!-- DISPLAY WHEN NOT EDITING -->
+                  <span ng-show="!editEndTime">
+                    {{playlist.endTime}}
+                    <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" ng-click="editEndTime = !editEndTime">
+                      <i class="material-icons">edit</i>
+                    </button>
+                  </span>
+                </td>
+                  
                 <!--<script>
                   componentHandler.upgradeDom();
                 </script>-->
@@ -68,7 +104,7 @@
           </div>
 
           <!-- NESTED ADD CARD -->
-          <div ng-show="descriptionShown" id="molplay-table-add-playlist" class="mdl-card">
+          <div ng-show="addPlaylistShown" id="molplay-table-add-playlist" class="mdl-card">
             <div class="mdl-card__media">
               <h5>Select Playlists</h5>
             </div>
@@ -100,7 +136,7 @@
               </tbody>
             </table>
             <div class="mdl-card__menu">
-              <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="descriptionShown = !descriptionShown">
+              <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="addPlaylistShown = !addPlaylistShown">
                 <i class="material-icons">cancel</i>
               </button>
             </div>
@@ -110,11 +146,11 @@
           <!-- Action buttons below table -->
           <div class="mdl-card__actions mdl-card--border mdl-typography--text-uppercase">
 
-            <button id="demo-show-snackbar" class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="descriptionShown = !descriptionShown">
+            <button id="demo-show-snackbar" class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="addPlaylistShown = !addPlaylistShown">
               <i class="material-icons">add</i>
             </button>
-            Add Playlist
-            <button ng-show="!descriptionShown" class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect right-actions" style="float:right;">
+            Add Playlists
+            <button ng-show="!addPlaylistShown" class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect right-actions" style="float:right;">
               <i class="material-icons">delete</i>
             </button>
           </div>
