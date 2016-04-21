@@ -20,6 +20,8 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
   $scope.login = function(e){
     console.log('login');
     if ($scope.loginEmail && $scope.loginPassword){
+      $scope.warningTextAlert = "";
+      $scope.showWarningAlert = false;
       userService.login({
         data : {
           email : $scope.loginEmail.trim(),
@@ -27,12 +29,16 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
         },
         success : function(resp){
           $location.path('/');
-          //console.log(resp);
+          console.log(resp);
         },
         // TODO : display errors when backend gets back about ms-users ticket for login error reporting.
       });
       $scope.loginEmail = "";
       $scope.loginPassword = "";
+    }else{
+      $scope.warningLoginTextAlert = "All Field Should Not Be Empty";
+      $scope.showWarningLoginAlert = true;
+      $location.path('/loginRegister');
     }
   };
 
@@ -46,9 +52,8 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
           confpassword : $scope.signupConfPassword.trim()
         },
         success : function(resp){
-          $scope.valid_email = true;
           //$location.path('/');
-          //console.log(resp);
+          console.log(resp);
         },
         // TODO : display errors when backend gets back about ms-users ticket for login error reporting.
       });
@@ -56,6 +61,10 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
       $scope.signupUsername = "";
       $scope.signupPassword = "";
       $scope.signupConfPassword = "";
+    }else{
+      $scope.warningRegAlert = "All Field Should Not Be Empty";
+      $scope.showWarningRegAlert = true;
+      $location.path('/loginRegister');
     }
   };
 
@@ -65,6 +74,11 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
   };
 
   componentHandler.upgradeDom();
+
+    // switch flag
+  /*  $scope.switchBool = function (value) {
+        $scope[value] = !$scope[value];
+    };
 
   /*$scope.toRegister = function(){
     window.location="register";
