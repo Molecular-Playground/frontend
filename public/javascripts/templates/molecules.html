@@ -1,9 +1,52 @@
+<script type="text/javascript">
+
+  $("#upload").css('opacity','0');
+
+  $("#select_file").click(function(e){
+     e.preventDefault();
+     $("#upload").trigger('click');
+  });
+
+</script>
+
+
 <div class=" mdl-typography--text-center" style="background-color: #37474f;">
   <div class="mdl-textfield mdl-js-textfield mdl-textfield">
     <input id="searchMolecules" class="mdl-textfield__input" type="text" ng-model='search.name' style="color:white">
     <label class="mdl-textfield__label" for="searchMolecules" style="color:lightgray;">search</label>
   </div>
 </div>
+
+
+<div class="android-screen-section mdl-typography--text-center">
+  <div ng-controller = "molUploadCtrl">
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="select_file">
+          Upload New Molecule
+          <i class="material-icons">add_circle_outline</i>
+      </button> <input id="upload" type="file" mol-upload="file"/>
+      
+      
+      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="uploadFile()">Submit Molecule</button>
+  </div>
+</div>
+
+<div class="android-screen-section mdl-typography--text-center">
+  <div ng-controller="fupController">
+
+          
+          <input ng-model="fileName" type="text" id="name" placeholder="name"></input>
+          <input ng-model="fileType" type="text" id="type" placeholder="type"></input>
+          <input type="file" id="file1" name="file"
+              ng-files="getTheFile($file)" />
+
+          
+
+          
+
+          <input type="button" ng-click="uploadFiles()" value="Upload" />
+  </div>
+</div>
+
 
 <div class="mdl-grid" style="max-width:1000px;margin:auto;">
   <div class="mdl-cell" ng-repeat="mol in molecules.mols | filter:search" viewerId="{{mol.id}}">

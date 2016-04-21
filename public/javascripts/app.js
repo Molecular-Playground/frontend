@@ -84,6 +84,7 @@
   /* --------- SERVICES --------- */
   require('./services/userService.js');
   require('./services/moleculeService.js');
+  require('./services/molUploadService.js');
 
 
   /* -------- DIRECTIVES ------- */
@@ -102,6 +103,8 @@
   require('./directives/LocationCardDirective.js');
   require('./directives/PlaylistsDirective.js');
   require('./directives/KeyPressDirective.js');
+  require('./directives/MoleculeUploadDirective.js');
+  require('./directives/UploadDirective.js');
 
 
   /* -------- CONTROLLERS ------- */
@@ -122,5 +125,7 @@
   require('./controllers/LocationCardController.js');
   require('./controllers/FullScreenMoleculeController.js');
   require('./controllers/PlaylistController.js');
+  require('./controllers/MoleculeUploadController.js');
+  require('./controllers/UploadController.js');
 
 })();
