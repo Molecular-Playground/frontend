@@ -4,8 +4,8 @@ angular.module('MolApp').controller('fupController', function($scope, $http){
 
 			$scope.formdata = new FormData();
             $scope.getTheFile = function ($file) {
-
-                    $scope.formdata.append("molecule",$file,$scope.fileName);
+            		console.log($file[0]);
+                    $scope.formdata.append("molecule",$file[0]);
                     $scope.formdata.append("name",$scope.fileName);
                     $scope.formdata.append("type",$scope.fileType);
                 
@@ -21,17 +21,13 @@ angular.module('MolApp').controller('fupController', function($scope, $http){
                     headers: {'Content-Type' : 'multipart/form-data'}
                 };
                 console.log(request);
-
-                console.log(request.data)
+                var r = new XMLHttpRequest();
+                r.open("POST", 'http://104.236.54.250:8000/api/molecule/upload');
+                r.send(request.data);
+                console.log(request.data);
                 // SEND THE FILES.
-                $http(request)
+                
 
-
-                    .success(function (d) {
-                        alert(d);
-                    })
-                    .error(function () {
-                    });
             }
 
     
