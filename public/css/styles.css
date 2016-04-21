@@ -546,6 +546,12 @@ a img{
   width:100%;
 }
 
+#molplay-sched-container table {
+  overflow-y:scroll;
+  width:100%;
+  overflow-x:scroll;
+}
+
 #molplay-sched-container .mdl-card__media {
   background-color:rgba(139, 195, 74, 1);
   color:#fff;
@@ -561,26 +567,30 @@ a img{
 
 #molplay-sched-container .mdl-card__actions .mdl-button {
   /*float:right;*/
-  color:rgba(0, 0, 0, 0.54)
+  color:rgba(0, 0, 0, 0.54);
 }
 
 #molplay-sched-container .mdl-card__menu .mdl-button {
   /*float:right;*/
-  color:rgba(255, 255, 255, 0.85)
+  color:rgba(255, 255, 255, 0.85);
 }
 
 #molplay-sched-container .mdl-checkbox__input {
   background-color:#444;
 }
 
-#molplay-sched-container .molplay-add-playlist .mdl-card__media {
-  background-color:#555;
+#molplay-add-playlist .mdl-card__media {
+  /*background-color:rgba(225, 64, 129, .20);*/
+  background-color:rgba(139, 195, 74, .65);
+  /*background-color:rgb(150, 150, 150);*/
 }
 
-#molplay-sched-container .molplay-add-playlist table,
-#molplay-sched-container .molplay-add-playlist thead,
-#molplay-sched-container .molplay-add-playlist tbody {
-  background-color:#ddd;
+#molplay-add-playlist table,
+#molplay-add-playlist thead,
+#molplay-add-playlist tbody {
+  /*background-color:rgb(250, 250, 250);*/
+  background-color:rgba(139,197,74,.05);
+  /*background-color:rgba(139, 195, 74, .15);*/
 }
 
 
