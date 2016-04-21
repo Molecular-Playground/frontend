@@ -581,15 +581,13 @@ a img{
 
 #molplay-add-playlist .mdl-card__media {
   /*background-color:rgba(225, 64, 129, .20);*/
-  background-color:rgba(139, 195, 74, .65);
-  /*background-color:rgb(150, 150, 150);*/
+  /*background-color:rgba(139, 195, 74, .65);*/
+  background-color:rgb(150, 150, 150);
 }
 
-#molplay-add-playlist table,
-#molplay-add-playlist thead,
-#molplay-add-playlist tbody {
-  /*background-color:rgb(250, 250, 250);*/
-  background-color:rgba(139,197,74,.05);
+#molplay-add-playlist table {
+  background-color:rgb(245, 245, 245);
+  /*background-color:rgba(139,197,74,.05);*/
   /*background-color:rgba(139, 195, 74, .15);*/
 }
 
