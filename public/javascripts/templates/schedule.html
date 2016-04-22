@@ -1,13 +1,3 @@
-<!--<script>
-  $('#select-all').click(function(event) {
-    var selectstat = this.checked;
-    // Iterate each checkbox
-    $(':checkbox').each(function() {
-      this.checked = selectstat;
-    });
-  });
-</script>-->
-
 <div class="android-screen-section">
   <a name="screens"></a>
 
@@ -46,10 +36,12 @@
               <!-- TODO: toggle "is-selected" class when checkbox is clicked-->
               <tr ng-repeat="playlist in schedplaylists">
                 <td class="mdl-data-table__cell--non-numeric">
+
+                  <!-- Checkbox to select row -->
                   <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{$index}}">-->
                   <label class="mdl-checkbox" for="checkbox-{{$index}}">
                     <!-- Include name=__? -->
-                    <input type="checkbox" id="checkbox-{{$index}}" class="mdl-checkbox__input" ng-checked="schedAll">
+                    <input type="checkbox" id="checkbox-{{$index}}" class="mdl-checkbox__input" ng-checked="schedAll" ng-model="playlist.selected">
                   </label>
                   <!-- NOTE: Could also put title in same column: include span for mdl-checkbox_label here -->
                 </td>
