@@ -30,7 +30,7 @@
                   <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" id="select-all" for="checkbox-head">-->
                   <label class="mdl-checkbox" id="select-all" for="checkbox-all">
                     <!-- Include name=__? -->
-                    <input type="checkbox" id="checkbox-all" class="mdl-checkbox__input">
+                    <input type="checkbox" id="checkbox-all" class="mdl-checkbox__input" ng-model="schedAll">
                   </label>
                   <!-- NOTE: Could also put title in same column: include span for mdl-checkbox_label here -->
                 </th>
@@ -44,12 +44,12 @@
                 <schedule-list-item></schedule-list-item>
               </tr>-->
               <!-- TODO: toggle "is-selected" class when checkbox is clicked-->
-              <tr ng-repeat="playlist in playlists">
+              <tr ng-repeat="playlist in schedplaylists">
                 <td class="mdl-data-table__cell--non-numeric">
                   <!--<label class="mdl-checkbox mdl-js-checkbox mdl-js-ripple-effect" for="checkbox-{{$index}}">-->
                   <label class="mdl-checkbox" for="checkbox-{{$index}}">
                     <!-- Include name=__? -->
-                    <input type="checkbox" id="checkbox-{{$index}}" class="mdl-checkbox__input">
+                    <input type="checkbox" id="checkbox-{{$index}}" class="mdl-checkbox__input" ng-checked="schedAll">
                   </label>
                   <!-- NOTE: Could also put title in same column: include span for mdl-checkbox_label here -->
                 </td>
@@ -113,7 +113,7 @@
                 <tr>
                   <th class="mdl-data-table__cell--non-numeric">
                     <label class="mdl-checkbox" id="select-all" for="checkbox-add-all">
-                      <input type="checkbox" id="checkbox-add-all" class="mdl-checkbox__input">
+                      <input type="checkbox" id="checkbox-add-all" class="mdl-checkbox__input" ng-model="addAll">
                     </label>
   
                   </th>
@@ -122,11 +122,12 @@
               </thead>
               <tbody>
 
-                <tr ng-repeat="playlist in playlists">
+
+                <tr ng-repeat="playlist in userplaylists">
                   <td class="mdl-data-table__cell--non-numeric">
 
 
-                      <input type="checkbox" id="checkbox-add-{{$index}}" class="mdl-checkbox__input">
+                      <input type="checkbox" id="checkbox-add-{{$index}}" class="mdl-checkbox__input" ng-checked="addAll">
                    
                   </td>
                   <td class="mdl-data-table__cell--non-numeric">
@@ -150,7 +151,7 @@
               <i class="material-icons">add</i>
             </button>
             Add Playlists
-            <button ng-show="!addPlaylistShown" class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect right-actions" style="float:right;">
+            <button ng-show="!addPlaylistShown" ng-click="removeItems()" class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect right-actions" style="float:right;">
               <i class="material-icons">delete</i>
             </button>
           </div>
