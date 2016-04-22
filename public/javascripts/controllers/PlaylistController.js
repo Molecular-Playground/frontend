@@ -4,13 +4,9 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', '$rootScope', 'u
 
   $scope.temp = "";
   $scope.showCreateNewPlaylists = false;
-
-  $scope.$watch('$scope.playlistEdit', function(newVal, oldVal){
-    console.log('sfd');
-  });
+  $scope.playlistEdit = false; //this one is local, not in the directive like for mol card
 
   $scope.toggleCreateNewPlaylists = function(val){
-    console.log(val);
     if (val){
       $scope.showCreateNewPlaylists = !!val;
     }
@@ -21,21 +17,36 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', '$rootScope', 'u
 
   $scope.items = []; //list of playlists
 
-  $scope.curEditPlaylistIndx = undefined;
-  $rootScope.$on('belch', function(event, data){
+  $scope.curEditPlaylistIndx = -1;
 
+  //adding molecules to playlists
+  $rootScope.$on('belch', function(event, data){
     var molIndx = Number.parseInt(data.molIdx);
     var playlistIndx = $scope.curEditPlaylistIndx;
-    
-    $scope.items[playlistIndx].molList.push( $scope.mols[molIndx] );
+    //only adds item to playlist if it's not already there
+    if($scope.items[playlistIndx].molList.indexOf($scope.mols[molIndx]) == -1){
+      $scope.items[playlistIndx].molList.push( $scope.mols[molIndx] );
+    }
+    else{
+      console.log('Item already in playlist');
+    }
 
   });
 
-  $scope.removeItem = function(molIndex) {
+  $scope.removeMol = function(molIndex) {
+    var molIndx = Number.parseInt(molIndex);
+    var playlistIndx = $scope.curEditPlaylistIndx;
+    
+    $scope.items[playlistIndx].molList.splice(molIndx, 1);
+  }
+
+  $scope.removePlay = function(molIndex) {
     var molIndx = Number.parseInt(molIndex);
     var playlistIndx = $scope.curEditPlaylistIndx;
 
-    $scope.items[playlistIndx].molList.splice( molIndx );
+    $scope.toggleEdit(playlistIndx);
+    $scope.items.splice(playlistIndx, 1);
+    $scope.curEditPlaylistIndx = -1;
   }
 
   $scope.addItem = function () {
@@ -50,10 +61,8 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', '$rootScope', 'u
   };
 
   $scope.toggleEdit = function (index) {
-   // $scope.playlistEdit = !$scope.playlistEdit;
-    // var sendBool = $scope.playlistEdit;
-    console.log(index)
     $scope.curEditPlaylistIndx = index;
+    $scope.playlistEdit = !$scope.playlistEdit;
     $rootScope.$broadcast('burp');
   };
 
