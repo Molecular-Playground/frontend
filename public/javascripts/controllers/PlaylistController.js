@@ -25,7 +25,7 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', '$rootScope', 'u
     var playlistIndx = $scope.curEditPlaylistIndx;
     //only adds item to playlist if it's not already there
     if($scope.items[playlistIndx].molList.indexOf($scope.mols[molIndx]) == -1){
-      $scope.items[playlistIndx].molList.push( $scope.mols[molIndx] );
+      $scope.items[playlistIndx].molList.push($scope.mols[molIndx]);
     }
     else{
       console.log('Item already in playlist');
@@ -36,7 +36,7 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', '$rootScope', 'u
   $scope.removeMol = function(molIndex) {
     var molIndx = Number.parseInt(molIndex);
     var playlistIndx = $scope.curEditPlaylistIndx;
-    
+
     $scope.items[playlistIndx].molList.splice(molIndx, 1);
   }
 
@@ -60,8 +60,18 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', '$rootScope', 'u
     //TODO add error message upon failure
   };
 
+  $scope.currPlaylist = -1;
+
   $scope.toggleEdit = function (index) {
     $scope.curEditPlaylistIndx = index;
+    // if($scope.playlistEdit){
+    //   $scope.currPlaylist  = -1;
+    // }
+    // else{
+    //   $scope.currPlaylist = index;
+    // }
+    // console.log($scope.currPlaylist)
+    // console.log($scope.curEditPlaylistIndx)
     $scope.playlistEdit = !$scope.playlistEdit;
     $rootScope.$broadcast('burp');
   };
