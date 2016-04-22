@@ -5,7 +5,6 @@ angular.module('MolApp').controller('moleculeCardCtrl', ['$scope', '$rootScope',
 	//$scope.playlistEdit = false;
 
 	$scope.addToPlaylist = function () {
-		console.log('ere')
 		$rootScope.$broadcast('belch', {
 			'molIdx' : $scope.index
 		});

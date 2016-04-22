@@ -1,16 +1,15 @@
 <div class="mdl-card mdl-shadow--4dp" style="width:auto;height:{{viewerHeight+150}}px;min-height:300px;">
   <div class="mdl-card__media" style="background-color:rgba(139, 195, 74, 1);color:white;" align="center">
-    <h5 align="left" style="margin-left:2em;">
+    <h5 align="left" style="margin-left:2em; overflow: hidden;">
       {{molName}}
-
-      <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="descriptionShown = !descriptionShown" style="margin-left:3em;">
+      </h5>
+      <button class="mdl-button mdl-js-button mdl-button--icon" ng-click="descriptionShown = !descriptionShown" style="right:10%; top:5%; position:absolute;">
         <i class="material-icons" title="View Molecule">remove_red_eye</i>
       </button>
-
-      <button ng-show="playlistEdit" class="mdl-button mdl-js-button mdl-button--icon" ng-click="addToPlaylist()">
+      <button ng-show="playlistEdit" class="mdl-button mdl-js-button mdl-button--icon" ng-click="addToPlaylist()" style="right:0.2%; top:5%; position:absolute;">
         <i class="material-icons" title="View Molecule">add</i>
       </button>
-    </h5>
+    
   </div>
 
   <div ng-show="descriptionShown" class="mdl-card__supporting-text" style='overflow-y:scroll;margin-bottom:53px;'>

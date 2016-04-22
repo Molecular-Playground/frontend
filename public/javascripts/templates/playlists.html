@@ -8,12 +8,17 @@
 					<button  ng-click="toggleEdit($index)" id="editButton" class="mdl-button mdl-js-button mdl-button--icon">
 						<i title="Edit" class="material-icons">edit</i>
 					</button>
-				</div>
-				<ul class="playlistElmement" ng-repeat="mol in play.molList" style="margin: 5px;">
-					<li>{{ mol.name }}</li>
-					<button  ng-if="curEditPlaylistIndx == $index" ng-click="removeItem($index)" id="removeMolButton" class="mdl-button mdl-js-button mdl-button--icon">
+					<!--only shows remove pl button if current playlist is being edited-->
+					<button  ng-show="curEditPlaylistIndx === $index && playlistEdit" ng-click="$event.stopPropagation(); removePlay($index);" id="removePlayButton" class="mdl-button mdl-js-button mdl-button--icon">
 						<i title="Remove" class="material-icons">remove</i>
 					</button>
+				</div>
+				<ul class="playlistElmement" ng-repeat="mol in play.molList" style="margin: 5px;">
+					<li>{{ mol.name }}
+						<button  ng-click="removeMol($index)" id="removeMolButton" class="mdl-button mdl-js-button mdl-button--icon">
+							<i title="Remove" class="material-icons">remove</i>
+						</button>
+					</li>
 				</ul>
 			</div>
 		</div>
