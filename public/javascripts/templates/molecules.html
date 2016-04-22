@@ -18,32 +18,26 @@
 </div>
 
 
-<div class="android-screen-section mdl-typography--text-center">
-  <div ng-controller = "molUploadCtrl">
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="select_file">
+
+
+
+<div ng-show="!showUploadOption" class="android-screen-section mdl-typography--text-center">
+    <button ng-click="showUploadOption = !showUploadOption" class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" id="select_file">
           Upload New Molecule
           <i class="material-icons">add_circle_outline</i>
-      </button> <input id="upload" type="file" mol-upload="file"/>
-      
-      
-      <button class="mdl-button mdl-js-button mdl-button--raised mdl-js-ripple-effect mdl-button--accent" ng-click="uploadFile()">Submit Molecule</button>
-  </div>
+      </button> 
 </div>
 
-<div class="android-screen-section mdl-typography--text-center">
+
+<div ng-show="showUploadOption" class="android-screen-section mdl-typography--text-center">
   <div ng-controller="fupController">
 
           
-          <input ng-model="fileName" type="text" id="name" placeholder="name"></input>
-          <input ng-model="fileType" type="text" id="type" placeholder="type"></input>
+          <input ng-model="fileName" type="text" id="name" placeholder="Molecule Name"></input>
+          <input ng-model="fileType" type="text" id="type" placeholder="File Type"></input>
           <input type="file" id="file1" name="file"
               ng-files="getTheFile($file)" />
-
-          
-
-          
-
-          <input type="button" ng-click="uploadFiles()" value="Upload" />
+          <input type="button" ng-click="uploadFiles()" value="Upload Molecule" />
   </div>
 </div>
 
