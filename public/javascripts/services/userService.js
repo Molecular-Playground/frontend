@@ -1,4 +1,5 @@
 var angular = require('angular');
+var SERVER_URL = '104.236.54.250';
 angular.module('MolApp').factory('userService', ['$http', '$cookies', function($http, $cookies){
   var observerCallbacks = [];
 
@@ -26,7 +27,7 @@ angular.module('MolApp').factory('userService', ['$http', '$cookies', function($
     login : function(params){
       $http({
         method: 'POST',
-        url: 'http://104.236.54.250:8000/api/login/',
+        url: 'http://' + SERVER_URL + ':8000/api/login/',
         contentType : 'application/json',
         data : JSON.stringify(params.data),
         dataType : 'application/json'
@@ -40,7 +41,7 @@ angular.module('MolApp').factory('userService', ['$http', '$cookies', function($
     register : function(params){
       $http({
         method: 'PUT',
-        url: 'http://104.236.54.250:8000/api/user/',
+        url: 'http://' + SERVER_URL + ':8000/api/user/',
         contentType : 'application/json',
         data : JSON.stringify(params.data),
         dataType : 'application/json'
@@ -54,7 +55,7 @@ angular.module('MolApp').factory('userService', ['$http', '$cookies', function($
     validate : function(params){
       $http({
         method: 'POST',
-        url: 'http://104.236.54.250:8000/api/user/validate',
+        url: 'http://' + SERVER_URL + ':8000/api/user/validate',
         contentType : 'application/json',
         data : JSON.stringify(params.data),
         dataType : 'application/json'

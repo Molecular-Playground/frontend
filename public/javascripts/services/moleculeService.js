@@ -1,10 +1,11 @@
 var angular = require('angular');
+var SERVER_URL = '104.236.54.250';
 angular.module('MolApp').factory('MolService', ['$http', '$cookies', function($http, $cookies){
   var molecules = [];
   var getMols = function(){
     $http({
       method : 'GET',
-      url : 'http://104.236.54.250:8000/api/molecules',
+      url : 'http://' + SERVER_URL + ':8000/api/molecules',
       success : function(data){
         molecules = data.slice();
       },
