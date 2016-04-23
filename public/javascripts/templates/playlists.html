@@ -2,11 +2,12 @@
 	<div id="playlist-main-section" class="mdl-card__supporting-text">
 		<div class="mdl-grid">
 			<!--repeating playlist div-->
-			<div id="playlist-card" class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp" ng-repeat="play in items">
+			<div id="playlist-card" class="demo-card-square mdl-cell mdl-card mdl-shadow--2dp" ng-repeat="play in items" data-ng-class="{'grayout':curEditPlaylistIndx != $index && playlistEdit}">
 				<h5 class="mdl-card__title" style="background-color: #8BC34A; color: white; margin-top: 0px; padding: 0px;">
-					<div class="mdl-card__title" style="color: white; align-left: 2em; padding-left: 10%; overflow: hidden;">{{ play.name }}</div>
+					<div class="mdl-card__title" style="color: white; align-left: 2em; padding-left: 10%; overflow: hidden; max-width: 18ch;">{{ play.name }}</div>
 					<div>
-						<button ng-click="toggleEdit($index)" id="editButton" class="mdl-button mdl-js-button mdl-button--icon" style="right: 10%; top:5%; position:absolute;">
+						<!--hide button if another playlist is being edited-->
+						<button ng-show="(curEditPlaylistIndx == $index) || (curEditPlaylistIndx != $index && !playlistEdit)" ng-click="toggleEdit($index)" id="editButton" class="mdl-button mdl-js-button mdl-button--icon" style="right: 10%; top:5%; position:absolute;">
 							<i title="Edit" class="material-icons">edit</i>
 						</button>
 						<!--only shows remove pl button if current playlist is being edited-->
@@ -17,7 +18,8 @@
 				</h5>
 				<ul class="playlistElmement" ng-repeat="mol in play.molList" style="margin: 5px;">
 					<li>{{ mol.name }}
-						<button ng-show="playlistEdit" ng-click="removeMol($index)" id="removeMolButton" class="mdl-button mdl-js-button mdl-button--icon">
+					<!-- only shows delete mol button when only it's playlist is being edited -->
+						<button ng-show="{{items.indexOf(play)}} == curEditPlaylistIndx && playlistEdit" ng-click="removeMol($index)" id="removeMolButton" class="mdl-button mdl-js-button mdl-button--icon">
 							<i title="Remove" class="material-icons">remove</i>
 						</button>
 					</li>
@@ -33,7 +35,7 @@
 		<form ng-submit="addItem(); toggleCreateNewPlaylists(0)">
 			<div>
 				<p>
-					<div class="mdl-textfield mdl-js-textfield" style="margin-left: 1em;">
+					<div class="mdl-textfield mdl-js-textfield" style="margin-left: 1em;" autofocus="true">
 						<input class="mdl-textfield__input" type="text" ng-model="temp">
 						<label class="mdl-textfield__label" for="blah">Playlist Name...</label>
 					</div>

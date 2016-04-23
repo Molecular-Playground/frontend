@@ -60,18 +60,8 @@ angular.module('MolApp').controller('PlaylistsCtrl', ['$scope', '$rootScope', 'u
     //TODO add error message upon failure
   };
 
-  $scope.currPlaylist = -1;
-
   $scope.toggleEdit = function (index) {
     $scope.curEditPlaylistIndx = index;
-    // if($scope.playlistEdit){
-    //   $scope.currPlaylist  = -1;
-    // }
-    // else{
-    //   $scope.currPlaylist = index;
-    // }
-    // console.log($scope.currPlaylist)
-    // console.log($scope.curEditPlaylistIndx)
     $scope.playlistEdit = !$scope.playlistEdit;
     $rootScope.$broadcast('burp');
   };
