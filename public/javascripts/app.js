@@ -111,6 +111,7 @@
   require('./directives/PlaylistsDirective.js');
   require('./directives/KeyPressDirective.js');
   require('./directives/EmailConfirmationDirective.js');
+  require('./directives/UploadDirective.js');
 
 
   /* -------- CONTROLLERS ------- */
@@ -132,5 +133,6 @@
   require('./controllers/FullScreenMoleculeController.js');
   require('./controllers/PlaylistController.js');
   require('./controllers/EmailConfirmationController.js');
+  require('./controllers/UploadController.js');
 
 })();
