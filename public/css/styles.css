@@ -576,6 +576,7 @@ a img{
 #molplay-table-add-playlist {
   overflow:auto;
   width:100%;
+  max-height: 500px;
 }
 
 #molplay-table-current-schedule table,
