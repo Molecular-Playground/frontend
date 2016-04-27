@@ -2,13 +2,11 @@ var angular = require('angular');
 
 angular.module('MolApp').controller('ScheduleCtrl', ['$scope', '$location', 'userService', function($scope, $location, userService){
 
-	// Useless?
-	/*$scope.updateSelect = function(plIndex) {
-		var schedIndex = Number.parseInt(plIndex);
-		var selectStatus = $scope.schedplaylists[plIndex].select;
-		$scope.schedplaylists[plIndex].select = !selectStatus;
-		console.log('selectStatus changed to: ' + selectStatus);
-	};*/
+	// Show add playlist dialog
+	$scope.addPlaylistShown = false;
+
+	// Playlists to add
+	$scope.playlistsToAdd = [];
 
 	// Deletes items from schedule
 	$scope.removeItems = function() {
@@ -17,14 +15,62 @@ angular.module('MolApp').controller('ScheduleCtrl', ['$scope', '$location', 'use
     	//for (var i = 0; i < $scope.currSelection; i++) {
     	//	$scope.schedplaylists.splice( i, 1 );
     	//};
-    	$scope.schedplaylists = $scope.schedplaylists.filter(
+    	var allSelected = $scope.schedAll;
+    	console.log(allSelected);
+    	if(allSelected) {
+    		console.log('Delete All');
+			$scope.schedplaylists = [];
+		} else {
+			$scope.schedplaylists = $scope.schedplaylists.filter(
 		    function(item) {
-		      return !item.selected
-		    }
-		  );
+		    	console.log('In filter');
+		      	return !item.selected;
+		    });
+		}
+    	console.log('Deleted checked items');
   	};
 
-  	$scope.checkAll = false;
+  	// Add items to schedule
+  	$scope.addItems = function() {
+  		// Get list of playlists to add
+  		//var new_playlist = {};
+    	angular.forEach($scope.userplaylists, function(item) {
+           if(item.selected) {
+           	console.log('Item selected playlist');
+           	// Add default start/endtime
+           	var new_playlist = item;
+           	new_playlist['startTime'] = '9:00 AM';
+           	new_playlist['endTime'] = '10:00 AM';
+           	console.log(new_playlist);
+           	// Add to playlist
+           	$scope.schedplaylists.push(new_playlist);
+           	console.log('Pushed new playlist');
+           	console.log($scope.schedplaylists[$scope.schedplaylists.length - 1]);
+           };
+         });
+  	};
+
+  	// 'Add' Button
+  	$scope.addPlaylistButton = function() {
+  		// If clicked while add dialog shown, users done interacting with it.
+  		// If clicked when dialog is not shown, will show it for users to interact with it.
+  		if($scope.addPlaylistShown) {
+  			// Close dialog and add any selected userplaylists
+  			$scope.addItems();
+  			// Deselect all for next time
+  			$scope.userplaylistsDeselectAll();
+  		};
+  		// Toggle dialog show state
+  		$scope.addPlaylistShown = !$scope.addPlaylistShown;
+  	};
+
+  	//$scope.deselectAll = function {
+  	//	angular.forEach($scope.userplaylists, function(item) {
+  	//		item.selected = false;
+  	//	});
+  	//};
+
+  	//$scope.checkAll = false;
 
   	$scope.toggleCheckAll = function() {
        if($scope.checkAll) {
@@ -39,18 +85,6 @@ angular.module('MolApp').controller('ScheduleCtrl', ['$scope', '$location', 'use
        }
 
      };
-
-  	/*$scope.deleteSelected = function () {
-        angular.forEach
-        ($scope.schedplaylists, function (item) {
-            if(item.selected)
-            {
-                $scope.schedplaylists.splice( item, 1 );
-            }
-        });
-    };*/
-
-  	$scope.currSelection = [0,1,2];
 
 	$scope.schedplaylists = [
 		{
@@ -77,7 +111,7 @@ angular.module('MolApp').controller('ScheduleCtrl', ['$scope', '$location', 'use
 	];
 
 	$scope.userplaylists = [
-	{
+		{
 			pid : 1,
 			selected :false,
 			name : "PlayList ONE"

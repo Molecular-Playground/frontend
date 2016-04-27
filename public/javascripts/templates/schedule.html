@@ -62,7 +62,7 @@
                   </span>
                   <!-- DISPLAY WHEN NOT EDITING -->
                   <span ng-show="!editStartTime">
-                    {{playlist.endTime}}
+                    {{playlist.startTime}}
                     <button class="mdl-button mdl-button--icon mdl-js-button mdl-js-ripple-effect" ng-click="editStartTime = !editStartTime">
                       <i class="material-icons">edit</i>
                     </button>
@@ -119,7 +119,7 @@
                   <td class="mdl-data-table__cell--non-numeric">
 
 
-                      <input type="checkbox" id="checkbox-add-{{$index}}" class="mdl-checkbox__input" ng-checked="addAll">
+                      <input type="checkbox" id="checkbox-add-{{$index}}" class="mdl-checkbox__input" ng-checked="addAll" ng-model="playlist.selected">
                    
                   </td>
                   <td class="mdl-data-table__cell--non-numeric">
@@ -139,7 +139,7 @@
           <!-- Action buttons below table -->
           <div class="mdl-card__actions mdl-card--border mdl-typography--text-uppercase">
 
-            <button id="demo-show-snackbar" class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="addPlaylistShown = !addPlaylistShown">
+            <button id="demo-show-snackbar" class="mdl-button mdl-button--icon mdl-button--colored mdl-js-button mdl-js-ripple-effect" ng-click="addPlaylistButton()">
               <i class="material-icons">add</i>
             </button>
             Add Playlists
