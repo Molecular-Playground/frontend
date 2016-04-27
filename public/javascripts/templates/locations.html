@@ -7,6 +7,6 @@
 
 <div class="mdl-grid" style="max-width:1000px;margin:auto;">
   <div class="mdl-cell" ng-repeat="loc in locations.locs | filter:search">
-    <location-card url='{{loc.url}}' dataType='{{loc.datatype}}' locname='{{loc.name}}' locdescription='{{loc.description}}'/>
+    <location-card url='{{loc.url}}' dataType='{{loc.datatype}}' locname='{{loc.name}}' locdescription='{{loc.description}}' more='{{loc.more}}'/>
   </div>
 </div>

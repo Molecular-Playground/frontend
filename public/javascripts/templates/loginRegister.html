@@ -3,8 +3,9 @@
   <div class="mdl-cell mdl-cell--3-col" align="right">
     <div class="mdl-typography--display-1-color-contrast" align="left" style="padding-bottom:1em;">Login</div>
 
-    <!--warning dialog-->
+    <!--message dialog for action status-->
     <div ng-controller="LoginCtrl">
+      <!--Error Message-->
       <div class="alert alert-warning" ng-if="showWarningLoginAlert">
        <strong>{{warningLoginTextAlert}}</strong>
      </div>
@@ -28,10 +29,16 @@
   <div class="mdl-cell mdl-cell--3-col" align="left">
     <div class="mdl-typography--display-1-color-contrast" style="padding-bottom:1em;">Sign Up</div>
 
-    <!--warning dialog-->
+    <!--message show for action status-->
     <div ng-controller="LoginCtrl">
+      <!--Error Message-->
       <div class="alert alert-warning" ng-if="showWarningRegAlert">
        <strong>{{warningRegAlert}}</strong>
+     </div>
+     <!--Success Message-->
+     <div class="alert alert-successing" ng-if="registerSuccess">
+      <strong>New Account is Registered Successfully</strong>
+      <p>Please check you email box to confirm the email BEFORE login</p>
      </div>
     </div>
 
