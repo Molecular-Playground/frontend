@@ -10,6 +10,8 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
 
   $scope.loginStatusMessage = "";
 
+  $scope.registerSuccess = false;
+
 
   $scope.keyPressHandler = function(keyEvent, callback) {
     if (keyEvent.which === 13) {
@@ -35,6 +37,7 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
       });
       $scope.loginEmail = "";
       $scope.loginPassword = "";
+
     }else{
       $scope.warningLoginTextAlert = "All Field Should Not Be Empty";
       $scope.showWarningLoginAlert = true;
@@ -52,7 +55,8 @@ angular.module('MolApp').controller('LoginCtrl', ['$rootScope', '$scope', '$loca
           confpassword : $scope.signupConfPassword.trim()
         },
         success : function(resp){
-          //$location.path('/');
+          $scope.registerSuccess = true;
+          $location.path('/');
           console.log(resp);
         },
         // TODO : display errors when backend gets back about ms-users ticket for login error reporting.

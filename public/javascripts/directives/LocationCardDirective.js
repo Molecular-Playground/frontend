@@ -11,7 +11,7 @@ angular.module('MolApp').directive('locationCard', function() {
       scope.dataType = attrs.datatype;
       scope.locName = attrs.locname;
       scope.desc = attrs.locdescription;
-
+      scope.more = attrs.more;
     }
   };
 });
